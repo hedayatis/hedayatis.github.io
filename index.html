@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Sajjad (Sam) Hedayati &mdash; optimization and simulation for manufacturing and logistics decisions.">
+<title>Sajjad (Sam) Hedayati &mdash; Optimization &amp; Simulation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#10222C; --petrol:#0B4F6C; --petrol-soft:#3D7C97; --brass:#A97A22;
+    --paper:#ECEFF0; --card:#FFFFFF; --tint:#E9F1F4; --rule:#B9C3C9; --muted:#56676F;
+    --display:"IBM Plex Sans Condensed","Helvetica Neue",Arial,sans-serif;
+    --body:"IBM Plex Serif",Georgia,"Times New Roman",serif;
+    --mono:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
+  .wrap{max-width:900px;margin:0 auto;padding:0 26px}
+
+  .masthead{background:var(--ink);color:#E7EDF0;padding:54px 0 40px}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin:0 0 18px}
+  .masthead h1{font-family:var(--display);font-weight:700;font-size:clamp(38px,7.4vw,62px);line-height:1.02;letter-spacing:-.015em;margin:0 0 14px}
+  .lede{font-size:clamp(17px,2.3vw,20px);max-width:47ch;margin:0 0 26px;color:#C7D5DB}
+  .contact{font-family:var(--mono);font-size:12.5px;line-height:2;color:#A9BBC4;border-top:1px solid rgba(255,255,255,.16);padding-top:16px}
+  .contact a{color:#CFE0E7;text-decoration:none;border-bottom:1px solid rgba(207,224,231,.35)}
+  .contact a:hover{color:#fff;border-bottom-color:#fff}
+  .sep{color:#5E7480;padding:0 8px}
+
+  .thesis{background:var(--card);border-bottom:1px solid var(--rule);padding:46px 0 40px}
+  .claim{font-family:var(--display);font-weight:600;font-size:clamp(23px,3.5vw,32px);line-height:1.24;letter-spacing:-.01em;margin:0 0 16px;max-width:25ch}
+  .gloss{margin:0;max-width:60ch;color:var(--muted)}
+
+  .flow{display:flex;align-items:stretch;margin:34px 0 0;flex-wrap:wrap}
+  .stage{flex:1 1 150px;background:var(--tint);border:1px solid var(--rule);padding:13px 14px;min-width:150px}
+  .stage b{font-family:var(--display);font-weight:600;font-size:15px;color:var(--petrol);display:block;line-height:1.2}
+  .stage span{font-family:var(--mono);font-size:10.5px;color:var(--muted);display:block;margin-top:6px;line-height:1.6}
+  .stage.out{background:var(--ink);border-color:var(--ink)}
+  .stage.out b{color:#fff}
+  .stage.out span{color:#9FB4BE}
+  .chev{align-self:center;color:var(--brass);font-family:var(--mono);font-size:15px;padding:0 8px}
+  .loop{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--brass);margin-top:10px}
+  .ledger{font-family:var(--mono);font-size:12px;letter-spacing:.03em;color:var(--petrol);margin-top:26px;padding-top:14px;border-top:1px solid var(--rule)}
+
+  section{padding:46px 0}
+  h2{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin:0 0 4px}
+  .h2rule{height:2px;background:var(--ink);width:34px;margin-bottom:24px}
+  h3{font-family:var(--display);font-weight:600;font-size:20px;letter-spacing:-.005em;margin:0 0 6px;color:var(--petrol)}
+  p{margin:0 0 12px}
+
+  .legend{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin:-12px 0 24px;line-height:1.9}
+  .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--petrol);border-radius:2px;padding:2px 7px;color:var(--petrol);background:var(--tint);white-space:nowrap}
+  .tag.work{border-color:var(--rule);color:var(--muted);background:#F5F8F9}
+  .tag.scoped{border-color:var(--brass);color:var(--brass);background:#FBF6EC}
+  .area{background:var(--card);border:1px solid var(--rule);border-left:3px solid var(--petrol);padding:20px 22px;margin-bottom:12px}
+  .head{display:flex;gap:12px;align-items:flex-start}
+  .icon{flex:0 0 30px;width:30px;height:30px;margin-top:2px}
+  .icon svg{width:30px;height:30px;display:block}
+  .titles{flex:1 1 auto;min-width:0}
+  .titles .top{display:flex;gap:12px;align-items:baseline;justify-content:space-between;flex-wrap:wrap}
+  .area p{color:var(--muted);max-width:64ch;font-size:16px;margin:6px 0 0}
+  .kit{font-family:var(--mono);font-size:12.5px;line-height:1.95;color:var(--ink);margin:12px 0 0;padding-top:12px;border-top:1px dotted var(--rule)}
+
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+  .gcard{background:var(--card);border:1px solid var(--rule);padding:0 0 20px;display:flex;flex-direction:column}
+  .plate{background:var(--tint);border-bottom:1px solid var(--rule);padding:14px 16px}
+  .plate svg{width:100%;height:auto;display:block}
+  .gbody{padding:16px 20px 0}
+  .gbody h3{font-size:19px;color:var(--ink)}
+  .gbody p{font-size:15.5px;color:var(--muted);margin:0}
+  .source{font-family:var(--mono);font-size:11.5px;color:var(--petrol);display:block;margin-top:9px}
+
+  .result{border-top:1px solid var(--rule);padding:16px 0}
+  .result:first-of-type{border-top:2px solid var(--ink)}
+  .result h3{font-size:18px;color:var(--ink);margin-bottom:4px}
+  .result p{color:var(--muted);max-width:72ch;font-size:15.5px;margin:0}
+
+  .role{display:grid;grid-template-columns:152px 1fr;gap:22px;padding:16px 0;border-top:1px solid var(--rule)}
+  .role:first-of-type{border-top:2px solid var(--ink)}
+  .when{font-family:var(--mono);font-size:12px;color:var(--petrol);padding-top:3px}
+  .role h3{font-size:18px;color:var(--ink);margin-bottom:4px}
+  .role p{font-size:15.5px;color:var(--muted);margin:0;max-width:64ch}
+  .where{font-family:var(--display);font-weight:500;font-size:15px;color:var(--petrol-soft);display:block;margin-bottom:6px}
+
+  .pub{padding:14px 0;border-top:1px solid var(--rule);font-size:15.5px}
+  .pub:first-of-type{border-top:2px solid var(--ink)}
+  .venue{font-style:italic}
+  .note{font-family:var(--mono);font-size:11.5px;color:var(--muted);display:block;margin-top:5px}
+
+  .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+  .fact{background:var(--card);padding:20px 22px}
+  .fact h3{font-size:12px;font-family:var(--mono);font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);margin-bottom:10px}
+  .fact ul{margin:0;padding-left:0;list-style:none}
+  .fact li{font-size:15px;line-height:1.5;margin-bottom:9px;color:var(--ink)}
+  .fact li span{color:var(--muted);font-size:13.5px;display:block}
+
+  footer{background:var(--ink);color:#A9BBC4;padding:34px 0;font-family:var(--mono);font-size:12px;line-height:1.9}
+  footer strong{color:#E7EDF0;font-weight:500}
+  footer a{color:#CFE0E7}
+  .version{margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,.16);color:#7A8F9A}
+
+  a:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+
+  .rise{opacity:0;transform:translateY(10px);animation:rise .5s ease forwards}
+  .rise:nth-child(2){animation-delay:.06s}
+  .rise:nth-child(3){animation-delay:.12s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.rise{animation:none;opacity:1;transform:none}}
+
+  @media (max-width:620px){
+    body{font-size:16px}
+    .role{grid-template-columns:1fr;gap:6px}
+    .masthead{padding:38px 0 30px}
+    section{padding:34px 0}
+    .chev{display:none}
+    .stage{flex:1 1 100%}
+  }
+
+  @media print{
+    body{background:#fff;font-size:10.5pt}
+    .masthead,footer{background:#fff;color:var(--ink)}
+    .masthead h1{color:var(--ink)}
+    .lede,.contact,footer{color:#333}
+    .contact a,footer a{color:var(--petrol)}
+    .stage.out{background:#fff;border-color:var(--ink)}
+    .stage.out b{color:var(--ink)}
+    .stage.out span{color:#555}
+    .area,.gcard,.result,.role,.pub,.fact{break-inside:avoid}
+    section{padding:16px 0}
+    .rise{animation:none;opacity:1;transform:none}
+    .gallery{grid-template-columns:1fr 1fr}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow rise">Operations research &middot; Ghent, Belgium</p>
+    <h1 class="rise">Sajjad (Sam) Hedayati</h1>
+    <p class="lede rise">I build optimization and simulation models for manufacturing and logistics, and I stay with them until someone is making a decision on the output.</p>
+    <div class="contact">
+      <a href="mailto:sajjad.hedayati@ugent.be">sajjad.hedayati@ugent.be</a><span class="sep">/</span><a href="https://www.linkedin.com/in/sajjad-hedayati-13703725a">LinkedIn</a><span class="sep">/</span><a href="https://orcid.org/0000-0002-1008-6288">ORCID 0000-0002-1008-6288</a><span class="sep">/</span><a href="https://scholar.google.com/citations?user=vNrnIkoAAAAJ">Google Scholar</a>
+    </div>
+  </div>
+</header>
+
+<div class="thesis">
+  <div class="wrap">
+    <p class="claim">A tool I built provided the key evidence behind Flanders Make's decision to continue funding the programme.</p>
+    <p class="gloss">A discrete-event simulation engine and analytics dashboard for remanufacturing operations, delivered as a self-service interface with automated scenario comparison &mdash; built that way so the industrial partner could interrogate the results themselves rather than take my word for them.</p>
+
+    <div class="flow">
+      <div class="stage"><b>Plant data</b><span>failures, rework, routings, stock</span></div>
+      <div class="chev">&#9656;</div>
+      <div class="stage"><b>Discrete-event model</b><span>SimPy &middot; R simmer</span></div>
+      <div class="chev">&#9656;</div>
+      <div class="stage"><b>Optimization layer</b><span>MILP &middot; Lagrangian &middot; stochastic</span></div>
+      <div class="chev">&#9656;</div>
+      <div class="stage"><b>Scenario dashboard</b><span>self-service interface</span></div>
+      <div class="chev">&#9656;</div>
+      <div class="stage out"><b>The decision</b><span>capacity, policy, investment</span></div>
+    </div>
+    <p class="loop">&#8635; planners re-run the scenarios themselves &mdash; the loop closes without me</p>
+
+    <p class="ledger">&asymp; 8 years professionally &nbsp;/&nbsp; 3 journal articles, 6 peer-reviewed conference contributions &nbsp;/&nbsp; reviewer for 3 international OR journals</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2>What I work on</h2>
+    <div class="h2rule"></div>
+    <p class="legend">Depth is labelled, not implied.<br>
+    <strong>Deep</strong> &mdash; published, benchmarked and defended. &nbsp;<strong>Working</strong> &mdash; used in delivery. &nbsp;<strong>Scoped</strong> &mdash; exactly the stated extent, no more.</p>
+
+    <div class="area">
+      <div class="head">
+        <div class="icon"><svg viewBox="0 0 30 30" fill="none" stroke="#0B4F6C" stroke-width="1.4" aria-hidden="true">
+          <path d="M15 6v4M15 10L8 14M15 10l7 4M8 16v3M8 19l-3 4M8 19l3 4M22 16v5"/>
+          <circle cx="15" cy="4" r="2.2" fill="#E9F1F4"/><circle cx="8" cy="14" r="2.2" fill="#E9F1F4"/>
+          <circle cx="22" cy="14" r="2.2" fill="#0B4F6C"/><circle cx="5" cy="24" r="2.2" fill="#E9F1F4"/>
+          <circle cx="11" cy="24" r="2.2" fill="#E9F1F4"/><circle cx="22" cy="23" r="2.2" fill="#E9F1F4"/>
+        </svg></div>
+        <div class="titles">
+          <div class="top"><h3>Optimization and decision models</h3><span class="tag">Deep</span></div>
+          <p>Turning a messy operational question into something a solver can answer, then making it solvable at real instance sizes when the exact method stalls.</p>
+        </div>
+      </div>
+      <p class="kit">Mixed-integer &amp; integer programming &middot; Gurobi (gurobipy), AMPL, CPLEX &middot; valid inequalities, lazy constraints, callbacks, warm starts &middot; Lagrangian relaxation with dual-guided repair heuristics &middot; Benders / L-shaped decomposition &middot; exact dynamic programming &middot; simulated annealing, genetic algorithms, differential evolution, large-neighbourhood and hill-climbing search</p>
+    </div>
+
+    <div class="area">
+      <div class="head">
+        <div class="icon"><svg viewBox="0 0 30 30" fill="none" stroke="#0B4F6C" stroke-width="1.4" aria-hidden="true">
+          <circle cx="6" cy="15" r="2.4" fill="#0B4F6C"/>
+          <path d="M9 14L23 6M9 15h14M9 16l14 8" stroke-dasharray="3 2.5"/>
+          <path d="M25 4v22" stroke="#A97A22" stroke-width="1.2"/>
+        </svg></div>
+        <div class="titles">
+          <div class="top"><h3>Decisions under uncertainty</h3><span class="tag">Deep</span></div>
+          <p>Plans that hold when demand, quality and failures misbehave &mdash; and a defensible figure for what the stochastic treatment is worth, rather than an assertion that it is.</p>
+        </div>
+      </div>
+      <p class="kit">Two-stage stochastic programming &middot; sample average approximation with statistical optimality-gap bounds &middot; scenario generation and reduction (moment matching, clustering, quasi-Monte-Carlo) &middot; decision-dependent (endogenous) uncertainty &middot; value of the stochastic solution</p>
+    </div>
+
+    <div class="area">
+      <div class="head">
+        <div class="icon"><svg viewBox="0 0 30 30" fill="none" stroke="#0B4F6C" stroke-width="1.4" aria-hidden="true">
+          <circle cx="4.5" cy="11" r="2"/><circle cx="10" cy="11" r="2"/><circle cx="15.5" cy="11" r="2"/>
+          <rect x="19.5" y="7" width="8" height="8" fill="#E9F1F4"/><path d="M17.5 11h2"/>
+          <path d="M4 21c3 0 3-3 6-3s3 3 6 3 3-3 6-3 3 3 6 3" stroke="#A97A22"/>
+        </svg></div>
+        <div class="titles">
+          <div class="top"><h3>Simulation and decision tools</h3><span class="tag">Deep</span></div>
+          <p>Discrete-event models of production and logistics systems, plus the interface that lets a planner run them without me in the room.</p>
+        </div>
+      </div>
+      <p class="kit">Discrete-event simulation (SimPy, R simmer) &middot; simulation&ndash;optimization &middot; design of experiments &middot; stochastic failures, rework loops, WIP and spare-parts inventory, replenishment policies, queueing and utilisation, operator-skill effects &middot; Python (NumPy, pandas, SciPy, Matplotlib, multiprocessing, Tkinter) &middot; R &middot; Git &middot; GUI and dashboard delivery</p>
+    </div>
+
+    <div class="area">
+      <div class="head">
+        <div class="icon"><svg viewBox="0 0 30 30" fill="none" stroke="#0B4F6C" stroke-width="1.4" aria-hidden="true">
+          <rect x="3" y="5" width="9" height="6" fill="#E9F1F4"/><rect x="18" y="5" width="9" height="6" fill="#E9F1F4"/>
+          <rect x="10.5" y="19" width="9" height="6" fill="#E9F1F4"/>
+          <path d="M12 8h6M22.5 11v5h-7.5v3M7.5 11v11h3" stroke-linecap="round"/>
+        </svg></div>
+        <div class="titles">
+          <div class="top"><h3>Process and planning analytics</h3><span class="tag work">Working</span></div>
+          <p>Six years inside operations before the research programme: mapping how a process actually runs, getting the data out, and putting numbers in front of the people who decide.</p>
+        </div>
+      </div>
+      <p class="kit">BPMN and formal process modelling &middot; as-is / to-be mapping and process reengineering &middot; SQL extraction and merging against production databases &middot; R analytics and reporting &middot; dashboard design &middot; production planning, timetabling and scheduling &middot; bottleneck analysis &middot; KPI definition and board-level reporting &middot; statistical process control, process and measurement system capability, acceptance sampling</p>
+    </div>
+
+    <div class="area">
+      <div class="head">
+        <div class="icon"><svg viewBox="0 0 30 30" fill="none" stroke="#0B4F6C" stroke-width="1.4" aria-hidden="true">
+          <circle cx="7" cy="8" r="2.2"/><circle cx="7" cy="22" r="2.2"/>
+          <circle cx="15" cy="15" r="2.4" fill="#A97A22" stroke="#A97A22"/>
+          <circle cx="24" cy="8" r="2.2"/><circle cx="24" cy="22" r="2.2"/>
+          <path d="M8.6 9.6l4.8 4M8.6 20.4l4.8-4M16.8 13.6l5.4-4M16.8 16.4l5.4 4"/>
+        </svg></div>
+        <div class="titles">
+          <div class="top"><h3>Learning-augmented optimization</h3><span class="tag scoped">Scoped</span></div>
+          <p>Real but narrow, and worth saying precisely: reinforcement learning applied to the control of an optimization algorithm, not general deep-learning practice.</p>
+        </div>
+      </div>
+      <p class="kit">PPO agents in custom Gym environments learning Lagrangian multiplier update policies &middot; graph neural networks for combinatorial optimization (co-supervised, not sole author) &middot; kernel-based contextual / prescriptive models &middot; scikit-learn &middot; supervised classification, k-means and k-medoids clustering</p>
+    </div>
+
+    <div class="area">
+      <div class="head">
+        <div class="icon"><svg viewBox="0 0 30 30" fill="none" stroke="#0B4F6C" stroke-width="1.4" aria-hidden="true">
+          <path d="M15 4l11 5-11 5-11-5z" fill="#E9F1F4"/><path d="M4 15l11 5 11-5"/><path d="M4 21l11 5 11-5"/>
+        </svg></div>
+        <div class="titles">
+          <div class="top"><h3>ERP process design</h3><span class="tag scoped">Scoped</span></div>
+          <p>One SAP Materials Management implementation at a petrochemical facility, six months, on the process side: blueprinting and mapping how material flow, procurement and stock movements should run, settled with the business before it was built. Process design, not configuration.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Problems solved, and what changed</h2>
+    <div class="h2rule"></div>
+    <div class="gallery">
+
+      <div class="gcard">
+        <div class="plate">
+          <svg viewBox="0 0 300 120" fill="none" stroke="#0B4F6C" stroke-width="1.6" role="img" aria-label="A production line whose inspection is deferred to a later station">
+            <text x="150" y="14" font-family="IBM Plex Mono, monospace" font-size="10" fill="#A97A22" text-anchor="middle">inspection deferred downstream</text>
+            <path d="M92 44C112 24 214 24 238 40" stroke="#A97A22" stroke-width="1.6" stroke-dasharray="5 4"/>
+            <path d="M232 33l8 8-11 2z" fill="#A97A22" stroke="none"/>
+            <path d="M14 62h272" stroke="#B9C3C9" stroke-width="8" stroke-linecap="round"/>
+            <rect x="24" y="48" width="30" height="28" fill="#fff"/><rect x="76" y="48" width="30" height="28" fill="#fff"/>
+            <rect x="128" y="48" width="30" height="28" fill="#fff"/><rect x="180" y="48" width="30" height="28" fill="#fff"/>
+            <rect x="232" y="48" width="30" height="28" fill="#0B4F6C"/>
+            <path d="M239 61l5 5 9-10" stroke="#fff" stroke-width="2.2"/>
+            <text x="24" y="98" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F">station 1</text>
+            <text x="286" y="98" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F" text-anchor="end">inspection station</text>
+          </svg>
+        </div>
+        <div class="gbody">
+          <h3>Solved what the commercial solver could not</h3>
+          <p>Integer programme for inspection-station allocation with deferrable inspection under limited capacity, then two Lagrangian relaxation approaches with greedy repair heuristics and hill-climbing local search &mdash; returning near-optimal plans with bounded optimality gaps on instances where an exact commercial solver stalled at the time limit. Benchmarked against both the exact solver and a problem-specific genetic algorithm.
+          <span class="source">Computers &amp; Operations Research 194, 107588 (2026)</span></p>
+        </div>
+      </div>
+
+      <div class="gcard">
+        <div class="plate">
+          <svg viewBox="0 0 300 120" fill="none" stroke="#0B4F6C" stroke-width="1.6" role="img" aria-label="A picker route through warehouse aisles with alternative pick locations">
+            <text x="286" y="14" font-family="IBM Plex Mono, monospace" font-size="10" fill="#A97A22" text-anchor="end">alternative pick locations</text>
+            <rect x="30" y="22" width="18" height="76" fill="#D8E4E9" stroke="none"/>
+            <rect x="96" y="22" width="18" height="76" fill="#D8E4E9" stroke="none"/>
+            <rect x="162" y="22" width="18" height="76" fill="#D8E4E9" stroke="none"/>
+            <rect x="228" y="22" width="18" height="76" fill="#D8E4E9" stroke="none"/>
+            <path d="M18 104h264" stroke="#B9C3C9"/>
+            <path d="M20 100V34h52v52h52V30h52v56h52V40" stroke="#0B4F6C" stroke-width="2"/>
+            <circle cx="72" cy="56" r="4.5" fill="#0B4F6C"/><circle cx="124" cy="44" r="4.5" fill="#0B4F6C"/>
+            <circle cx="176" cy="70" r="4.5" fill="#fff" stroke="#A97A22" stroke-width="2"/>
+            <circle cx="228" cy="42" r="4.5" fill="#fff" stroke="#A97A22" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="gbody">
+          <h3>Scaled a warehouse routing formulation</h3>
+          <p>Clustered and generalized vehicle routing formulation for joint order batching and picker routing with alternative pick locations in mixed-shelves warehouses: two MILP formulations plus a general rule for cost-matrix construction in rectangular environments, solving instances up to 180 nodes.
+          <span class="source">IMA Journal of Management Mathematics 35(2), 241&ndash;265 (2023)</span></p>
+        </div>
+      </div>
+
+      <div class="gcard">
+        <div class="plate">
+          <svg viewBox="0 0 300 120" fill="none" stroke="#0B4F6C" stroke-width="1.6" role="img" aria-label="A truck route from a depot to mobile parcel lockers within time windows">
+            <text x="286" y="14" font-family="IBM Plex Mono, monospace" font-size="10" fill="#A97A22" text-anchor="end">multiple time windows</text>
+            <path d="M52 60C80 30 106 92 140 62c30-26 62 30 96 2" stroke="#0B4F6C" stroke-width="2"/>
+            <rect x="16" y="48" width="32" height="24" fill="#0B4F6C"/>
+            <text x="32" y="64" font-family="IBM Plex Mono, monospace" font-size="11" fill="#fff" text-anchor="middle">D</text>
+            <rect x="104" y="78" width="18" height="26" rx="2" fill="#E9F1F4"/>
+            <rect x="152" y="24" width="18" height="26" rx="2" fill="#E9F1F4"/>
+            <rect x="238" y="42" width="18" height="26" rx="2" fill="#E9F1F4"/>
+            <path d="M108 86h10M108 92h10M156 32h10M156 38h10M242 50h10M242 56h10" stroke="#0B4F6C" stroke-width="1"/>
+            <circle cx="113" cy="70" r="3.4" fill="#A97A22"/><circle cx="161" cy="58" r="3.4" fill="#A97A22"/>
+            <circle cx="247" cy="76" r="3.4" fill="#A97A22"/>
+            <text x="14" y="98" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F">depot</text>
+          </svg>
+        </div>
+        <div class="gbody">
+          <h3>Built a benchmark where none existed</h3>
+          <p>Cluster-based simulated annealing &mdash; k-means clustering with six neighbourhood operators &mdash; for re-supplying autonomous mobile parcel lockers under multiple time windows and time-dependent parking costs. Generated a new benchmark instance set from Solomon data and validated against IBM CPLEX.
+          <span class="source">Future Transportation 4(4), 1266&ndash;1296 (2024)</span></p>
+        </div>
+      </div>
+
+      <div class="gcard">
+        <div class="plate">
+          <svg viewBox="0 0 300 120" fill="none" stroke="#0B4F6C" stroke-width="1.6" role="img" aria-label="A returned product disassembled into components across uncertain scenarios">
+            <text x="14" y="14" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F">returned unit</text>
+            <rect x="18" y="48" width="34" height="28" fill="#0B4F6C"/>
+            <path d="M52 62h30" stroke="#B9C3C9" stroke-width="2"/>
+            <path d="M84 62l32-30M84 62h32M84 62l32 30" stroke="#A97A22" stroke-dasharray="5 4"/>
+            <rect x="120" y="20" width="26" height="24" fill="#E9F1F4"/>
+            <rect x="120" y="50" width="26" height="24" fill="#E9F1F4"/>
+            <rect x="120" y="80" width="26" height="24" fill="#E9F1F4"/>
+            <path d="M146 32h30M146 62h30M146 92h30" stroke="#B9C3C9"/>
+            <rect x="176" y="20" width="20" height="24" fill="#fff"/><rect x="200" y="20" width="20" height="24" fill="#fff"/>
+            <rect x="176" y="50" width="20" height="24" fill="#fff"/><rect x="200" y="50" width="20" height="24" fill="#fff"/>
+            <rect x="176" y="80" width="20" height="24" fill="#fff"/><rect x="200" y="80" width="20" height="24" fill="#fff"/>
+            <text x="232" y="36" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F">scenario 1</text>
+            <text x="232" y="66" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F">scenario 2</text>
+            <text x="232" y="96" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F">scenario s</text>
+          </svg>
+        </div>
+        <div class="gbody">
+          <h3>Showed what the stochastic treatment was worth</h3>
+          <p>Two-stage stochastic disassembly scheduling with a coupled recourse stage under shared procurement cost, benchmarking a decomposition-inspired simulated annealing heuristic with an embedded MIP evaluating recourse against both the full extensive-form MIP and a deterministic model.
+          <span class="source">IWLS 2025 &mdash; 15th International Workshop on Lot Sizing</span></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Also on the record</h2>
+    <div class="h2rule"></div>
+
+    <div class="result">
+      <h3>Turned an intractable formulation into a polynomial-time routine</h3>
+      <p>Derived an exact dynamic-programming algorithm for the uncapacitated case of the inspection-allocation problem.</p>
+    </div>
+    <div class="result">
+      <h3>Put a number on what a model's accuracy is worth</h3>
+      <p>Modelled how an imperfect condition-triage classifier propagates error into downstream throughput and cost &mdash; converting "is this model accurate enough?" into a defensible figure and a rational basis for investing in a better one. Decision quality rather than metric quality.</p>
+    </div>
+    <div class="result">
+      <h3>Made a learned optimizer beat a hand-tuned one</h3>
+      <p>Trained a PPO agent in a custom Gym environment to learn Lagrangian multiplier update policies, replacing hand-tuned subgradient schedules. Co-supervised an M.Sc. thesis extending this into a decoupled GNN + RL framework for the generalized assignment problem, separating learned search direction from learned step-size control &mdash; reduced multiplier oscillation with better final bounds.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Track record</h2>
+    <div class="h2rule"></div>
+
+    <div class="role">
+      <div class="when">Jan 2022 &mdash; present</div>
+      <div>
+        <h3>Project Researcher</h3>
+        <span class="where">Ghent University &amp; Flanders Make &mdash; REMASC programme</span>
+        <p>Stochastic and learning-augmented optimization for capacity allocation and scheduling in remanufacturing, delivered as decision tools the industrial partner uses directly on their own data. Teaching assistant since February 2022: runs the exercise sessions for the whole course and sometimes delivers the theory lectures &mdash; probability and R, exploratory data analysis, hypothesis testing, regression, one- and two-way ANOVA, design of experiments, acceptance sampling, statistical process control, process and measurement system capability. Co-supervised one M.Sc. thesis.</p>
+      </div>
+    </div>
+
+    <div class="role">
+      <div class="when">Sep &mdash; Dec 2021</div>
+      <div>
+        <h3>Visiting Researcher</h3>
+        <span class="where">Eindhoven University of Technology (TU/e)</span>
+        <p>City logistics and warehousing: waste-collection routing, last-mile delivery with alternative locations, integrated order picking and batching, mobile parcel lockers. Coursework with BETA, the Dutch research school for Operations Management &amp; Logistics.</p>
+      </div>
+    </div>
+
+    <div class="role">
+      <div class="when">Dec 2015 &mdash; Jul 2021</div>
+      <div>
+        <h3>Business analysis, planning and industrial engineering</h3>
+        <span class="where">APSAN &middot; Baroline &middot; Hacoupian &middot; SmartComm &middot; Entekhab Group &middot; SarvRayaneh &mdash; Iran</span>
+        <p>Six positions, two of them concurrent, totalling three years and three months. Process modelling and reengineering in every role; SQL extraction against live databases; dashboards and board-level reporting; planning, timetabling and scheduling across competing teams at a startup; bottleneck analysis on a live garment production floor; process design on a SAP MM implementation at a petrochemical facility.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Publications and peer review</h2>
+    <div class="h2rule"></div>
+
+    <div class="pub">
+      Hedayati, S., De Vuyst, S., Raa, B. (2026). Inspection station allocation in a production line with delayed inspection. <span class="venue">Computers &amp; Operations Research</span>, 194, 107588.
+      <span class="note">Web of Science indexed &middot; UGent class A1</span>
+    </div>
+    <div class="pub">
+      Hedayati, S., Setak, M., Demir, E., Van Woensel, T. (2023). A new approach to the joint order batching and picker routing problem with alternative locations. <span class="venue">IMA Journal of Management Mathematics</span>, 35(2), 241&ndash;265. Oxford University Press.
+    </div>
+    <div class="pub">
+      Hedayati, S., Setak, M., Van Woensel, T., Demir, E. (2024). Re-supplying autonomous mobile parcel lockers in last-mile distribution. <span class="venue">Future Transportation</span>, 4(4), 1266&ndash;1296. MDPI.
+    </div>
+    <div class="pub">
+      Six peer-reviewed conference contributions: ORBEL 40 (2026) &middot; Flanders Make Scientific Conference 2025 &middot; FEARS 2025 &middot; IWLS 2025 &middot; FEARS 2022 &middot; NOMLC 2022.
+      <span class="note">Peer reviewer for IMA Journal of Management Mathematics, Journal of Heuristics and OR Spektrum</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Education, languages, certification</h2>
+    <div class="h2rule"></div>
+    <div class="facts">
+      <div class="fact">
+        <h3>Education</h3>
+        <ul>
+          <li>Ph.D. Industrial Engineering<span>Ghent University, 2022&ndash;2026 (expected). Internal defence December 2026; public defence expected early 2027.</span></li>
+          <li>M.Sc. Industrial Engineering<span>University of Tehran, 2014&ndash;2017</span></li>
+          <li>B.Sc. Industrial Engineering<span>Shahid Beheshti University of Medical Sciences, 2009&ndash;2013</span></li>
+          <li>Doctoral studies, K. N. Toosi University of Technology<span>2018&ndash;2021, program not completed</span></li>
+        </ul>
+      </div>
+      <div class="fact">
+        <h3>Languages</h3>
+        <ul>
+          <li>Persian<span>Native</span></li>
+          <li>English<span>Full professional</span></li>
+          <li>Dutch<span>B1+, certified by UCT, Ghent University</span></li>
+        </ul>
+      </div>
+      <div class="fact">
+        <h3>Certification</h3>
+        <ul>
+          <li>ISO 9001 Foundation &mdash; Quality</li>
+          <li>ISO 14001 &mdash; Environmental Management Systems</li>
+          <li>OHSAS 18001 Lead Implementer &mdash; Health &amp; Safety</li>
+          <li>PMBOK</li>
+          <li>Microsoft Project</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <strong>Sajjad (Sam) Hedayati</strong> &mdash; optimization, simulation and decision support for manufacturing and logistics. Ghent, Belgium.
+    <div class="version">Profile &mdash; v2.0 (web) &middot; August 2026 &middot; <a href="mailto:sajjad.hedayati@ugent.be">sajjad.hedayati@ugent.be</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
