@@ -3,9 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
-<meta name="description" content="Sajjad (Sam) Hedayati &mdash; optimization and simulation for manufacturing and logistics decisions.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="description" content="Sajjad (Sam) Hedayati &mdash; operations research, optimization and simulation for manufacturing and logistics, with measured gains in cost, runtime and decision quality.">
 <title>Sajjad (Sam) Hedayati &mdash; Optimization &amp; Simulation</title>
+<link rel="canonical" href="https://hedayatis.github.io/">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://hedayatis.github.io/">
+<meta property="og:title" content="Sajjad (Sam) Hedayati &mdash; Optimization &amp; Simulation">
+<meta property="og:description" content="Operations research and decision tools for manufacturing and logistics, backed by measured computational outcomes.">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/63190657?v=4">
+<meta property="og:image:alt" content="Sajjad (Sam) Hedayati">
+<meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -45,6 +53,16 @@
   .chev{align-self:center;color:var(--brass);font-family:var(--mono);font-size:15px;padding:0 8px}
   .loop{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--brass);margin-top:10px}
   .ledger{font-family:var(--mono);font-size:12px;letter-spacing:.03em;color:var(--petrol);margin-top:26px;padding-top:14px;border-top:1px solid var(--rule)}
+
+  .impact{background:#F5F8F9;border-bottom:1px solid var(--rule)}
+  .impact-intro{color:var(--muted);max-width:67ch;margin:0 0 24px}
+  .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+  .metric{background:var(--card);padding:22px;display:flex;flex-direction:column;min-height:230px}
+  .metric-value{font-family:var(--display);font-size:36px;font-weight:700;line-height:1;color:var(--petrol);letter-spacing:-.025em;margin:0 0 7px}
+  .metric h3{font-size:17px;color:var(--ink);margin:0 0 9px}
+  .metric p{font-size:14.5px;color:var(--muted);margin:0 0 14px}
+  .metric-source{font-family:var(--mono);font-size:10.5px;line-height:1.5;color:var(--brass);margin-top:auto;text-transform:uppercase;letter-spacing:.05em}
+  .evidence-note{font-family:var(--mono);font-size:11px;line-height:1.65;color:var(--muted);margin:17px 0 0}
 
   section{padding:46px 0}
   h2{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin:0 0 4px}
@@ -178,7 +196,7 @@
     .stage.out{background:#fff;border-color:var(--ink)}
     .stage.out b{color:var(--ink)}
     .stage.out span{color:#555}
-    .area,.gcard,.result,.role,.pub,.fact{break-inside:avoid}
+    .area,.gcard,.metric,.result,.role,.pub,.fact{break-inside:avoid}
     section{padding:16px 0}
     .rise{animation:none;opacity:1;transform:none}
     .gallery{grid-template-columns:1fr 1fr}
@@ -191,7 +209,7 @@
   <div class="wrap">
     <p class="eyebrow rise">Operations research &middot; Ghent, Belgium</p>
     <h1 class="rise">Sajjad (Sam) Hedayati</h1>
-    <p class="lede rise">I build optimization and simulation models for manufacturing and logistics, and I stay with them until someone is making a decision on the output.</p>
+    <p class="lede rise">I design optimization and simulation tools that turn operational uncertainty into measurable improvements in cost, speed and service.</p>
     <div class="contact">
       <a href="mailto:sajjad.hedayati@ugent.be">sajjad.hedayati@ugent.be</a><span class="sep">/</span><a href="https://www.linkedin.com/in/sajjad-hedayati-13703725a">LinkedIn</a><span class="sep">/</span><a href="https://orcid.org/0000-0002-1008-6288">ORCID 0000-0002-1008-6288</a><span class="sep">/</span><a href="https://scholar.google.com/citations?user=vNrnIkoAAAAJ">Google Scholar</a>
     </div>
@@ -200,8 +218,8 @@
 
 <div class="thesis">
   <div class="wrap">
-    <p class="claim">A tool I built provided the key evidence behind Flanders Make's decision to continue funding the programme.</p>
-    <p class="gloss">A discrete-event simulation engine and analytics dashboard for remanufacturing operations, delivered as a self-service interface with automated scenario comparison &mdash; built that way so the industrial partner could interrogate the results themselves rather than take my word for them.</p>
+    <p class="claim">I work from mathematical formulation to an implementable decision &mdash; algorithm, simulation, validation and usable output.</p>
+    <p class="gloss">The common thread is measurable decision support: reduce the problem without losing the decision, expose the trade-offs, and leave planners with a tool they can interrogate themselves.</p>
 
     <div class="flow">
       <div class="stage"><b>Plant data</b><span>failures, rework, routings, stock</span></div>
@@ -216,9 +234,56 @@
     </div>
     <p class="loop">&#8635; planners re-run the scenarios themselves &mdash; the loop closes without me</p>
 
-    <p class="ledger">&asymp; 8 years professionally &nbsp;/&nbsp; 3 journal articles, 6 peer-reviewed conference contributions, 4 complete working papers &nbsp;/&nbsp; reviewer for 3 international OR journals</p>
+    <p class="ledger">&asymp; 8 years professionally &nbsp;/&nbsp; 3 journal articles, 6 peer-reviewed conference contributions, 8 current manuscripts and research studies &nbsp;/&nbsp; reviewer for 3 international OR journals</p>
   </div>
 </div>
+
+<section class="impact" id="measured-outcomes">
+  <div class="wrap">
+    <h2>Selected measured outcomes</h2>
+    <div class="h2rule"></div>
+    <p class="impact-intro">A short numerical record of what changed in the computational studies &mdash; savings, reductions and solution-quality gains, with the scope kept explicit.</p>
+    <div class="metrics">
+      <article class="metric">
+        <p class="metric-value">95%</p>
+        <h3>fewer scenarios</h3>
+        <p>Compressed 1,000 scenarios to 50. A certified variant reduced training time from 88.77 s to 5.27 s while retaining the full-SAA holdout cost in the tested setting.</p>
+        <span class="metric-source">Certified stochastic inspection study</span>
+      </article>
+      <article class="metric">
+        <p class="metric-value">13.3&ndash;29.4%</p>
+        <h3>lower total routing cost</h3>
+        <p>Across 80 marketplace-routing instances: 13.3% below the best sequential policy and 29.4% below cheapest-source planning; better on 75 of 80 and never worse.</p>
+        <span class="metric-source">Integrated sourcing and routing study</span>
+      </article>
+      <article class="metric">
+        <p class="metric-value">94.4%</p>
+        <h3>less solve time</h3>
+        <p>Reduced 418.50 s to 23.31 s on the largest delayed-inspection benchmark while keeping the reported upper-bound gaps below 8%.</p>
+        <span class="metric-source">Published inspection-allocation study</span>
+      </article>
+      <article class="metric">
+        <p class="metric-value">10,000</p>
+        <h3>exact matches</h3>
+        <p>A tailored dynamic program matched the integer-program optimum on every tested instance and averaged an 8.6&times; speedup at 100 stages.</p>
+        <span class="metric-source">Exact dynamic-programming study</span>
+      </article>
+      <article class="metric">
+        <p class="metric-value">40.0%</p>
+        <h3>lower weekly planning cost</h3>
+        <p>Against a strong workload-coverage roster in paired synthetic weeks; separately, condition information and skill-differentiated beliefs were worth 8.9% and 12.0%.</p>
+        <span class="metric-source">Integrated remanufacturing benchmark</span>
+      </article>
+      <article class="metric">
+        <p class="metric-value">&gt;80%</p>
+        <h3>less recipient waiting</h3>
+        <p>Fleet sizing cut waiting by more than 80% in both tested mobility regimes; multi-start search recovered all 12 of 12 exactly enumerable optima.</p>
+        <span class="metric-source">Stochastic mobile-depot study</span>
+      </article>
+    </div>
+    <p class="evidence-note">Scope note &mdash; these are published or fully scripted computational benchmark results under each study's stated assumptions. They are not presented as realized client savings.</p>
+  </div>
+</section>
 
 <section>
   <div class="wrap">
@@ -340,8 +405,8 @@
           </svg>
         </div>
         <div class="gbody">
-          <h3>Solved what the commercial solver could not</h3>
-          <p>Integer programme for inspection-station allocation with deferrable inspection under limited capacity, then two Lagrangian relaxation approaches with greedy repair heuristics and hill-climbing local search &mdash; returning near-optimal plans with bounded optimality gaps on instances where an exact commercial solver stalled at the time limit. Benchmarked against both the exact solver and a problem-specific genetic algorithm.
+          <h3>Cut a 418.50 s benchmark to 23.31 s</h3>
+          <p>For inspection-station allocation with delayed inspection, the scalable Lagrangian scheme reduced runtime by 94.4% on the largest IDI benchmark while keeping its reported gap below 8%; the genetic-algorithm baseline reached 20.52% in IDI and exceeded 52% in MDI on the largest hard cases.
           <span class="source">Computers &amp; Operations Research 194, 107588 (2026)</span></p>
         </div>
       </div>
@@ -362,9 +427,9 @@
           </svg>
         </div>
         <div class="gbody">
-          <h3>Scaled a warehouse routing formulation</h3>
-          <p>Clustered and generalized vehicle routing formulation for joint order batching and picker routing with alternative pick locations in mixed-shelves warehouses: two MILP formulations plus a general rule for cost-matrix construction in rectangular environments, solving instances up to 180 nodes.
-          <span class="source">IMA Journal of Management Mathematics 35(2), 241&ndash;265 (2023)</span></p>
+          <h3>Closed a 17% benchmark gap to zero</h3>
+          <p>Two MILP formulations for joint order batching and picker routing with alternative locations. A tailored valid inequality closed benchmark gaps from 15.2% and 17.0% to 0%; the stronger formulation reduced the clustered-case gap to 0.18% and solved instances up to 180 nodes.
+          <span class="source">IMA Journal of Management Mathematics 35(2), 241&ndash;265 (2024)</span></p>
         </div>
       </div>
 
@@ -385,8 +450,8 @@
           </svg>
         </div>
         <div class="gbody">
-          <h3>Built a benchmark where none existed</h3>
-          <p>Cluster-based simulated annealing &mdash; k-means clustering with six neighbourhood operators &mdash; for re-supplying autonomous mobile parcel lockers under multiple time windows and time-dependent parking costs. Generated a new benchmark instance set from Solomon data and validated against IBM CPLEX.
+          <h3>Scaled routing to 1,200 meeting points</h3>
+          <p>Cluster-based simulated annealing for re-supplying autonomous mobile parcel lockers under multiple time windows and time-dependent parking costs. The method scaled to 1,200 potential meeting points and averaged a 4.54% gap on the small- and medium-size CPLEX validation set.
           <span class="source">Future Transportation 4(4), 1266&ndash;1296 (2024)</span></p>
         </div>
       </div>
@@ -411,9 +476,9 @@
           </svg>
         </div>
         <div class="gbody">
-          <h3>Showed what the stochastic treatment was worth</h3>
-          <p>Two-stage stochastic disassembly scheduling with a coupled recourse stage under shared procurement cost, benchmarking a decomposition-inspired simulated annealing heuristic with an embedded MIP evaluating recourse against both the full extensive-form MIP and a deterministic model.
-          <span class="source">IWLS 2025 &mdash; 15th International Workshop on Lot Sizing</span></p>
+          <h3>Returned plans when the exact solve returned none</h3>
+          <p>For integrated disassembly scheduling and workforce planning, the exact solver found no incumbent on the largest synthetic class within 600 s; the matheuristic returned feasible plans with 1.23%&ndash;3.06% gaps to the best available lower bounds under the same budget.
+          <span class="source">Working paper (2026) &middot; reproducible synthetic benchmarks</span></p>
         </div>
       </div>
 
@@ -432,7 +497,7 @@
       <input type="radio" name="jtab" id="jt3">
       <div class="jtl">
         <label for="jt1">Delayed inspection &middot; C&amp;OR 2026</label>
-        <label for="jt2">Picker routing &middot; IMA JMM 2023</label>
+        <label for="jt2">Picker routing &middot; IMA JMM 2024</label>
         <label for="jt3">Mobile lockers &middot; Future Transp. 2024</label>
       </div>
       <div class="jpanel jp1">
@@ -471,7 +536,7 @@
           <text stroke="none" x="40" y="192" font-family="IBM Plex Mono, monospace" font-size="11" fill="#56676F">depot</text>
         </svg></div>
         <p class="cap">Joint order batching and picker routing with alternative locations</p>
-        <p class="src">IMA Journal of Management Mathematics 35(2), 241&ndash;265 (2023) &middot; with M. Setak, E. Demir and T. Van Woensel</p>
+        <p class="src">IMA Journal of Management Mathematics 35(2), 241&ndash;265 (2024) &middot; with M. Setak, E. Demir and T. Van Woensel</p>
         <p class="expl">When an item is held at several shelves, the route chooses the location. One cycle draws the tour; the ring marks the moment a pick commits to the alternative that suits the route.</p>
       </div>
       <div class="jpanel jp3">
@@ -504,15 +569,15 @@
 
     <div class="result">
       <h3>Turned an intractable formulation into a polynomial-time routine</h3>
-      <p>Derived an exact dynamic-programming algorithm for the uncapacitated case of the inspection-allocation problem.</p>
+      <p>Derived an exact dynamic-programming algorithm for the uncapacitated inspection-allocation problem: identical optima on 10,000 tested instances and an 8.6&times; average speedup at 100 stages.</p>
     </div>
     <div class="result">
-      <h3>Put a number on what a model's accuracy is worth</h3>
-      <p>Modelled how an imperfect condition-triage classifier propagates error into downstream throughput and cost &mdash; converting "is this model accurate enough?" into a defensible figure and a rational basis for investing in a better one. Decision quality rather than metric quality.</p>
+      <h3>Protected 9.3% of total cost by modelling uncertainty</h3>
+      <p>On an independent holdout sample, the stochastic inspection plan cost 9.3% less than expected-value planning. Certified scenario reduction then removed 95% of the scenarios without giving back the tested out-of-sample result.</p>
     </div>
     <div class="result">
-      <h3>Made a learned optimizer beat a hand-tuned one</h3>
-      <p>Trained a PPO agent in a custom Gym environment to learn Lagrangian multiplier update policies, replacing hand-tuned subgradient schedules. Co-supervised an M.Sc. thesis extending this into a decoupled GNN + RL framework for the generalized assignment problem, separating learned search direction from learned step-size control &mdash; reduced multiplier oscillation with better final bounds.</p>
+      <h3>Separated the value of three planning inputs</h3>
+      <p>In paired synthetic remanufacturing experiments, integrated roster decisions reduced weekly cost by 40.0% against a workload-coverage rule; condition information contributed 8.9% and operator-skill information 12.0% against their respective ablations.</p>
     </div>
   </div>
 </section>
@@ -561,7 +626,7 @@
       <span class="note">Web of Science indexed &middot; UGent class A1</span>
     </div>
     <div class="pub">
-      Hedayati, S., Setak, M., Demir, E., Van Woensel, T. (2023). A new approach to the joint order batching and picker routing problem with alternative locations. <span class="venue">IMA Journal of Management Mathematics</span>, 35(2), 241&ndash;265. Oxford University Press.
+      Hedayati, S., Setak, M., Demir, E., Van Woensel, T. (2024). A new approach to the joint order batching and picker routing problem with alternative locations. <span class="venue">IMA Journal of Management Mathematics</span>, 35(2), 241&ndash;265. Oxford University Press.
     </div>
     <div class="pub">
       Hedayati, S., Setak, M., Van Woensel, T., Demir, E. (2024). Re-supplying autonomous mobile parcel lockers in last-mile distribution. <span class="venue">Future Transportation</span>, 4(4), 1266&ndash;1296. MDPI.
@@ -571,8 +636,12 @@
       <span class="note">Peer reviewer for IMA Journal of Management Mathematics, Journal of Heuristics and OR Spektrum</span>
     </div>
     <div class="pub">
-      Four further manuscripts are complete and being prepared for submission: data-driven two-stage stochastic programming with decision-dependent recourse domains; certificate-conditioned stochastic yield in remanufacturing &mdash; integrating weekly shift rostering with adaptive multi-stage disassembly planning and lot-sizing; delegated basket completion in marketplace e-grocery (sole-authored); and the stochastic mobile-depot autonomous locker routing problem.
-      <span class="note">Working papers &middot; each with a full reproducibility package &middot; not yet submitted</span>
+      Current manufacturing research: certified scenario reduction for stochastic inspection allocation; an exact dynamic program for uncapacitated inspection allocation; decision-dependent recourse domains; certificate-conditioned remanufacturing planning; and integrated disassembly scheduling with workforce planning.
+      <span class="note">Working manuscripts and reproducible computational studies &middot; not yet submitted unless stated otherwise</span>
+    </div>
+    <div class="pub">
+      Current logistics and synthesis research: delegated basket completion in marketplace e-grocery (sole-authored); the stochastic mobile-depot autonomous locker routing problem; and a structured review of uncertainty across the recoverable area.
+      <span class="note">Working manuscripts and research studies &middot; August 2026</span>
     </div>
   </div>
 </section>
@@ -616,7 +685,7 @@
 <footer>
   <div class="wrap">
     <strong>Sajjad (Sam) Hedayati</strong> &mdash; optimization, simulation and decision support for manufacturing and logistics. Ghent, Belgium.
-    <div class="version">Profile &mdash; v2.2 (web) &middot; August 2026 &middot; <a href="mailto:sajjad.hedayati@ugent.be">sajjad.hedayati@ugent.be</a></div>
+    <div class="version">Profile &mdash; v3.0 (web) &middot; August 2026 &middot; <a href="mailto:sajjad.hedayati@ugent.be">sajjad.hedayati@ugent.be</a></div>
   </div>
 </footer>
 
