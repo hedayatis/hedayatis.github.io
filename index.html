@@ -111,6 +111,55 @@
   @keyframes rise{to{opacity:1;transform:none}}
   @media (prefers-reduced-motion:reduce){.rise{animation:none;opacity:1;transform:none}}
 
+  /* journal-paper animation tabs */
+  .jtabs{background:var(--card);border:1px solid var(--rule);position:relative}
+  .jtabs>input{position:absolute;opacity:0;pointer-events:none}
+  .jtl{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--rule)}
+  .jtl label{font-family:var(--mono);font-size:11px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;padding:12px 10px;cursor:pointer;color:var(--muted);flex:1 1 33%;text-align:center;border-right:1px solid var(--rule)}
+  .jtl label:last-child{border-right:none}
+  .jtl label:hover{color:var(--petrol)}
+  .jpanel{display:none;padding:18px 20px 20px}
+  .jpanel .cap{font-family:var(--display);font-weight:600;font-size:19px;color:var(--ink);margin:14px 0 2px}
+  .jpanel .src{font-family:var(--mono);font-size:11.5px;color:var(--petrol);margin:0}
+  .jpanel .expl{font-size:15.5px;color:var(--muted);margin:8px 0 0;max-width:70ch}
+  #jt1:checked~.jtl label[for=jt1],#jt2:checked~.jtl label[for=jt2],#jt3:checked~.jtl label[for=jt3]{color:var(--petrol);background:var(--tint);box-shadow:inset 0 -2px 0 var(--petrol)}
+  #jt1:focus-visible~.jtl label[for=jt1],#jt2:focus-visible~.jtl label[for=jt2],#jt3:focus-visible~.jtl label[for=jt3]{outline:2px solid var(--brass);outline-offset:-3px}
+  #jt1:checked~.jp1,#jt2:checked~.jp2,#jt3:checked~.jp3{display:block}
+  .jplate{background:var(--tint);border:1px solid var(--rule);padding:18px 22px}
+  .jplate svg{width:100%;max-width:660px;height:auto;display:block;margin:0 auto}
+  /* each scene runs one slow 14s choreography: draw, travel, settle, rest */
+  .a1arc{opacity:0;animation:a1arc 14s ease-in-out infinite}
+  .a1dot{opacity:0;animation:a1dot 14s cubic-bezier(.45,.05,.25,1) infinite}
+  .a1chk{stroke-dasharray:100;stroke-dashoffset:100;opacity:0;animation:a1chk 14s linear infinite}
+  @keyframes a1arc{0%{opacity:0}7%{opacity:1}88%{opacity:1}96%,100%{opacity:0}}
+  @keyframes a1dot{0%,4%{opacity:0;transform:translateX(0)}9%{opacity:1;transform:translateX(0)}14%{transform:translateX(0)}54%{transform:translateX(440px)}88%{opacity:1;transform:translateX(440px)}95%,100%{opacity:0;transform:translateX(440px)}}
+  @keyframes a1chk{0%,55%{stroke-dashoffset:100;opacity:0}57%{opacity:1;stroke-dashoffset:100}66%{stroke-dashoffset:0}88%{stroke-dashoffset:0;opacity:1}95%,100%{stroke-dashoffset:0;opacity:0}}
+  .a2route{stroke-dasharray:100;stroke-dashoffset:100;animation:a2route 14s cubic-bezier(.4,0,.2,1) infinite}
+  .a2picker{offset-path:path('M56 166V52h130v98h130V46h130v104h124');offset-rotate:0deg;opacity:0;animation:a2picker 14s cubic-bezier(.4,0,.2,1) infinite}
+  .a2halo1,.a2halo2{transform-box:fill-box;transform-origin:center;opacity:0;animation:a2halo1 14s ease-out infinite}
+  .a2halo2{animation-name:a2halo2}
+  @keyframes a2route{0%,6%{stroke-dashoffset:100}58%,100%{stroke-dashoffset:0}}
+  @keyframes a2picker{0%,6%{offset-distance:0%;opacity:0}10%{opacity:1}58%{offset-distance:100%;opacity:1}88%{offset-distance:100%;opacity:1}95%,100%{offset-distance:100%;opacity:0}}
+  @keyframes a2halo1{0%,42%{opacity:0;transform:scale(1)}45%{opacity:.85;transform:scale(1.15)}54%{opacity:0;transform:scale(2.3)}100%{opacity:0;transform:scale(2.3)}}
+  @keyframes a2halo2{0%,52%{opacity:0;transform:scale(1)}55%{opacity:.85;transform:scale(1.15)}64%{opacity:0;transform:scale(2.3)}100%{opacity:0;transform:scale(2.3)}}
+  .a3route{stroke-dasharray:100;stroke-dashoffset:100;animation:a3route 14s cubic-bezier(.4,0,.2,1) infinite}
+  .a3truck{offset-path:path('M84 113C170 40 250 170 340 96 400 56 470 140 596 106');offset-rotate:0deg;opacity:0;animation:a3truck 14s cubic-bezier(.4,0,.2,1) infinite}
+  .a3f1,.a3f2,.a3f3{transform-box:fill-box;transform-origin:bottom;transform:scaleY(0);animation:a3f1 14s ease-out infinite}
+  .a3f2{animation-name:a3f2}
+  .a3f3{animation-name:a3f3}
+  @keyframes a3route{0%,6%{stroke-dashoffset:100}60%,100%{stroke-dashoffset:0}}
+  @keyframes a3truck{0%,6%{offset-distance:0%;opacity:0}10%{opacity:1}60%{offset-distance:100%}88%{opacity:1;offset-distance:100%}95%,100%{opacity:0;offset-distance:100%}}
+  @keyframes a3f1{0%,24%{transform:scaleY(0)}32%{transform:scaleY(1)}88%{transform:scaleY(1)}96%,100%{transform:scaleY(0)}}
+  @keyframes a3f2{0%,40%{transform:scaleY(0)}48%{transform:scaleY(1)}88%{transform:scaleY(1)}96%,100%{transform:scaleY(0)}}
+  @keyframes a3f3{0%,54%{transform:scaleY(0)}62%{transform:scaleY(1)}88%{transform:scaleY(1)}96%,100%{transform:scaleY(0)}}
+  @media (prefers-reduced-motion:reduce){
+    .a1arc,.a1dot,.a1chk,.a2route,.a2picker,.a2halo1,.a2halo2,.a3route,.a3truck,.a3f1,.a3f2,.a3f3{animation:none}
+    .a1arc,.a1dot,.a1chk,.a2picker,.a3truck{opacity:1}
+    .a1chk,.a2route,.a3route{stroke-dashoffset:0}
+    .a3f1,.a3f2,.a3f3{transform:scaleY(1)}
+    .a2halo1,.a2halo2{opacity:0}
+  }
+  @media print{.jtabs-section{display:none}}
   @media (max-width:620px){
     body{font-size:16px}
     .role{grid-template-columns:1fr;gap:6px}
@@ -167,7 +216,7 @@
     </div>
     <p class="loop">&#8635; planners re-run the scenarios themselves &mdash; the loop closes without me</p>
 
-    <p class="ledger">&asymp; 8 years professionally &nbsp;/&nbsp; 3 journal articles, 6 peer-reviewed conference contributions &nbsp;/&nbsp; reviewer for 3 international OR journals</p>
+    <p class="ledger">&asymp; 8 years professionally &nbsp;/&nbsp; 3 journal articles, 6 peer-reviewed conference contributions, 4 complete working papers &nbsp;/&nbsp; reviewer for 3 international OR journals</p>
   </div>
 </div>
 
@@ -278,7 +327,7 @@
       <div class="gcard">
         <div class="plate">
           <svg viewBox="0 0 300 120" fill="none" stroke="#0B4F6C" stroke-width="1.6" role="img" aria-label="A production line whose inspection is deferred to a later station">
-            <text x="150" y="14" font-family="IBM Plex Mono, monospace" font-size="10" fill="#A97A22" text-anchor="middle">inspection deferred downstream</text>
+            <text stroke="none" x="150" y="14" font-family="IBM Plex Mono, monospace" font-size="10" fill="#A97A22" text-anchor="middle">inspection deferred downstream</text>
             <path d="M92 44C112 24 214 24 238 40" stroke="#A97A22" stroke-width="1.6" stroke-dasharray="5 4"/>
             <path d="M232 33l8 8-11 2z" fill="#A97A22" stroke="none"/>
             <path d="M14 62h272" stroke="#B9C3C9" stroke-width="8" stroke-linecap="round"/>
@@ -286,8 +335,8 @@
             <rect x="128" y="48" width="30" height="28" fill="#fff"/><rect x="180" y="48" width="30" height="28" fill="#fff"/>
             <rect x="232" y="48" width="30" height="28" fill="#0B4F6C"/>
             <path d="M239 61l5 5 9-10" stroke="#fff" stroke-width="2.2"/>
-            <text x="24" y="98" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F">station 1</text>
-            <text x="286" y="98" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F" text-anchor="end">inspection station</text>
+            <text stroke="none" x="24" y="98" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F">station 1</text>
+            <text stroke="none" x="286" y="98" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F" text-anchor="end">inspection station</text>
           </svg>
         </div>
         <div class="gbody">
@@ -300,7 +349,7 @@
       <div class="gcard">
         <div class="plate">
           <svg viewBox="0 0 300 120" fill="none" stroke="#0B4F6C" stroke-width="1.6" role="img" aria-label="A picker route through warehouse aisles with alternative pick locations">
-            <text x="286" y="14" font-family="IBM Plex Mono, monospace" font-size="10" fill="#A97A22" text-anchor="end">alternative pick locations</text>
+            <text stroke="none" x="286" y="14" font-family="IBM Plex Mono, monospace" font-size="10" fill="#A97A22" text-anchor="end">alternative pick locations</text>
             <rect x="30" y="22" width="18" height="76" fill="#D8E4E9" stroke="none"/>
             <rect x="96" y="22" width="18" height="76" fill="#D8E4E9" stroke="none"/>
             <rect x="162" y="22" width="18" height="76" fill="#D8E4E9" stroke="none"/>
@@ -322,17 +371,17 @@
       <div class="gcard">
         <div class="plate">
           <svg viewBox="0 0 300 120" fill="none" stroke="#0B4F6C" stroke-width="1.6" role="img" aria-label="A truck route from a depot to mobile parcel lockers within time windows">
-            <text x="286" y="14" font-family="IBM Plex Mono, monospace" font-size="10" fill="#A97A22" text-anchor="end">multiple time windows</text>
+            <text stroke="none" x="286" y="14" font-family="IBM Plex Mono, monospace" font-size="10" fill="#A97A22" text-anchor="end">multiple time windows</text>
             <path d="M52 60C80 30 106 92 140 62c30-26 62 30 96 2" stroke="#0B4F6C" stroke-width="2"/>
             <rect x="16" y="48" width="32" height="24" fill="#0B4F6C"/>
-            <text x="32" y="64" font-family="IBM Plex Mono, monospace" font-size="11" fill="#fff" text-anchor="middle">D</text>
+            <text stroke="none" x="32" y="64" font-family="IBM Plex Mono, monospace" font-size="11" fill="#fff" text-anchor="middle">D</text>
             <rect x="104" y="78" width="18" height="26" rx="2" fill="#E9F1F4"/>
             <rect x="152" y="24" width="18" height="26" rx="2" fill="#E9F1F4"/>
             <rect x="238" y="42" width="18" height="26" rx="2" fill="#E9F1F4"/>
             <path d="M108 86h10M108 92h10M156 32h10M156 38h10M242 50h10M242 56h10" stroke="#0B4F6C" stroke-width="1"/>
             <circle cx="113" cy="70" r="3.4" fill="#A97A22"/><circle cx="161" cy="58" r="3.4" fill="#A97A22"/>
             <circle cx="247" cy="76" r="3.4" fill="#A97A22"/>
-            <text x="14" y="98" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F">depot</text>
+            <text stroke="none" x="14" y="98" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F">depot</text>
           </svg>
         </div>
         <div class="gbody">
@@ -345,7 +394,7 @@
       <div class="gcard">
         <div class="plate">
           <svg viewBox="0 0 300 120" fill="none" stroke="#0B4F6C" stroke-width="1.6" role="img" aria-label="A returned product disassembled into components across uncertain scenarios">
-            <text x="14" y="14" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F">returned unit</text>
+            <text stroke="none" x="14" y="14" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F">returned unit</text>
             <rect x="18" y="48" width="34" height="28" fill="#0B4F6C"/>
             <path d="M52 62h30" stroke="#B9C3C9" stroke-width="2"/>
             <path d="M84 62l32-30M84 62h32M84 62l32 30" stroke="#A97A22" stroke-dasharray="5 4"/>
@@ -356,9 +405,9 @@
             <rect x="176" y="20" width="20" height="24" fill="#fff"/><rect x="200" y="20" width="20" height="24" fill="#fff"/>
             <rect x="176" y="50" width="20" height="24" fill="#fff"/><rect x="200" y="50" width="20" height="24" fill="#fff"/>
             <rect x="176" y="80" width="20" height="24" fill="#fff"/><rect x="200" y="80" width="20" height="24" fill="#fff"/>
-            <text x="232" y="36" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F">scenario 1</text>
-            <text x="232" y="66" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F">scenario 2</text>
-            <text x="232" y="96" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F">scenario s</text>
+            <text stroke="none" x="232" y="36" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F">scenario 1</text>
+            <text stroke="none" x="232" y="66" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F">scenario 2</text>
+            <text stroke="none" x="232" y="96" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F">scenario s</text>
           </svg>
         </div>
         <div class="gbody">
@@ -372,6 +421,82 @@
   </div>
 </section>
 
+<section class="jtabs-section" id="journal-motion">
+  <div class="wrap">
+    <h2>The journal papers &mdash; in motion</h2>
+    <div class="h2rule"></div>
+    <p class="legend">One tab per journal article. Each animation draws the problem the paper solves &mdash; the structure, never the results.</p>
+    <div class="jtabs">
+      <input type="radio" name="jtab" id="jt1" checked>
+      <input type="radio" name="jtab" id="jt2">
+      <input type="radio" name="jtab" id="jt3">
+      <div class="jtl">
+        <label for="jt1">Delayed inspection &middot; C&amp;OR 2026</label>
+        <label for="jt2">Picker routing &middot; IMA JMM 2023</label>
+        <label for="jt3">Mobile lockers &middot; Future Transp. 2024</label>
+      </div>
+      <div class="jpanel jp1">
+        <div class="jplate"><svg viewBox="0 0 640 200" fill="none" stroke="#0B4F6C" stroke-width="1.6" role="img" aria-label="Animated: a defect travels down the production line and is caught at a later inspection station">
+          <text stroke="none" x="320" y="22" font-family="IBM Plex Mono, monospace" font-size="11" fill="#A97A22" text-anchor="middle" letter-spacing="1">inspection deferred downstream</text>
+          <path class="a1arc" d="M105 90C210 34 430 34 502 86" stroke="#A97A22" stroke-width="1.5" stroke-dasharray="6 5"/>
+          <path class="a1arc" d="M495 78l9 10-13 2z" fill="#A97A22" stroke="none"/>
+          <path d="M30 118h580" stroke="#B9C3C9" stroke-width="9" stroke-linecap="round"/>
+          <rect x="60" y="97" width="46" height="42" fill="#fff"/><rect x="170" y="97" width="46" height="42" fill="#fff"/>
+          <rect x="280" y="97" width="46" height="42" fill="#fff"/><rect x="390" y="97" width="46" height="42" fill="#fff"/>
+          <rect x="500" y="97" width="46" height="42" fill="#0B4F6C"/>
+          <g class="a1dot"><circle cx="83" cy="118" r="5" fill="#A97A22" stroke="none"/></g>
+          <path class="a1chk" pathLength="100" d="M512 118l8 8 15-17" stroke="#fff" stroke-width="2.6"/>
+          <text stroke="none" x="60" y="164" font-family="IBM Plex Mono, monospace" font-size="11" fill="#56676F">station 1</text>
+          <text stroke="none" x="610" y="164" font-family="IBM Plex Mono, monospace" font-size="11" fill="#56676F" text-anchor="end">inspection station</text>
+        </svg></div>
+        <p class="cap">Inspection station allocation with delayed inspection</p>
+        <p class="src">Computers &amp; Operations Research 194, 107588 (2026) &middot; with S. De Vuyst and B. Raa</p>
+        <p class="expl">A defect born at an early station need not be caught there: it may be caught at any station inside its window, at the price of capacity every other defect type competes for. One cycle follows one defect down the line to the station that catches it.</p>
+      </div>
+      <div class="jpanel jp2">
+        <div class="jplate"><svg viewBox="0 0 640 200" fill="none" stroke="#0B4F6C" stroke-width="1.6" role="img" aria-label="Animated: a picker tour draws itself through the aisles and commits to alternative pick locations as it passes them">
+          <text stroke="none" x="610" y="22" font-family="IBM Plex Mono, monospace" font-size="11" fill="#A97A22" text-anchor="end" letter-spacing="1">alternative pick locations</text>
+          <rect x="86" y="34" width="40" height="120" fill="#D8E4E9" stroke="none"/>
+          <rect x="216" y="34" width="40" height="120" fill="#D8E4E9" stroke="none"/>
+          <rect x="346" y="34" width="40" height="120" fill="#D8E4E9" stroke="none"/>
+          <rect x="476" y="34" width="40" height="120" fill="#D8E4E9" stroke="none"/>
+          <path d="M40 172h560" stroke="#B9C3C9"/>
+          <path class="a2route" pathLength="100" d="M56 166V52h130v98h130V46h130v104h124" stroke="#0B4F6C" stroke-width="2"/>
+          <circle cx="186" cy="110" r="5" fill="#0B4F6C"/><circle cx="316" cy="84" r="5" fill="#0B4F6C"/>
+          <circle class="a2halo1" cx="446" cy="118" r="6" stroke="#A97A22" stroke-width="2"/>
+          <circle cx="446" cy="118" r="5" fill="#fff" stroke="#A97A22" stroke-width="2"/>
+          <circle class="a2halo2" cx="524" cy="150" r="6" stroke="#A97A22" stroke-width="2"/>
+          <circle cx="524" cy="150" r="5" fill="#fff" stroke="#A97A22" stroke-width="2"/>
+          <g class="a2picker"><circle r="5.5" fill="#0B4F6C" stroke="#fff" stroke-width="1.5"/></g>
+          <text stroke="none" x="40" y="192" font-family="IBM Plex Mono, monospace" font-size="11" fill="#56676F">depot</text>
+        </svg></div>
+        <p class="cap">Joint order batching and picker routing with alternative locations</p>
+        <p class="src">IMA Journal of Management Mathematics 35(2), 241&ndash;265 (2023) &middot; with M. Setak, E. Demir and T. Van Woensel</p>
+        <p class="expl">When an item is held at several shelves, the route chooses the location. One cycle draws the tour; the ring marks the moment a pick commits to the alternative that suits the route.</p>
+      </div>
+      <div class="jpanel jp3">
+        <div class="jplate"><svg viewBox="0 0 640 200" fill="none" stroke="#0B4F6C" stroke-width="1.6" role="img" aria-label="Animated: a resupply vehicle rides one round from the depot, replenishing mobile parcel lockers as it passes">
+          <text stroke="none" x="610" y="22" font-family="IBM Plex Mono, monospace" font-size="11" fill="#A97A22" text-anchor="end" letter-spacing="1">multiple time windows</text>
+          <path class="a3route" pathLength="100" d="M84 113C170 40 250 170 340 96 400 56 470 140 596 106" stroke="#0B4F6C" stroke-width="2"/>
+          <rect x="36" y="96" width="48" height="34" fill="#0B4F6C"/>
+          <text stroke="none" x="60" y="118" font-family="IBM Plex Mono, monospace" font-size="12" fill="#fff" text-anchor="middle">D</text>
+          <rect x="186" y="120" width="26" height="38" rx="2" fill="#fff"/>
+          <rect x="352" y="26" width="26" height="38" rx="2" fill="#fff"/>
+          <rect x="500" y="122" width="26" height="38" rx="2" fill="#fff"/>
+          <path d="M191 130h16M191 137h16M357 36h16M357 43h16M505 132h16M505 139h16" stroke="#0B4F6C" stroke-width="1"/>
+          <rect class="a3f1" x="190" y="146" width="18" height="8" fill="#A97A22" stroke="none"/>
+          <rect class="a3f2" x="356" y="52" width="18" height="8" fill="#A97A22" stroke="none"/>
+          <rect class="a3f3" x="504" y="148" width="18" height="8" fill="#A97A22" stroke="none"/>
+          <g class="a3truck"><rect x="-11" y="-8" width="22" height="13" rx="2" fill="#A97A22" stroke="none"/><circle cx="-5" cy="7" r="2.6" fill="#10222C" stroke="none"/><circle cx="5" cy="7" r="2.6" fill="#10222C" stroke="none"/></g>
+          <text stroke="none" x="36" y="150" font-family="IBM Plex Mono, monospace" font-size="11" fill="#56676F">depot</text>
+        </svg></div>
+        <p class="cap">Re-supplying autonomous mobile parcel lockers in last-mile distribution</p>
+        <p class="src">Future Transportation 4(4), 1266&ndash;1296 (2024) &middot; with M. Setak, T. Van Woensel and E. Demir</p>
+        <p class="expl">A replenishment vehicle tours autonomous lockers under multiple time windows and time-dependent parking costs. One cycle runs one resupply round; a bar fills as each locker is restocked.</p>
+      </div>
+    </div>
+  </div>
+</section>
 <section>
   <div class="wrap">
     <h2>Also on the record</h2>
@@ -445,6 +570,10 @@
       Six peer-reviewed conference contributions: ORBEL 40 (2026) &middot; Flanders Make Scientific Conference 2025 &middot; FEARS 2025 &middot; IWLS 2025 &middot; FEARS 2022 &middot; NOMLC 2022.
       <span class="note">Peer reviewer for IMA Journal of Management Mathematics, Journal of Heuristics and OR Spektrum</span>
     </div>
+    <div class="pub">
+      Four further manuscripts are complete and being prepared for submission: data-driven two-stage stochastic programming with decision-dependent recourse domains; certificate-conditioned stochastic yield in remanufacturing &mdash; integrating weekly shift rostering with adaptive multi-stage disassembly planning and lot-sizing; delegated basket completion in marketplace e-grocery (sole-authored); and the stochastic mobile-depot autonomous locker routing problem.
+      <span class="note">Working papers &middot; each with a full reproducibility package &middot; not yet submitted</span>
+    </div>
   </div>
 </section>
 
@@ -487,7 +616,7 @@
 <footer>
   <div class="wrap">
     <strong>Sajjad (Sam) Hedayati</strong> &mdash; optimization, simulation and decision support for manufacturing and logistics. Ghent, Belgium.
-    <div class="version">Profile &mdash; v2.0 (web) &middot; August 2026 &middot; <a href="mailto:sajjad.hedayati@ugent.be">sajjad.hedayati@ugent.be</a></div>
+    <div class="version">Profile &mdash; v2.2 (web) &middot; August 2026 &middot; <a href="mailto:sajjad.hedayati@ugent.be">sajjad.hedayati@ugent.be</a></div>
   </div>
 </footer>
 
