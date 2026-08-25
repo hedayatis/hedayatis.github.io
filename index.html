@@ -64,6 +64,23 @@
   .metric-source{font-family:var(--mono);font-size:10.5px;line-height:1.5;color:var(--brass);margin-top:auto;text-transform:uppercase;letter-spacing:.05em}
   .evidence-note{font-family:var(--mono);font-size:11px;line-height:1.65;color:var(--muted);margin:17px 0 0}
 
+  .book-section{background:var(--ink);color:#D8E3E7;border-bottom:1px solid #071820}
+  .book-section h2{color:#D5A84F}
+  .book-section .h2rule{background:#D8E3E7}
+  .book-card{display:grid;grid-template-columns:minmax(190px,248px) 1fr;gap:34px;align-items:center}
+  .book-cover-link{display:block;background:#fff;border:1px solid rgba(255,255,255,.22);box-shadow:0 16px 34px rgba(0,0,0,.24);line-height:0}
+  .book-cover{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover}
+  .book-kicker{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#D5A84F;margin:0 0 12px}
+  .book-title{font-family:var(--display);font-size:clamp(28px,4.5vw,42px);font-weight:700;line-height:1.06;letter-spacing:-.015em;color:#fff;margin:0 0 10px}
+  .book-subtitle{font-family:var(--body);font-size:18px;line-height:1.45;color:#BFD0D7;margin:0 0 18px;max-width:42ch}
+  .book-description{color:#AFC1C9;max-width:56ch;margin:0 0 18px}
+  .book-meta{font-family:var(--mono);font-size:11px;line-height:1.7;letter-spacing:.04em;text-transform:uppercase;color:#839AA5;margin:0 0 23px}
+  .book-actions{display:flex;gap:10px;flex-wrap:wrap}
+  .book-button{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #D5A84F;padding:11px 15px;color:#10222C;background:#D5A84F}
+  .book-button:hover{background:#E4BC6B;border-color:#E4BC6B}
+  .book-button.secondary{color:#D8E3E7;background:transparent;border-color:#627B87}
+  .book-button.secondary:hover{color:#fff;border-color:#D8E3E7}
+
   section{padding:46px 0}
   h2{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin:0 0 4px}
   .h2rule{height:2px;background:var(--ink);width:34px;margin-bottom:24px}
@@ -181,6 +198,8 @@
   @media (max-width:620px){
     body{font-size:16px}
     .role{grid-template-columns:1fr;gap:6px}
+    .book-card{grid-template-columns:1fr;gap:25px}
+    .book-cover-link{width:min(74vw,260px)}
     .masthead{padding:38px 0 30px}
     section{padding:34px 0}
     .chev{display:none}
@@ -196,7 +215,7 @@
     .stage.out{background:#fff;border-color:var(--ink)}
     .stage.out b{color:var(--ink)}
     .stage.out span{color:#555}
-    .area,.gcard,.metric,.result,.role,.pub,.fact{break-inside:avoid}
+    .area,.gcard,.metric,.book-card,.result,.role,.pub,.fact{break-inside:avoid}
     section{padding:16px 0}
     .rise{animation:none;opacity:1;transform:none}
     .gallery{grid-template-columns:1fr 1fr}
@@ -211,7 +230,7 @@
     <h1 class="rise">Sajjad (Sam) Hedayati</h1>
     <p class="lede rise">I design optimization and simulation tools that turn operational uncertainty into measurable improvements in cost, speed and service.</p>
     <div class="contact">
-      <a href="mailto:sajjad.hedayati@ugent.be">sajjad.hedayati@ugent.be</a><span class="sep">/</span><a href="https://www.linkedin.com/in/sajjad-hedayati-13703725a">LinkedIn</a><span class="sep">/</span><a href="https://orcid.org/0000-0002-1008-6288">ORCID 0000-0002-1008-6288</a><span class="sep">/</span><a href="https://scholar.google.com/citations?user=vNrnIkoAAAAJ">Google Scholar</a>
+      <a href="mailto:sajjad.hedayati@ugent.be">sajjad.hedayati@ugent.be</a><span class="sep">/</span><a href="https://www.linkedin.com/in/sajjad-hedayati-13703725a">LinkedIn</a><span class="sep">/</span><a href="https://orcid.org/0000-0002-1008-6288">ORCID 0000-0002-1008-6288</a><span class="sep">/</span><a href="https://scholar.google.com/citations?user=vNrnIkoAAAAJ">Google Scholar</a><span class="sep">/</span><a href="#book">Book</a>
     </div>
   </div>
 </header>
@@ -282,6 +301,29 @@
       </article>
     </div>
     <p class="evidence-note">Scope note &mdash; these are published or fully scripted computational benchmark results under each study's stated assumptions. They are not presented as realized client savings.</p>
+  </div>
+</section>
+
+<section class="book-section" id="book">
+  <div class="wrap">
+    <h2>Book</h2>
+    <div class="h2rule"></div>
+    <article class="book-card">
+      <a class="book-cover-link" href="books/the-abundance-within.pdf" target="_blank" rel="noopener" aria-label="Read The Abundance Within online">
+        <img class="book-cover" src="assets/the-abundance-within-cover.png" width="1080" height="1620" loading="lazy" alt="Title page of The Abundance Within by Sam Hedayati">
+      </a>
+      <div>
+        <p class="book-kicker">First edition &middot; 2026</p>
+        <h3 class="book-title">The Abundance Within</h3>
+        <p class="book-subtitle">How Seeing What We Have Saves Us from the Culture of Lack</p>
+        <p class="book-description">A book about the personal and cultural habit of seeing only what is missing &mdash; and the disciplines of accurate seeing, gratitude, sufficiency, attention and generosity that can rebuild abundance without denying real need or injustice.</p>
+        <p class="book-meta">Sam Hedayati &middot; 275 pages &middot; PDF</p>
+        <div class="book-actions">
+          <a class="book-button" href="books/the-abundance-within.pdf" target="_blank" rel="noopener">Read online</a>
+          <a class="book-button secondary" href="books/the-abundance-within.pdf" download>Download PDF</a>
+        </div>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -685,7 +727,7 @@
 <footer>
   <div class="wrap">
     <strong>Sajjad (Sam) Hedayati</strong> &mdash; optimization, simulation and decision support for manufacturing and logistics. Ghent, Belgium.
-    <div class="version">Profile &mdash; v3.0 (web) &middot; August 2026 &middot; <a href="mailto:sajjad.hedayati@ugent.be">sajjad.hedayati@ugent.be</a></div>
+    <div class="version">Profile &mdash; v3.1 (web) &middot; August 2026 &middot; <a href="mailto:sajjad.hedayati@ugent.be">sajjad.hedayati@ugent.be</a></div>
   </div>
 </footer>
 

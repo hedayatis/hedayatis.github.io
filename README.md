@@ -21,6 +21,18 @@ built on top of them. It shows the problems I have worked on -- inspection
 allocation, warehouse and marketplace routing, mobile parcel-locker resupply,
 and remanufacturing planning -- with compact schematics and measured outcomes.
 
+## Book
+
+**[The Abundance Within: How Seeing What We Have Saves Us from the Culture of
+Lack](https://hedayatis.github.io/books/the-abundance-within.pdf)** (2026), by
+Sam Hedayati. A 275-page book about the personal and cultural habit of seeing
+only what is missing, and the practices of accurate seeing, gratitude,
+sufficiency, attention and generosity that can rebuild abundance without
+denying real need or injustice.
+
+[Read online](https://hedayatis.github.io/books/the-abundance-within.pdf) |
+[Download the PDF](https://hedayatis.github.io/books/the-abundance-within.pdf)
+
 ## Selected measured outcomes
 
 - **95% scenario reduction:** 1,000 scenarios compressed to 50; a certified
@@ -58,9 +70,9 @@ Publications behind the page:
 
 Deliberately simple, and kept that way:
 
-- **One self-contained HTML file.** All styles are inline, every drawing is
-  hand-written inline SVG, and there is no JavaScript, framework or build step.
-  The page survives being copied, emailed, printed or opened offline.
+- **A self-contained profile page.** All page styles are inline, every technical
+  drawing is hand-written inline SVG, and there is no JavaScript, framework or
+  build step. The book cover and PDF are served as static companion assets.
 - **CSS-only animation.** The journal-paper schematics run a single slow,
   staged choreography per scene; `prefers-reduced-motion` renders the completed
   state statically instead.
@@ -76,5 +88,6 @@ The current version is stamped in the page footer.
 
 ## License
 
-Content (text, drawings) (c) Sajjad Hedayati. Please do not reuse the personal
-content; feel free to borrow the technical approach.
+Site content (text, drawings) (c) Sajjad Hedayati. The book PDF is (c) 2026 Sam
+Hedayati, all rights reserved. Please do not reuse the personal content; feel
+free to borrow the technical approach.
