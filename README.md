@@ -21,6 +21,20 @@ built on top of them. It shows the problems I have worked on -- inspection
 allocation, warehouse and marketplace routing, mobile parcel-locker resupply,
 and remanufacturing planning -- with compact schematics and measured outcomes.
 
+## RIPPLE Optimization Lab
+
+RIPPLE -- Recovery Inventory Planning under Probabilistic Yield and Lead-Time
+External Sourcing -- is an original interactive stochastic optimization
+demonstrator. It coordinates EOL disassembly, module-core reprocessing,
+probabilistic recovery, refurbished-product reassembly, inventory, regular
+supplier orders, emergency purchasing, and backlog.
+
+The app uses a mixed-integer model solved by the open-source HiGHS solver. The
+interface compares reactive, safety-stock, stochastic, and CVaR risk-averse
+policies using synthetic data. Its private source and solver validation are
+complete; the public Streamlit deployment is pending because the hosting
+service blocked account authorization on 27 August 2026.
+
 ## Book
 
 **[The Abundance Within: How Seeing What We Have Saves Us from the Culture of
