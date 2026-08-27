@@ -64,6 +64,23 @@
   .metric-source{font-family:var(--mono);font-size:10.5px;line-height:1.5;color:var(--brass);margin-top:auto;text-transform:uppercase;letter-spacing:.05em}
   .evidence-note{font-family:var(--mono);font-size:11px;line-height:1.65;color:var(--muted);margin:17px 0 0}
 
+
+  .lab-section{background:#E2ECEF;border-bottom:1px solid var(--rule)}
+  .lab-shell{background:var(--card);border:1px solid var(--rule);border-top:4px solid var(--petrol);padding:26px}
+  .lab-head{display:grid;grid-template-columns:1fr auto;gap:22px;align-items:start}
+  .lab-status{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--brass);border:1px solid var(--brass);padding:5px 8px;white-space:nowrap}
+  .lab-title{font-family:var(--display);font-size:clamp(27px,4vw,38px);line-height:1.05;color:var(--ink);margin:4px 0 10px}
+  .lab-lede{color:var(--muted);max-width:61ch;margin:0}
+  .lab-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:24px 0 18px}
+  .lab-step{background:#F7FAFB;padding:16px}
+  .lab-step b{font-family:var(--display);font-size:17px;color:var(--petrol);display:block}
+  .lab-step span{font-family:var(--mono);font-size:10.5px;line-height:1.55;color:var(--muted)}
+  .lab-kpis{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}
+  .lab-kpis span{font-family:var(--mono);font-size:10.5px;color:var(--ink);background:var(--tint);border:1px solid var(--rule);padding:6px 8px}
+  .lab-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .lab-button{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;background:var(--petrol);color:#fff;padding:11px 15px;border:1px solid var(--petrol)}
+  .lab-button:hover{background:var(--ink);border-color:var(--ink)}
+  .lab-note{font-family:var(--mono);font-size:10.5px;color:var(--muted)}
   .book-section{background:var(--ink);color:#D8E3E7;border-bottom:1px solid #071820}
   .book-section h2{color:#D5A84F}
   .book-section .h2rule{background:#D8E3E7}
@@ -199,6 +216,8 @@
     body{font-size:16px}
     .role{grid-template-columns:1fr;gap:6px}
     .book-card{grid-template-columns:1fr;gap:25px}
+    .lab-head{grid-template-columns:1fr}
+    .lab-flow{grid-template-columns:1fr}
     .book-cover-link{width:min(74vw,260px)}
     .masthead{padding:38px 0 30px}
     section{padding:34px 0}
@@ -230,7 +249,7 @@
     <h1 class="rise">Sajjad (Sam) Hedayati</h1>
     <p class="lede rise">I design optimization and simulation tools that turn operational uncertainty into measurable improvements in cost, speed and service.</p>
     <div class="contact">
-      <a href="mailto:sajjad.hedayati@ugent.be">sajjad.hedayati@ugent.be</a><span class="sep">/</span><a href="https://www.linkedin.com/in/sajjad-hedayati-13703725a">LinkedIn</a><span class="sep">/</span><a href="https://orcid.org/0000-0002-1008-6288">ORCID 0000-0002-1008-6288</a><span class="sep">/</span><a href="https://scholar.google.com/citations?user=vNrnIkoAAAAJ">Google Scholar</a><span class="sep">/</span><a href="#book">Book</a>
+      <a href="mailto:sajjad.hedayati@ugent.be">sajjad.hedayati@ugent.be</a><span class="sep">/</span><a href="https://www.linkedin.com/in/sajjad-hedayati-13703725a">LinkedIn</a><span class="sep">/</span><a href="https://orcid.org/0000-0002-1008-6288">ORCID 0000-0002-1008-6288</a><span class="sep">/</span><a href="https://scholar.google.com/citations?user=vNrnIkoAAAAJ">Google Scholar</a><span class="sep">/</span><a href="#ripple">RIPPLE Lab</a><span class="sep">/</span><a href="#book">Book</a>
     </div>
   </div>
 </header>
@@ -322,6 +341,36 @@
           <a class="book-button" href="books/the-abundance-within.pdf" target="_blank" rel="noopener">Read online</a>
           <a class="book-button secondary" href="books/the-abundance-within.pdf" download>Download PDF</a>
         </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<section class="lab-section" id="ripple">
+  <div class="wrap">
+    <h2>Interactive optimization lab</h2>
+    <div class="h2rule"></div>
+    <article class="lab-shell">
+      <div class="lab-head">
+        <div>
+          <p class="eyebrow">Recovery planning under uncertainty</p>
+          <h3 class="lab-title">RIPPLE Optimization Lab</h3>
+          <p class="lab-lede">A clean-room stochastic MILP demonstrator for deciding what to disassemble, recover, reassemble, hold and purchase when recovery yield and demand are uncertain.</p>
+        </div>
+        <span class="lab-status">Private beta</span>
+      </div>
+      <div class="lab-flow" aria-label="RIPPLE three-stage recovery flow">
+        <div class="lab-step"><b>Disassemble</b><span>EOL arrivals &middot; product inventory &middot; stage capacity</span></div>
+        <div class="lab-step"><b>Reprocess</b><span>module cores &middot; random yield &middot; supplier pipeline</span></div>
+        <div class="lab-step"><b>Reassemble &amp; serve</b><span>module demand &middot; refurbished kits &middot; backlog control</span></div>
+      </div>
+      <div class="lab-kpis">
+        <span>HiGHS MILP</span><span>rolling horizon</span><span>CVaR option</span><span>scenario replay</span><span>inventory analytics</span><span>synthetic data</span>
+      </div>
+      <div class="lab-actions">
+        <a class="lab-button" href="mailto:sajjad.hedayati@ugent.be?subject=RIPPLE%20Optimization%20Lab%20private%20beta">Request beta access</a>
+        <span class="lab-note">Public deployment is being prepared; the private source and tested solver are complete.</span>
       </div>
     </article>
   </div>
@@ -727,7 +776,7 @@
 <footer>
   <div class="wrap">
     <strong>Sajjad (Sam) Hedayati</strong> &mdash; optimization, simulation and decision support for manufacturing and logistics. Ghent, Belgium.
-    <div class="version">Profile &mdash; v3.1 (web) &middot; August 2026 &middot; <a href="mailto:sajjad.hedayati@ugent.be">sajjad.hedayati@ugent.be</a></div>
+    <div class="version">Profile &mdash; v3.2 (web) &middot; August 2026 &middot; <a href="mailto:sajjad.hedayati@ugent.be">sajjad.hedayati@ugent.be</a></div>
   </div>
 </footer>
 
