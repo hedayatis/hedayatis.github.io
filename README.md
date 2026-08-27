@@ -31,9 +31,9 @@ supplier orders, emergency purchasing, and backlog.
 
 The app uses a mixed-integer model solved by the open-source HiGHS solver. The
 interface compares reactive, safety-stock, stochastic, and CVaR risk-averse
-policies using synthetic data. Its private source and solver validation are
-complete; the public Streamlit deployment is pending because the hosting
-service blocked account authorization on 27 August 2026.
+policies using synthetic data. The source repository remains private, while the
+public demonstrator is available at:
+**[https://ripple-optimization-lab-ixsdhfedbevujnmwyqq6qh.streamlit.app/](https://ripple-optimization-lab-ixsdhfedbevujnmwyqq6qh.streamlit.app/)**.
 
 ## Book
 
