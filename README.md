@@ -45,6 +45,23 @@ the application remains maintained separately from this static website.
 
 First launch may take 50 seconds or more while the free server wakes up.
 
+## Retail Analytics Lab
+
+[Launch Analytics Lab](https://hedayatis.github.io/retail-analytics-lab/) |
+[Explore source on GitHub](https://github.com/hedayatis/retail-analytics-lab)
+
+A reproducible analytics portfolio project over 1,067,371 UCI Online Retail II
+transaction lines: data contracts, checksum-verified ingestion, a cleaning
+ledger, DuckDB star schema, RFM segmentation and cohort retention.
+
+The project demonstrates Python/pandas, SQL/DuckDB and base R, backed by
+cross-engine parity checks and 60 passing tests. RFM has four implementations;
+cohort retention has three. The browser lab displays full-population summaries
+and runs R/Python RFM comparisons on a 25-customer sample.
+
+The dataset is used for non-commercial demonstration. The language runtimes
+download on first execution; project code and validation are publicly available.
+
 ## Book
 
 **[The Abundance Within: How Seeing What We Have Saves Us from the Culture of
@@ -112,7 +129,7 @@ The current version is stamped in the page footer.
 
 ## Revision and validation
 
-Current revision: **3.5**. The existing two-part website revision convention is
+Current revision: **3.6**. The existing two-part website revision convention is
 preserved in `VERSION`, the footer, and `CHANGELOG.md`.
 
 The book closes the portfolio immediately above the footer; all other sections
@@ -124,8 +141,9 @@ Run the dependency-free static checks from the repository root:
 python -m unittest discover -s tests -v
 ```
 
-After GitHub Pages publishes, verify the two launch buttons and the startup
-notice at [the simulation card](https://hedayatis.github.io/#simulation-lab).
+After GitHub Pages publishes, verify all three lab launch buttons, the
+[analytics source link](https://github.com/hedayatis/retail-analytics-lab), and
+the startup notices in the lab cards.
 Static tests validate links and markup, not execution of the externally hosted
 applications.
 

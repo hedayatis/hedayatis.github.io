@@ -8,6 +8,8 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 SIMULATION = "https://isapdi-simulation-lab.onrender.com"
 RIPPLE = "https://ripple-optimization-lab-ixsdhfedbevujnmwyqq6qh.streamlit.app/"
+RETAIL = "https://hedayatis.github.io/retail-analytics-lab/"
+RETAIL_SOURCE = "https://github.com/hedayatis/retail-analytics-lab"
 
 
 class Document(HTMLParser):
@@ -58,10 +60,28 @@ class PortfolioTests(unittest.TestCase):
 
     def test_card_follows_ripple_inside_same_section(self):
         section = self.source.split('<section class="lab-section" id="ripple">', 1)[1].split("</section>", 1)[0]
-        self.assertEqual(section.count('<article class="lab-shell"'), 2)
+        self.assertEqual(section.count('<article class="lab-shell"'), 3)
         self.assertLess(section.index("RIPPLE Optimization Lab"),
                         section.index("ISAPDI Simulation Lab"))
+        self.assertLess(section.index("ISAPDI Simulation Lab"),
+                        section.index("Retail Analytics Lab"))
         self.assertIn(".lab-shell + .lab-shell{margin-top:22px}", self.source)
+
+    def test_retail_launch_source_and_scope(self):
+        card = self.source.split('<article class="lab-shell" id="retail-analytics-lab"', 1)[1].split("</article>", 1)[0]
+        for url in (RETAIL, RETAIL_SOURCE):
+            links = [a for tag, a in Document(card).elements
+                     if tag == "a" and a.get("href") == url]
+            self.assertEqual(len(links), 1)
+            self.assertEqual(links[0]["target"], "_blank")
+            self.assertIn("noopener", links[0]["rel"].split())
+            self.assertIn(url, self.readme)
+        self.assertIn("1,067,371", card)
+        self.assertIn("25-customer browser sample", card)
+        self.assertIn("Non-commercial dataset", card)
+        self.assertIn("60 passing tests", card)
+        self.assertIn('aria-describedby="retail-lab-note"', card)
+        self.assertIn('href="#ripple">Interactive labs</a>', self.source)
 
     def test_book_is_last_section_immediately_before_footer(self):
         sections = [attrs for tag, attrs in self.doc.elements if tag == "section"]
