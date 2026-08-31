@@ -1,5 +1,38 @@
 # Changelog
 
+## [3.6] - 2026-08-31
+
+**Status:** release
+
+### Added
+
+- Retail Analytics Lab card alongside RIPPLE and ISAPDI, with live-demo and
+  public-source links, a three-stage pipeline overview and demonstrated skills.
+- Explicit distinction between full-population summaries and sample-based
+  browser execution, plus dataset-use and runtime-download notices.
+- Regression check for analytics links, claims and accessibility references.
+
+### Changed
+
+- Broaden the lab heading and navigation label to include analytics.
+- Synchronize VERSION, README and footer to revision 3.6.
+
+### Validation
+
+- `python -B -m unittest discover -s tests -v`: 7/7 passed.
+- Source comparison preserves the existing lab cards, book and section order.
+- Check the Pages deployment and live links after merge.
+
+### Compatibility and migration
+
+- Backward compatible; existing URLs and content remain intact, with the book
+  still last above the footer. No migration or hosting-provider change.
+
+### Known limitations
+
+- Static checks do not execute browser WebAssembly runtimes or provide visual QA.
+- External-app availability and initial runtime downloads depend on their hosts.
+
 ## [3.5] - 2026-08-31
 
 **Status:** release
