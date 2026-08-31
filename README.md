@@ -35,6 +35,16 @@ policies using synthetic data. The source repository remains private, while the
 public demonstrator is available at:
 **[https://ripple-optimization-lab-ixsdhfedbevujnmwyqq6qh.streamlit.app/](https://ripple-optimization-lab-ixsdhfedbevujnmwyqq6qh.streamlit.app/)**.
 
+## ISAPDI Simulation Lab
+
+[Launch Simulation Lab](https://isapdi-simulation-lab.onrender.com)
+
+Explore inspection allocation and production-line simulation through an
+interactive dashboard. The portfolio links to the existing Render deployment;
+the application remains maintained separately from this static website.
+
+First launch may take 50 seconds or more while the free server wakes up.
+
 ## Book
 
 **[The Abundance Within: How Seeing What We Have Saves Us from the Culture of
@@ -99,6 +109,22 @@ Deliberately simple, and kept that way:
   discovery and a clean preview when the page is shared on LinkedIn.
 
 The current version is stamped in the page footer.
+
+## Revision and validation
+
+Current revision: **3.4**. The existing two-part website revision convention is
+preserved in `VERSION`, the footer, and `CHANGELOG.md`.
+
+Run the dependency-free static checks from the repository root:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+After GitHub Pages publishes, verify the two launch buttons and the startup
+notice at [the simulation card](https://hedayatis.github.io/#simulation-lab).
+Static tests validate links and markup, not execution of the externally hosted
+applications.
 
 ## License
 
