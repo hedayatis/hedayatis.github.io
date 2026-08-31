@@ -1,5 +1,34 @@
 # Changelog
 
+## [3.5] - 2026-08-31
+
+**Status:** release
+
+### Changed
+
+- Move the complete book section to the end of the portfolio, directly above
+  the footer. Preserve its content, cover, PDF links, and navigation anchor.
+- Preserve the relative order and content of all other sections, including
+  RIPPLE and ISAPDI.
+- Synchronize VERSION, README, and footer with revision 3.5.
+
+### Validation
+
+- `python -m unittest discover -s tests -v`: 6/6 passed.
+- Exact source comparison confirms the book block is unchanged and all
+  non-book sections retain their content and order.
+- Publication verification: check the GitHub Pages workflow after merge.
+
+### Compatibility and migration
+
+- Backward compatible; no asset, URL, model, API, hosting, or visibility changes.
+  No migration required.
+
+### Known limitations
+
+- Static checks do not execute the external labs or provide browser visual QA.
+- The existing Render free-hosting startup delay remains unchanged.
+
 ## [3.4] - 2026-08-31
 
 **Status:** release

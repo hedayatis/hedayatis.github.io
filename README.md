@@ -112,8 +112,11 @@ The current version is stamped in the page footer.
 
 ## Revision and validation
 
-Current revision: **3.4**. The existing two-part website revision convention is
+Current revision: **3.5**. The existing two-part website revision convention is
 preserved in `VERSION`, the footer, and `CHANGELOG.md`.
+
+The book closes the portfolio immediately above the footer; all other sections
+retain their existing order.
 
 Run the dependency-free static checks from the repository root:
 

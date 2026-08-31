@@ -1,4 +1,4 @@
-"""Dependency-free regression checks for the public lab cards."""
+"""Dependency-free regression checks for portfolio layout and lab cards."""
 from collections import Counter
 from html.parser import HTMLParser
 from pathlib import Path
@@ -62,6 +62,16 @@ class PortfolioTests(unittest.TestCase):
         self.assertLess(section.index("RIPPLE Optimization Lab"),
                         section.index("ISAPDI Simulation Lab"))
         self.assertIn(".lab-shell + .lab-shell{margin-top:22px}", self.source)
+
+    def test_book_is_last_section_immediately_before_footer(self):
+        sections = [attrs for tag, attrs in self.doc.elements if tag == "section"]
+        self.assertEqual(sections[-1].get("id"), "book")
+        self.assertEqual(sum(a.get("id") == "book" for a in sections), 1)
+        book = self.source.split('<section class="book-section" id="book">', 1)[1]
+        content, after = book.split("</section>", 1)
+        self.assertTrue(after.lstrip().startswith("<footer>"))
+        self.assertIn("assets/the-abundance-within-cover-final.png", content)
+        self.assertEqual(content.count('href="books/the-abundance-within.pdf"'), 3)
 
     def test_revision_and_documentation_agree(self):
         version = (ROOT / "VERSION").read_text().strip()
