@@ -1,5 +1,37 @@
 # Changelog
 
+## [3.7] - 2026-09-02
+
+**Status:** release
+
+### Added
+
+- RevMode for LaTeX portfolio card with its single-source, three-view revision
+  workflow, Overleaf/TeXstudio compatibility, open-source repository and direct
+  template ZIP links.
+- Regression coverage for the new card, workflow claims and public links.
+
+### Changed
+
+- Broaden the labs heading and masthead link to include open research tools.
+- Synchronize VERSION, README and footer to revision 3.7.
+
+### Validation
+
+- `python -B -m unittest discover -s tests -v`: 8/8 passed.
+- HTML parsing and accessibility-reference checks passed.
+
+### Compatibility and migration
+
+- Backward compatible; existing public URLs, lab cards, book assets and section
+  order are preserved. No migration or hosting-provider change.
+
+### Known limitations
+
+- Static tests do not execute external applications or verify GitHub service
+  availability.
+- GitHub Pages publication must be verified after merge.
+
 ## [3.6] - 2026-08-31
 
 **Status:** release
