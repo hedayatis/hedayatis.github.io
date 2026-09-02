@@ -62,6 +62,22 @@ and runs R/Python RFM comparisons on a 25-customer sample.
 The dataset is used for non-commercial demonstration. The language runtimes
 download on first execution; project code and validation are publicly available.
 
+## RevMode for LaTeX
+
+[Explore RevMode on GitHub](https://github.com/hedayatis/overleaf-revmode-template) |
+[Download the template ZIP](https://github.com/hedayatis/overleaf-revmode-template/archive/refs/heads/main.zip)
+
+RevMode is a free, MIT-licensed manuscript revision workflow for Overleaf and
+offline LaTeX editors. One manuscript body produces three controlled views: an
+original working master with private notes, a comment-driven version with
+collaborator-coloured comments, replies, suggestions and addressed text, and a
+clean ready-to-submit version. A global switch accepts all pending suggestions,
+while the same source also generates a point-by-point response ledger.
+
+The public repository includes TeXstudio and command-line instructions,
+cross-platform build helpers, mode-separation tests, GitHub Actions validation,
+and shareable Overleaf/offline dispatch bundles.
+
 ## Book
 
 **[The Abundance Within: How Seeing What We Have Saves Us from the Culture of
@@ -129,7 +145,7 @@ The current version is stamped in the page footer.
 
 ## Revision and validation
 
-Current revision: **3.6**. The existing two-part website revision convention is
+Current revision: **3.7**. The existing two-part website revision convention is
 preserved in `VERSION`, the footer, and `CHANGELOG.md`.
 
 The book closes the portfolio immediately above the footer; all other sections
@@ -141,9 +157,9 @@ Run the dependency-free static checks from the repository root:
 python -m unittest discover -s tests -v
 ```
 
-After GitHub Pages publishes, verify all three lab launch buttons, the
-[analytics source link](https://github.com/hedayatis/retail-analytics-lab), and
-the startup notices in the lab cards.
+After GitHub Pages publishes, verify the live lab buttons, the analytics source
+link, the RevMode repository and ZIP links, and the startup notices in the lab
+cards.
 Static tests validate links and markup, not execution of the externally hosted
 applications.
 

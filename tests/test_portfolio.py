@@ -10,6 +10,8 @@ SIMULATION = "https://isapdi-simulation-lab.onrender.com"
 RIPPLE = "https://ripple-optimization-lab-ixsdhfedbevujnmwyqq6qh.streamlit.app/"
 RETAIL = "https://hedayatis.github.io/retail-analytics-lab/"
 RETAIL_SOURCE = "https://github.com/hedayatis/retail-analytics-lab"
+REVMODE = "https://github.com/hedayatis/overleaf-revmode-template"
+REVMODE_ZIP = REVMODE + "/archive/refs/heads/main.zip"
 
 
 class Document(HTMLParser):
@@ -60,11 +62,13 @@ class PortfolioTests(unittest.TestCase):
 
     def test_card_follows_ripple_inside_same_section(self):
         section = self.source.split('<section class="lab-section" id="ripple">', 1)[1].split("</section>", 1)[0]
-        self.assertEqual(section.count('<article class="lab-shell"'), 3)
+        self.assertEqual(section.count('<article class="lab-shell"'), 4)
         self.assertLess(section.index("RIPPLE Optimization Lab"),
                         section.index("ISAPDI Simulation Lab"))
         self.assertLess(section.index("ISAPDI Simulation Lab"),
                         section.index("Retail Analytics Lab"))
+        self.assertLess(section.index("Retail Analytics Lab"),
+                        section.index("RevMode for LaTeX"))
         self.assertIn(".lab-shell + .lab-shell{margin-top:22px}", self.source)
 
     def test_retail_launch_source_and_scope(self):
@@ -81,7 +85,20 @@ class PortfolioTests(unittest.TestCase):
         self.assertIn("Non-commercial dataset", card)
         self.assertIn("60 passing tests", card)
         self.assertIn('aria-describedby="retail-lab-note"', card)
-        self.assertIn('href="#ripple">Interactive labs</a>', self.source)
+        self.assertIn('href="#ripple">Labs &amp; tools</a>', self.source)
+
+    def test_revmode_open_tool_card(self):
+        card = self.source.split('<article class="lab-shell" id="revmode"', 1)[1].split("</article>", 1)[0]
+        doc = Document(card)
+        hrefs = [attrs.get("href") for tag, attrs in doc.elements if tag == "a"]
+        self.assertIn(REVMODE, hrefs)
+        self.assertIn(REVMODE_ZIP, hrefs)
+        self.assertIn("one manuscript body", card)
+        self.assertIn("accept-all switch", card)
+        self.assertIn("point-by-point response ledger", card)
+        self.assertIn("Overleaf", card)
+        self.assertIn("TeXstudio", card)
+        self.assertIn('href="#ripple">Labs &amp; tools</a>', self.source)
 
     def test_book_is_last_section_immediately_before_footer(self):
         sections = [attrs for tag, attrs in self.doc.elements if tag == "section"]
