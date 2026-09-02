@@ -14,25 +14,29 @@
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/63190657?v=4">
 <meta property="og:image:alt" content="Sajjad (Sam) Hedayati">
 <meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#10222C" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#071419" media="(prefers-color-scheme: dark)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#10222C; --petrol:#0B4F6C; --petrol-soft:#3D7C97; --brass:#A97A22;
     --paper:#ECEFF0; --card:#FFFFFF; --tint:#E9F1F4; --rule:#B9C3C9; --muted:#56676F;
-    --display:"IBM Plex Sans Condensed","Helvetica Neue",Arial,sans-serif;
-    --body:"IBM Plex Serif",Georgia,"Times New Roman",serif;
+    --signature:"Fraunces",Georgia,"Times New Roman",serif;
+    --display:"Manrope","Helvetica Neue",Arial,sans-serif;
+    --body:"Source Serif 4",Georgia,"Times New Roman",serif;
     --mono:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;
   }
   *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
+  html{-webkit-text-size-adjust:100%;color-scheme:light dark}
   body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
   .wrap{max-width:900px;margin:0 auto;padding:0 26px}
 
-  .masthead{background:var(--ink);color:#E7EDF0;padding:54px 0 40px}
+  .masthead{background:linear-gradient(135deg,#10222C 0%,#0A3545 100%);color:#E7EDF0;padding:54px 0 40px}
   .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin:0 0 18px}
-  .masthead h1{font-family:var(--display);font-weight:700;font-size:clamp(38px,7.4vw,62px);line-height:1.02;letter-spacing:-.015em;margin:0 0 14px}
+  .masthead h1{font-family:var(--signature);font-weight:600;font-optical-sizing:auto;font-size:clamp(40px,7.7vw,66px);line-height:.98;letter-spacing:-.025em;margin:0 0 16px}
+  .name-alias{font-style:italic;font-weight:500;color:#D5A84F;font-size:.76em;white-space:nowrap}
   .lede{font-size:clamp(17px,2.3vw,20px);max-width:47ch;margin:0 0 26px;color:#C7D5DB}
   .contact{font-family:var(--mono);font-size:12.5px;line-height:2;color:#A9BBC4;border-top:1px solid rgba(255,255,255,.16);padding-top:16px}
   .contact a{color:#CFE0E7;text-decoration:none;border-bottom:1px solid rgba(207,224,231,.35)}
@@ -40,7 +44,7 @@
   .sep{color:#5E7480;padding:0 8px}
 
   .thesis{background:var(--card);border-bottom:1px solid var(--rule);padding:46px 0 40px}
-  .claim{font-family:var(--display);font-weight:600;font-size:clamp(23px,3.5vw,32px);line-height:1.24;letter-spacing:-.01em;margin:0 0 16px;max-width:25ch}
+  .claim{font-family:var(--signature);font-weight:600;font-optical-sizing:auto;font-size:clamp(25px,3.8vw,35px);line-height:1.2;letter-spacing:-.018em;margin:0 0 16px;max-width:25ch}
   .gloss{margin:0;max-width:60ch;color:var(--muted)}
 
   .flow{display:flex;align-items:stretch;margin:34px 0 0;flex-wrap:wrap}
@@ -93,7 +97,7 @@
   .book-cover-link{display:block;background:#fff;border:1px solid rgba(255,255,255,.22);box-shadow:0 16px 34px rgba(0,0,0,.24);line-height:0}
   .book-cover{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover}
   .book-kicker{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#D5A84F;margin:0 0 12px}
-  .book-title{font-family:var(--display);font-size:clamp(28px,4.5vw,42px);font-weight:700;line-height:1.06;letter-spacing:-.015em;color:#fff;margin:0 0 10px}
+  .book-title{font-family:var(--signature);font-size:clamp(30px,4.7vw,44px);font-weight:600;line-height:1.04;letter-spacing:-.02em;color:#fff;margin:0 0 10px}
   .book-subtitle{font-family:var(--body);font-size:18px;line-height:1.45;color:#BFD0D7;margin:0 0 18px;max-width:42ch}
   .book-description{color:#AFC1C9;max-width:56ch;margin:0 0 18px}
   .book-meta{font-family:var(--mono);font-size:11px;line-height:1.7;letter-spacing:.04em;text-transform:uppercase;color:#839AA5;margin:0 0 23px}
@@ -216,6 +220,49 @@
     .a3f1,.a3f2,.a3f3{transform:scaleY(1)}
     .a2halo1,.a2halo2{opacity:0}
   }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --ink:#E7EFF2; --petrol:#69C2C7; --petrol-soft:#8FBCC3; --brass:#E4B65B;
+      --paper:#071419; --card:#0D2027; --tint:#122B33; --rule:#2C454E; --muted:#A9BCC3;
+    }
+    body{background:#071419}
+    .masthead{background:radial-gradient(circle at 84% 8%,rgba(73,156,166,.18),transparent 36%),linear-gradient(135deg,#061117 0%,#0A2731 100%);color:#F2F7F8;border-bottom:1px solid #26444E}
+    .name-alias{color:#F0C46A}
+    .lede{color:#C6D7DC}
+    .contact{color:#9FB5BC;border-top-color:rgba(207,231,236,.18)}
+    .contact a{color:#B9DDE2;border-bottom-color:rgba(185,221,226,.38)}
+    .contact a:hover{color:#fff;border-bottom-color:#fff}
+    .sep{color:#617B84}
+    .thesis{background:#0A1B21}
+    .impact{background:#08171D}
+    .lab-section{background:#09191F}
+    .lab-step{background:#10262E}
+    .stage.out{background:#143844;border-color:#3B707C}
+    .stage.out b{color:#F4FAFB}
+    .stage.out span{color:#B0C7CE}
+    .lab-button{background:var(--petrol);border-color:var(--petrol);color:#061419}
+    .lab-button:hover{background:#91D9DC;border-color:#91D9DC;color:#061419}
+    .lab-button.secondary{background:transparent;color:var(--petrol)}
+    .lab-button.secondary:hover{background:var(--tint);border-color:var(--petrol);color:#DDF7F8}
+    .tag.work{background:#0E242B}
+    .tag.scoped{background:#2A2314}
+    .book-section,footer{background:#050E12;border-color:#1D333B}
+    .book-cover-link{border-color:#36515B;box-shadow:0 18px 42px rgba(0,0,0,.45)}
+    .book-button{color:#071419;background:#E4B65B;border-color:#E4B65B}
+    .book-button:hover{background:#F2CB7A;border-color:#F2CB7A}
+    .book-button.secondary{background:transparent;color:#D8E7EA;border-color:#54717B}
+    .book-button.secondary:hover{color:#fff;border-color:#D8E7EA}
+    footer{color:#9FB5BC}
+    footer strong{color:#EFF6F7}
+    footer a{color:#B9DDE2}
+    .version{border-top-color:#263C44;color:#78919A}
+    svg[stroke="#0B4F6C"],svg [stroke="#0B4F6C"]{stroke:var(--petrol)}
+    svg[stroke="#A97A22"],svg [stroke="#A97A22"]{stroke:var(--brass)}
+    svg [fill="#E9F1F4"]{fill:var(--tint)}
+    svg [fill="#0B4F6C"]{fill:var(--petrol)}
+    svg [fill="#10222C"]{fill:var(--ink)}
+    svg [fill="#FFFFFF"],svg [fill="#fff"]{fill:var(--card)}
+  }
   @media print{.jtabs-section{display:none}}
   @media (max-width:620px){
     body{font-size:16px}
@@ -231,6 +278,10 @@
   }
 
   @media print{
+    :root{
+      --ink:#10222C; --petrol:#0B4F6C; --petrol-soft:#3D7C97; --brass:#A97A22;
+      --paper:#fff; --card:#fff; --tint:#E9F1F4; --rule:#B9C3C9; --muted:#56676F;
+    }
     body{background:#fff;font-size:10.5pt}
     .masthead,footer{background:#fff;color:var(--ink)}
     .masthead h1{color:var(--ink)}
@@ -251,7 +302,7 @@
 <header class="masthead">
   <div class="wrap">
     <p class="eyebrow rise">Operations research &middot; Ghent, Belgium</p>
-    <h1 class="rise">Sajjad (Sam) Hedayati</h1>
+    <h1 class="rise">Sajjad <span class="name-alias">(Sam)</span> Hedayati</h1>
     <p class="lede rise">I design optimization and simulation tools that turn operational uncertainty into measurable improvements in cost, speed and service.</p>
     <div class="contact">
       <a href="mailto:sajjad.hedayati@ugent.be">sajjad.hedayati@ugent.be</a><span class="sep">/</span><a href="https://www.linkedin.com/in/sajjad-hedayati-13703725a">LinkedIn</a><span class="sep">/</span><a href="https://orcid.org/0000-0002-1008-6288">ORCID 0000-0002-1008-6288</a><span class="sep">/</span><a href="https://scholar.google.com/citations?user=vNrnIkoAAAAJ">Google Scholar</a><span class="sep">/</span><a href="#ripple">Labs &amp; tools</a><span class="sep">/</span><a href="#book">Book</a>
@@ -841,7 +892,7 @@
 <footer>
   <div class="wrap">
     <strong>Sajjad (Sam) Hedayati</strong> &mdash; optimization, simulation and decision support for manufacturing and logistics. Ghent, Belgium.
-    <div class="version">Profile &mdash; v3.7 (web) &middot; September 2026 &middot; <a href="mailto:sajjad.hedayati@ugent.be">sajjad.hedayati@ugent.be</a></div>
+    <div class="version">Profile &mdash; v3.8 (web) &middot; September 2026 &middot; <a href="mailto:sajjad.hedayati@ugent.be">sajjad.hedayati@ugent.be</a></div>
   </div>
 </footer>
 
