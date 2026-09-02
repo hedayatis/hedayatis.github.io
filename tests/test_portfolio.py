@@ -119,6 +119,16 @@ class PortfolioTests(unittest.TestCase):
         self.assertIn(SIMULATION, self.readme)
         self.assertIn("50 seconds or more", self.readme)
 
+    def test_personal_typography_and_dark_theme(self):
+        for family in ("Fraunces", "Manrope", "Source+Serif+4", "IBM+Plex+Mono"):
+            self.assertIn(family, self.source)
+        self.assertIn('--signature:"Fraunces"', self.source)
+        self.assertIn('class="name-alias"', self.source)
+        self.assertIn("@media (prefers-color-scheme:dark)", self.source)
+        self.assertIn("color-scheme:light dark", self.source)
+        self.assertIn('content="#071419" media="(prefers-color-scheme: dark)"', self.source)
+        self.assertIn("Complete dark mode", self.readme)
+
 
 if __name__ == "__main__":
     unittest.main()

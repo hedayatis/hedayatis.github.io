@@ -133,7 +133,13 @@ Deliberately simple, and kept that way:
 - **CSS-only animation.** The journal-paper schematics run a single slow,
   staged choreography per scene; `prefers-reduced-motion` renders the completed
   state statically instead.
-- **Typography:** IBM Plex (Sans Condensed / Serif / Mono) with system fallbacks.
+- **Personal typography:** Fraunces gives the name, thesis statement and book
+  title a distinctive editorial signature; Manrope carries technical headings,
+  Source Serif 4 keeps long research text readable, and IBM Plex Mono labels
+  metrics and evidence.
+- **Complete dark mode:** a midnight ink-blue system with high-contrast teal and
+  brass accents follows the visitor's operating-system preference, including
+  technical drawings and browser chrome.
 - **Print-aware.** A print stylesheet turns the dark bands white so the page
   exports cleanly to PDF.
 - **Plain ASCII source.** Special characters are written as HTML entities so the
@@ -145,11 +151,12 @@ The current version is stamped in the page footer.
 
 ## Revision and validation
 
-Current revision: **3.7**. The existing two-part website revision convention is
+Current revision: **3.8**. The existing two-part website revision convention is
 preserved in `VERSION`, the footer, and `CHANGELOG.md`.
 
 The book closes the portfolio immediately above the footer; all other sections
-retain their existing order.
+retain their existing order. Revision 3.8 changes only the visual identity and
+theme behavior, not the published research content or links.
 
 Run the dependency-free static checks from the repository root:
 

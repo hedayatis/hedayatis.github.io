@@ -1,5 +1,45 @@
 # Changelog
 
+## [3.8] - 2026-09-02
+
+**Status:** release
+
+### Added
+
+- A complete operating-system-aware dark theme covering page surfaces, cards,
+  controls, technical drawings, inverse sections and browser chrome.
+- A personal four-font system: Fraunces for the name and editorial signature,
+  Manrope for technical headings, Source Serif 4 for long-form research text,
+  and IBM Plex Mono for evidence and data labels.
+- Regression checks for the dark-theme contract, personal name treatment and
+  font loading.
+
+### Changed
+
+- Replace isolated dark bands with a coherent midnight ink-blue palette using
+  accessible teal and brass accents.
+- Give the masthead name, thesis statement and book title a tailored editorial
+  voice while preserving the existing content hierarchy.
+- Synchronize VERSION, README and footer to revision 3.8.
+
+### Validation
+
+- `python -B -m unittest discover -s tests -v`: 9/9 passed.
+- HTML parsing, link-reference and accessibility-reference checks passed.
+- Dark-theme text and accent combinations measure at least 8.09:1 contrast.
+- Print colors reset correctly when the operating system uses dark mode.
+
+### Compatibility and migration
+
+- Backward compatible; all content, URLs, interactive labs, book assets and
+  section order are preserved. No hosting or data migration is required.
+
+### Known limitations
+
+- Web fonts depend on Google Fonts availability and fall back to system fonts
+  when blocked.
+- Static tests cannot assess subjective font rendering on every platform.
+
 ## [3.7] - 2026-09-02
 
 **Status:** release
