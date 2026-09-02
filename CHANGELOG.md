@@ -2,7 +2,7 @@
 
 ## [3.8] - 2026-09-02
 
-**Status:** review
+**Status:** release
 
 ### Added
 
