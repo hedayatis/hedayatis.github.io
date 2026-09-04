@@ -18,33 +18,58 @@ A public repository grants read and fork rights to everyone and write rights to
 no one. Forking copies the code into someone else's account; it cannot alter
 this one.
 
-## Settings to keep enabled
+## Applying the protections
 
-Verify these under `Settings` on
-[github.com/hedayatis/hedayatis.github.io](https://github.com/hedayatis/hedayatis.github.io).
+`.github/protect-repo.sh` applies and verifies everything reachable through the
+API, and is safe to re-run:
 
-1. **Collaborators** (`Settings -> Collaborators and teams`) --
-   `hedayatis` only. Remove anything else.
-2. **Ruleset on `main`** (`Settings -> Rules -> Rulesets -> New branch ruleset`),
-   targeting the default branch, enforcement `Active`:
-   - Restrict deletions
-   - Block force pushes
-   - Require a pull request before merging, 1 approval, require review from
-     Code Owners -- optional; add `Repository admin` to the bypass list first,
-     otherwise a solo maintainer cannot approve their own pull request.
-   - Require signed commits -- optional; it proves each commit came from a key
-     held by the author rather than from a stolen token.
-3. **Actions permissions** (`Settings -> Actions -> General`) --
-   workflow permissions set to `Read repository contents and packages`, and
-   `Allow GitHub Actions to create and approve pull requests` left unchecked.
-   A token that cannot write cannot rewrite the site.
-4. **Deploy keys** (`Settings -> Deploy keys`) -- empty, or read-only. A
-   write-enabled deploy key is a password-free push route.
-5. **Installed apps** (`Settings -> Integrations -> GitHub Apps`) -- every app
-   listed there holds whatever permission it was granted. Remove the ones no
-   longer in use.
-6. **Pages source** (`Settings -> Pages`) -- deploy from the `main` branch. The
-   branch ruleset then governs what reaches the published site.
+```sh
+./.github/protect-repo.sh          # apply, then report
+./.github/protect-repo.sh --audit  # report only, change nothing
+```
+
+It authenticates through the GitHub CLI when `gh auth status` is already signed
+in, and otherwise through `$GITHUB_TOKEN` -- a fine-grained token for this
+repository with **Administration: read and write** and **Contents: read**,
+created at `github.com/settings/personal-access-tokens`. Each endpoint reports
+independently, so a permission the token lacks produces one `check` line rather
+than stopping the run.
+
+The script sets:
+
+1. **A ruleset named `protect-main`** on the default branch, enforcement
+   `Active`, restricting deletions and blocking force pushes. History on the
+   published branch can then only move forward.
+2. **Read-only Actions token permissions**, with `can_approve_pull_request_reviews`
+   off. A workflow token that cannot write cannot rewrite the site.
+
+and reports on:
+
+3. **Collaborators** -- expect `hedayatis` with `admin`, and nobody else.
+4. **Deploy keys** -- expect none, or `read_only=true`. A write-enabled deploy
+   key is a password-free push route.
+5. **Visibility and default branch** -- expect `public` and `main`.
+
+## Settings with no API route
+
+These are browser-only:
+
+- `Settings -> Integrations -> GitHub Apps` -- every app listed holds whatever
+  permission it was granted. Remove the ones no longer in use.
+- `Settings -> Pages` -- deploy from the `main` branch, so the branch ruleset
+  governs what reaches the published site.
+
+## Optional, stricter rules
+
+Both are added under `Settings -> Rules -> Rulesets -> protect-main`:
+
+- **Require a pull request before merging**, 1 approval, require review from
+  Code Owners. Add `Repository admin` to the bypass list first, otherwise a
+  solo maintainer cannot approve their own pull request and the branch becomes
+  unwritable. `.github/CODEOWNERS` assigns every path to `@hedayatis`, and
+  takes effect only from the default branch.
+- **Require signed commits.** This proves each commit came from a key the
+  author holds rather than from a stolen token.
 
 ## Account-level settings
 
@@ -57,18 +82,10 @@ Repository rules are only as strong as the account that can bypass them.
 - Authorized OAuth applications reviewed at
   `github.com/settings/applications`.
 
-## Verifying from a terminal
+## Verifying later
 
 ```sh
-# Collaborators: expect exactly one, hedayatis, with admin
-gh api repos/hedayatis/hedayatis.github.io/collaborators \
-  --jq '.[] | "\(.login) \(.role_name)"'
-
-# Rulesets: expect the main-branch ruleset, enforcement "active"
-gh api repos/hedayatis/hedayatis.github.io/rulesets \
-  --jq '.[] | "\(.name) \(.enforcement)"'
-
-# Deploy keys: expect an empty list, or read_only true
-gh api repos/hedayatis/hedayatis.github.io/keys \
-  --jq '.[] | "\(.title) read_only=\(.read_only)"'
+./.github/protect-repo.sh --audit
 ```
+
+Every line should read `ok`. A `check` line names the setting that drifted.
