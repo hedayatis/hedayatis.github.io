@@ -1,0 +1,5 @@
+# Every file in this repository is owned by its author.
+# Combined with a "require review from Code Owners" rule on main,
+# no change reaches the published site without approval from @hedayatis.
+
+* @hedayatis
