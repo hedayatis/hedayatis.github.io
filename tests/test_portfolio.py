@@ -13,6 +13,12 @@ RETAIL = "https://hedayatis.github.io/retail-analytics-lab/"
 RETAIL_SOURCE = "https://github.com/hedayatis/retail-analytics-lab"
 REVMODE = "https://github.com/hedayatis/overleaf-revmode-template"
 REVMODE_ZIP = REVMODE + "/archive/refs/heads/main.zip"
+CV_PDF = "assets/Sajjad_Hedayati_CV.pdf"
+# Never on a public page: these belong only in the private copy sent to employers.
+FORBIDDEN_PUBLIC = [r"\+32\s?4\d{2}", r"months'? notice", r"willing to relocate",
+                    r"\bopen to\b", r"\bseeking\b", r"looking for a role", r"residence permit",
+                    r"single permit", r"Blue Card", r"sponsorship", r"permanent residency",
+                    r"contract until", r"Not claimed", r"salary"]
 
 
 class Document(HTMLParser):
@@ -140,12 +146,29 @@ class PortfolioTests(unittest.TestCase):
 
     def test_public_page_is_ascii_and_carries_nothing_private(self):
         self.assertTrue(self.source.isascii(), "write special characters as HTML entities")
-        forbidden = [r"\+32\s?4\d{2}", r"months'? notice", r"willing to relocate",
-                     r"\bopen to\b", r"\bseeking\b", r"looking for a role", r"residence permit",
-                     r"single permit", r"Blue Card", r"sponsorship", r"permanent residency",
-                     r"Not claimed", r"salary"]
-        for pattern in forbidden:
+        for pattern in FORBIDDEN_PUBLIC:
             self.assertIsNone(re.search(pattern, self.source, re.I), pattern)
+
+    def test_cv_page_is_linked_safe_and_versioned(self):
+        cv = (ROOT / "cv.html").read_text(encoding="utf-8")
+        doc = Document(cv)
+        self.assertTrue(cv.isascii(), "write special characters as HTML entities")
+        for pattern in FORBIDDEN_PUBLIC:
+            self.assertIsNone(re.search(pattern, cv, re.I), pattern)
+        self.assertRegex(cv, r"CV &mdash; v\d+\.\d+ \(web\)")
+        hrefs = [a.get("href") for tag, a in doc.elements if tag == "a"]
+        self.assertIn(CV_PDF, hrefs)
+        self.assertIn("index.html", hrefs)
+        ids = [a["id"] for _, a in doc.elements if "id" in a]
+        self.assertEqual(len(ids), len(set(ids)))
+        for _, attrs in doc.elements:
+            for value in attrs.get("aria-labelledby", "").split():
+                self.assertIn(value, ids)
+        index_hrefs = [a.get("href") for tag, a in self.doc.elements if tag == "a"]
+        self.assertIn("cv.html", index_hrefs)
+        self.assertIn(CV_PDF, index_hrefs)
+        pdf = (ROOT / CV_PDF).read_bytes()
+        self.assertTrue(pdf.startswith(b"%PDF"))
 
 if __name__ == "__main__":
     unittest.main()
