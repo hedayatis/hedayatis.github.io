@@ -4,7 +4,9 @@ Operations research and decision science for manufacturing and logistics.
 I build the model, then the tool people run it in. Ghent, Belgium.
 
 This repository serves my profile page:
-**[hedayatis.github.io](https://hedayatis.github.io)**
+**[hedayatis.github.io](https://hedayatis.github.io)** and my detailed
+CV: **[hedayatis.github.io/cv.html](https://hedayatis.github.io/cv.html)**
+([PDF](https://hedayatis.github.io/assets/Sajjad_Hedayati_CV.pdf)).
 
 [Email](mailto:sajjad.hedayati@ugent.be) |
 [LinkedIn](https://www.linkedin.com/in/sajjad-hedayati-13703725a) |
@@ -153,12 +155,18 @@ Deliberately simple, and kept that way:
   file cannot be mangled by an editor guessing the wrong encoding.
 - **Public-profile ready.** Canonical, search and Open Graph metadata support
   discovery and a clean preview when the page is shared on LinkedIn.
+- **Detailed CV page.** `cv.html` carries the full CV in the same design, with
+  an A4 print stylesheet. `assets/Sajjad_Hedayati_CV.pdf` is that page printed
+  from Chromium; regenerate it after editing `cv.html` (any browser's
+  Print -> Save as PDF on A4 gives the same layout). Neither page carries a
+  phone number, availability, mobility, permit status or referee contact
+  details; the tests enforce this.
 
 The current version is stamped in the page footer.
 
 ## Revision and validation
 
-Current revision: **4.0**. The existing two-part website revision convention is
+Current revision: **4.1**. The existing two-part website revision convention is
 preserved in `VERSION`, the footer, and `CHANGELOG.md`.
 
 Revision 4.0 is a full rebrand: new visual identity, builder positioning, and a

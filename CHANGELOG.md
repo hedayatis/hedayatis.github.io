@@ -1,5 +1,34 @@
 # Changelog
 
+## [4.1] - 2026-10-26
+
+**Status:** release
+
+### Added
+
+- A detailed CV page (`cv.html`) in the v4.0 design, with an A4 print layout
+  and a five-page PDF (`assets/Sajjad_Hedayati_CV.pdf`) generated from it.
+  It merges the industry CV (v4.1, 15 October 2026) and the academic CV
+  (October 2026): experience with outcome bullets, research contributions,
+  the doctoral thesis title, eight conference contributions with full titles,
+  manuscripts in preparation, research projects, graded skills, labs,
+  languages and certification.
+- CV links in the section bar, the masthead and the footer.
+- A regression check that the CV page and PDF exist, are linked, stay ASCII
+  and carry nothing private.
+
+### Removed from the public CV by design
+
+- Phone number, relocation and notice-period lines, the contract end date,
+  pending funding applications and the planned 2027 visit, and referees'
+  email addresses ("References available on request" instead).
+
+### Validation
+
+- `python -B -m unittest discover -s tests -v`: 12/12 passed.
+- CV rendered at 1280 px and 390 px with no failed requests and no horizontal
+  overflow; PDF checked page by page.
+
 ## [4.0] - 2026-10-26
 
 **Status:** release

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Curriculum vitae of Sajjad (Sam) Hedayati &mdash; operations research and decision science for manufacturing and logistics.">
+<title>Sajjad (Sam) Hedayati &mdash; Curriculum Vitae</title>
+<link rel="canonical" href="https://hedayatis.github.io/cv.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23121417'/%3E%3Cpath d='M8 23c4 0 4-7 8-7s4-7 8-7' fill='none' stroke='%23F4F1EA' stroke-width='2.2' stroke-linecap='round'/%3E%3Ccircle cx='8' cy='23' r='2.6' fill='%23F4F1EA'/%3E%3Ccircle cx='24' cy='9' r='3' fill='%23FF7A55'/%3E%3C/svg%3E">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://hedayatis.github.io/cv.html">
+<meta property="og:title" content="Sajjad (Sam) Hedayati &mdash; Curriculum Vitae">
+<meta property="og:description" content="Operations research and decision science: optimization, simulation and self-service decision tools for manufacturing and logistics.">
+<meta name="theme-color" content="#F4F1EA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1013" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#121417; --paper:#F4F1EA; --card:#FBFAF6; --tint:#ECE7DC; --line:#CFC8BA;
+    --rule:#DCD6C9; --muted:#5B5F67; --signal:#B83A17;
+    --display:"Instrument Serif","Iowan Old Style",Georgia,"Times New Roman",serif;
+    --sans:"Inter","Helvetica Neue",Arial,sans-serif;
+    --mono:"JetBrains Mono","SFMono-Regular",Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;color-scheme:light dark}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  a:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+  p{margin:0 0 10px}
+
+  .toolbar{max-width:900px;margin:0 auto;padding:22px 24px 0;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .toolbar a{font-family:var(--mono);font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;color:var(--muted);padding:9px 14px;border:1px solid var(--line);border-radius:999px}
+  .toolbar a:hover{color:var(--ink);border-color:var(--ink)}
+  .toolbar a.primary{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+  .toolbar a.primary:hover{background:var(--signal);border-color:var(--signal);color:#fff}
+
+  .sheet{max-width:900px;margin:18px auto 56px;background:var(--card);border:1px solid var(--rule);border-radius:18px;padding:56px 60px;box-shadow:0 30px 60px -36px rgba(18,20,23,.3)}
+
+  header{border-bottom:2px solid var(--ink);padding-bottom:22px;margin-bottom:8px}
+  .role-line{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--signal);margin:0 0 10px}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(42px,6vw,60px);line-height:.95;letter-spacing:-.022em;margin:0 0 12px}
+  h1 .alias{font-style:italic;color:var(--signal);font-size:.7em}
+  .tagline{font-family:var(--display);font-size:22px;line-height:1.2;margin:0 0 16px}
+  .tagline em{color:var(--signal)}
+  .contact{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 18px;font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+  .contact a{text-decoration:none;border-bottom:1px solid var(--line)}
+  .contact a:hover{color:var(--ink);border-bottom-color:var(--signal)}
+
+  section{padding-top:24px}
+  h2{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-weight:500;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--signal);margin:0 0 14px}
+  h2::after{content:"";flex:1;height:1px;background:var(--rule)}
+  .summary{font-size:16px;color:var(--ink)}
+  .summary strong{font-weight:600}
+
+  .results{margin:0;padding:0;list-style:none}
+  .results li{position:relative;padding:0 0 10px 18px;color:var(--muted)}
+  .results li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--signal)}
+  .results li strong{color:var(--ink);font-weight:600}
+  .results li.lead{color:var(--ink)}
+
+  .entry{display:grid;grid-template-columns:150px minmax(0,1fr);gap:4px 22px;padding:12px 0;border-top:1px solid var(--rule)}
+  .entry:first-of-type{border-top:0;padding-top:0}
+  .when{font-family:var(--mono);font-size:11.5px;color:var(--signal);padding-top:3px}
+  .entry h3{font-size:16px;font-weight:600;letter-spacing:-.01em;margin:0}
+  .org{display:block;font-size:14.5px;color:var(--ink);margin:1px 0 6px}
+  .org span{color:var(--muted)}
+  .entry p{color:var(--muted);font-size:14.5px;margin:0 0 6px}
+  .entry ul{margin:2px 0 0;padding-left:18px;color:var(--muted);font-size:14.5px}
+  .entry li{margin-bottom:5px}
+  .entry li strong{color:var(--ink);font-weight:600}
+  .group-note{font-family:var(--mono);font-size:11px;color:var(--muted);margin:14px 0 4px;letter-spacing:.04em}
+
+  .pub{display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;padding:8px 0;font-size:14.5px}
+  .pub b{font-family:var(--mono);font-weight:400;font-size:11.5px;color:var(--signal);padding-top:2px}
+  .venue{font-style:italic;font-weight:500}
+  .meta{font-family:var(--mono);font-size:11px;color:var(--muted);display:block;margin-top:3px}
+  .sub{font-size:13px;font-weight:600;letter-spacing:-.005em;margin:16px 0 4px}
+
+  .skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 26px}
+  .skill h3{font-size:14.5px;font-weight:600;margin:0 0 4px;display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+  .skill h3 span{font-family:var(--mono);font-weight:400;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:1px 8px}
+  .skill h3 span.deep{color:var(--card);background:var(--ink);border-color:var(--ink)}
+  .skill h3 span.scoped{color:var(--signal);border-color:var(--signal)}
+  .skill p{font-family:var(--mono);font-size:11px;line-height:1.75;color:var(--muted);margin:0}
+  .legend{font-family:var(--mono);font-size:11px;color:var(--muted);margin:-4px 0 14px}
+
+  .two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 26px}
+  .facts{margin:0;padding:0;list-style:none;font-size:14.5px}
+  .facts li{margin-bottom:6px}
+  .facts li span{color:var(--muted)}
+
+  .labs{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 26px;font-size:14.5px}
+  .labs a{font-weight:600;text-decoration:none;border-bottom:1px solid var(--signal)}
+  .labs span{display:block;color:var(--muted);font-size:13.5px}
+
+  footer.cv-foot{margin-top:28px;padding-top:14px;border-top:1px solid var(--rule);font-family:var(--mono);font-size:11px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px 20px}
+
+  @media (prefers-color-scheme:dark){
+    :root{--ink:#ECE7DD; --paper:#0E1013; --card:#16191E; --tint:#1D2128; --line:#3A404A; --rule:#272B32; --muted:#A3A8B1; --signal:#FF7A55}
+    body{background:#0E1013}
+    .toolbar a.primary{color:#0E1013}
+    .toolbar a.primary:hover{color:#0E1013}
+    .sheet{box-shadow:0 30px 60px -36px rgba(0,0,0,.8)}
+  }
+  @media (max-width:680px){
+    .sheet{padding:30px 20px;border-radius:0;border-left:0;border-right:0;margin-top:14px}
+    .toolbar{padding:16px 16px 0}
+    .entry{grid-template-columns:1fr}
+    .skills,.two,.labs{grid-template-columns:1fr}
+  }
+  @page{size:A4;margin:14mm 14mm 14mm 14mm}
+  @media print{
+    :root{--ink:#121417; --paper:#fff; --card:#fff; --line:#CFC8BA; --rule:#DCD6C9; --muted:#4F535A; --signal:#B83A17}
+    body{background:#fff;font-size:8.9pt;line-height:1.38}
+    .toolbar{display:none}
+    .sheet{max-width:none;margin:0;padding:0;border:0;border-radius:0;box-shadow:none;background:#fff}
+    header{padding-bottom:12px}
+    h1{font-size:30pt;margin-bottom:6px}
+    .tagline{font-size:13pt;margin-bottom:8px}
+    .contact{font-size:7.8pt}
+    section{padding-top:11px}
+    h2{margin-bottom:8px;break-after:avoid}
+    .summary{font-size:9pt;margin-bottom:6px}
+    .entry{grid-template-columns:96px minmax(0,1fr);gap:2px 14px;padding:7px 0}
+    .entry h3,.org{break-after:avoid}
+    .entry li,.pub,.skill,.labs li{break-inside:avoid}
+    .entry h3{font-size:9.6pt}
+    .when{font-size:7.6pt}
+    .entry p,.entry ul,.org,.pub,.facts,.labs,.labs span{font-size:8.6pt}
+    .entry p{margin-bottom:3px}
+    .entry li{margin-bottom:2px}
+    .group-note{font-size:7.6pt;margin:8px 0 2px}
+    .pub{padding:3px 0;grid-template-columns:26px minmax(0,1fr)}
+    .sub{font-size:8.8pt;margin:9px 0 2px}
+    .skills,.two,.labs{gap:6px 20px}
+    .skill p{font-size:7.6pt;line-height:1.55}
+    .skill h3{font-size:8.9pt}
+    footer.cv-foot{margin-top:14px;font-size:7.6pt}
+  }
+</style>
+</head>
+<body>
+
+<nav class="toolbar" aria-label="CV actions">
+  <a href="index.html">&larr; Portfolio</a>
+  <a class="primary" href="assets/Sajjad_Hedayati_CV.pdf" download>Download PDF</a>
+</nav>
+
+<main class="sheet">
+  <header>
+    <p class="role-line">Operations research &amp; decision science &middot; Ghent, Belgium</p>
+    <h1>Sajjad <span class="alias">(Sam)</span> Hedayati</h1>
+    <p class="tagline">I build the model, <em>then the tool people run it in.</em></p>
+    <ul class="contact">
+      <li><a href="mailto:sajjad.hedayati@ugent.be">sajjad.hedayati@ugent.be</a></li>
+      <li><a href="https://hedayatis.github.io">hedayatis.github.io</a></li>
+      <li><a href="https://www.linkedin.com/in/sajjad-hedayati-13703725a">LinkedIn</a></li>
+      <li><a href="https://orcid.org/0000-0002-1008-6288">ORCID 0000-0002-1008-6288</a></li>
+      <li><a href="https://scholar.google.com/citations?user=vNrnIkoAAAAJ">Google Scholar</a></li>
+      <li><a href="https://github.com/hedayatis">GitHub</a></li>
+    </ul>
+  </header>
+
+  <section aria-labelledby="profile">
+    <h2 id="profile">Profile</h2>
+    <p class="summary">Operations researcher with <strong>around eight years of professional experience</strong>. I take operational problems that no off-the-shelf tool covers &mdash; capacity, inspection, scheduling and routing under uncertainty &mdash; formulate them, build the algorithm that makes them solvable at realistic size, and deliver the result as an application the people who own the decision can run themselves. Since 2022 I have done this as a project researcher with Ghent University and Flanders Make on an industrial partner&rsquo;s own data: the simulation and analytics tool I built there provided <strong>the key evidence behind Flanders Make&rsquo;s decision to continue funding the programme</strong>. Before that, three years in planning, industrial engineering and process consulting, presenting to boards and management teams.</p>
+    <p class="summary">Research focus: optimization under uncertainty for production and logistics planning &mdash; two-stage stochastic programming, exact and decomposition methods, and learning from data with provable guarantees. Three journal articles, including <em>Computers &amp; Operations Research</em> (2026); reviewer for three international OR journals.</p>
+  </section>
+
+  <section aria-labelledby="experience">
+    <h2 id="experience">Experience</h2>
+
+    <div class="entry">
+      <div class="when">Jan 2022 &ndash; present</div>
+      <div>
+        <h3>Project Researcher</h3>
+        <span class="org">Ghent University &amp; Flanders Make <span>&middot; Dept. of Industrial Systems Engineering and Product Design &middot; REMASC programme since Oct 2024</span></span>
+        <ul>
+          <li><strong>They had no tool for it; I built one, and it changed a funding decision.</strong> A discrete-event simulation and analytics application &mdash; a digital twin of the partner&rsquo;s cellular remanufacturing floor: stochastic failures, rework loops, WIP and spare-parts inventory, replenishment policies, resource utilisation, queues, operator-skill effects and cost &mdash; with automated scenario comparison of dispatching rules, staffing and shift schedules. Delivered as a self-service application so the partner&rsquo;s engineers could test changes themselves; it provided the key evidence behind Flanders Make&rsquo;s decision to continue funding the programme.</li>
+          <li><strong>Solved what the solver could not.</strong> Formulated inspection-station and capacity allocation as integer programmes, then built two Lagrangian relaxation approaches with greedy repair and hill-climbing search that return near-optimal plans with bounded gaps where the commercial solver stalls at the time limit; on the largest benchmark, runtime fell from 418.50 s to 23.31 s with the reported gap below 8%. Benchmarked against the exact solver and a problem-specific genetic algorithm; published in <em>Computers &amp; Operations Research</em> (2026).</li>
+          <li><strong>Made an intractable case exact.</strong> Derived an exact dynamic program for the uncapacitated case: identical optima on all 10,000 tested instances and an 8.6&times; average speedup at 100 stages, verified against an independent branch-and-bound implementation.</li>
+          <li><strong>Showed what modelling uncertainty is worth.</strong> On an independent holdout sample, the stochastic inspection plan cost 9.3% less than expected-value planning; a certified scenario reduction then cut 1,000 scenarios to 50 without giving back the tested out-of-sample result.</li>
+          <li><strong>Planned under uncertain supply.</strong> Multi-period disassembly planning and scheduling with uncertain return volumes and material condition: two-stage stochastic programming, sample average approximation with statistical gap bounds and scenario reduction, benchmarked against a deterministic model to quantify what the stochastic plan is actually worth.</li>
+          <li><strong>Priced a model&rsquo;s accuracy.</strong> Modelled how an imperfect condition-triage classifier propagates error into downstream throughput and cost, turning &ldquo;is this model good enough?&rdquo; into a figure a business can decide on.</li>
+          <li><strong>Made a learned optimizer replace a hand-tuned one.</strong> Trained a PPO agent to learn Lagrangian multiplier updates in place of hand-tuned subgradient schedules.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">Feb 2022 &ndash; present</div>
+      <div>
+        <h3>Teaching Assistant</h3>
+        <span class="org">Ghent University <span>&middot; Faculty of Engineering and Architecture</span></span>
+        <p>Run the exercise sessions for the full course <em>Probability, Quality Engineering and Industrial Statistics</em> and deliver theory lectures, hands-on in R: exploratory data analysis, hypothesis testing, regression, ANOVA, design of experiments, acceptance sampling, statistical process control, and process and measurement-system capability.</p>
+        <ul>
+          <li><strong>Co-supervisor, M.Sc. thesis (2025&ndash;2026):</strong> <em>A Learning-Based Approach to Lagrangian Relaxation in the Generalized Assignment Problem</em> &mdash; a graph neural network predicts the subgradient search direction and a reinforcement-learning agent corrects the Polyak step size, trained on small instances and transferred unchanged to larger ones; reduced multiplier oscillation and gave better final bounds.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">Sep &ndash; Dec 2021</div>
+      <div>
+        <h3>Visiting Researcher</h3>
+        <span class="org">Eindhoven University of Technology (TU/e) <span>&middot; OPAC group, host Prof. dr. Tom Van Woensel</span></span>
+        <p>Routing in city logistics and warehousing: joint order batching and picker routing, last-mile delivery with alternative locations, and mobile parcel lockers. Coursework with BETA, the Dutch research school for Operations Management &amp; Logistics. Led to two joint journal articles and a joint presentation at the 9th INFORMS TSL Workshop.</p>
+      </div>
+    </div>
+
+    <p class="group-note">Dec 2015 &ndash; Jul 2021 &middot; Tehran, Iran &middot; six positions, two of them concurrent, totalling three years and three months, in planning, industrial engineering and business-process analysis. Common thread: BPMN process modelling, SQL extraction and merging against production databases, R for analytics, and process optimization delivered in operating companies &mdash; from analysis through to implemented change.</p>
+
+    <div class="entry">
+      <div class="when">May &ndash; Jul 2021</div>
+      <div>
+        <h3>Business Analyst</h3>
+        <span class="org">APSAN Co</span>
+        <p>Process modelling and optimization, workflow and resource allocation, KPI definition and tracking; reported to the board.</p>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="when">Dec 2020 &ndash; Feb 2021</div>
+      <div>
+        <h3>Business Analyst / Process Consultant</h3>
+        <span class="org">Baroline</span>
+        <p>Feasibility studies, stakeholder workshops and process-reengineering proposals, followed through with technical teams.</p>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="when">Jun &ndash; Nov 2019</div>
+      <div>
+        <h3>Industrial Engineer</h3>
+        <span class="org">Hacoupian <span>&middot; garment manufacturer</span></span>
+        <p>Bottleneck identification on a live garment production floor and process optimization at head office; analysis reported to the board.</p>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="when">Apr 2018 &ndash; Jun 2019</div>
+      <div>
+        <h3>Planning Specialist</h3>
+        <span class="org">SmartComm <span>&middot; start-up</span></span>
+        <p>Owned project planning, timetabling and scheduling across competing teams; business-model revision and budget management.</p>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="when">Dec 2015 &ndash; Nov 2016</div>
+      <div>
+        <h3>Business Process Analyst</h3>
+        <span class="org">SarvRayaneh</span>
+        <p>Process modelling and improvement; contributed to building an internal workflow platform and designed the data relationships behind its reporting.</p>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="when">Feb &ndash; Sep 2016</div>
+      <div>
+        <h3>Business Process Analyst</h3>
+        <span class="org">Entekhab Group <span>&middot; petrochemical facility &middot; alongside SarvRayaneh</span></span>
+        <p>Process designer on a SAP Materials Management implementation: blueprinted the procurement, material-flow and stock-movement processes, settled with the business before they were built into the system. Process design, not configuration.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="research">
+    <h2 id="research">Research contributions</h2>
+    <div class="entry">
+      <div class="when">Scenario reduction</div>
+      <div>
+        <h3>Stochastic programming and certified scenario reduction</h3>
+        <ul>
+          <li>Two-stage stochastic integer programs for inspection allocation, solved by sample average approximation and L-shaped / Benders decomposition with statistical optimality-gap estimation.</li>
+          <li>A scenario-reduction certificate: a computable bound on the error of a reduced scenario set that holds uniformly over all first-stage decisions, with stratified sampling, robust variants and scalability studies.</li>
+          <li>A contextual extension in which scenario reduction and plans depend on observed covariates.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="when">Current line</div>
+      <div>
+        <h3>Learning decision-dependent feasible sets</h3>
+        <ul>
+          <li>Two-stage programs whose recourse domain depends on the first-stage decision and on an unknown contextual parameter: proved existence, lower semicontinuity and stability, and showed that a single-sided indicator formulation is exact for threshold activation.</li>
+          <li>Estimated the domain with honest random forests and nearest neighbours, with finite-sample optimality bounds, activation recovery under a margin condition, and a calibration that certifies an inner domain; synthetic study over 720 data sets.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="when">Exact methods</div>
+      <div>
+        <h3>Allocation and scheduling</h3>
+        <ul>
+          <li>Integer programming formulations for inspection-station allocation with delayed inspection, strengthened by valid inequalities, lazy cuts and warm starts; two Lagrangian relaxations with dual-guided repair and local search.</li>
+          <li>An exact dynamic-programming algorithm for the uncapacitated variant, with correctness proof.</li>
+          <li>Stochastic lot-sizing and scheduling for quality-differentiated disassembly (logic-based Benders).</li>
+        </ul>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="when">Logistics</div>
+      <div>
+        <h3>Logistics and warehousing <span style="font-weight:400;color:var(--muted)">&middot; with TU/e and Cardiff University</span></h3>
+        <ul>
+          <li>Joint order batching and picker routing with alternative pick locations, modelled as a clustered generalized vehicle routing problem; two MILP formulations and a cost-matrix rule for rectangular warehouses; instances up to 180 nodes.</li>
+          <li>Re-supplying autonomous mobile parcel lockers: meeting-point selection and truck routing with multiple time windows and time-dependent parking costs, solved by cluster-based simulated annealing on a new benchmark set generated from Solomon data and validated against CPLEX.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="education">
+    <h2 id="education">Education</h2>
+    <div class="entry">
+      <div class="when">Jan 2022 &ndash; Dec 2026</div>
+      <div>
+        <h3>Ph.D. Industrial Engineering</h3>
+        <span class="org">Ghent University <span>&middot; Faculty of Engineering and Architecture</span></span>
+        <p>Thesis: <em>Stochastic Optimization Models for Allocation of Quality Inspection in Flexible Assembly</em>, within the Flanders Make REMASC programme on remanufacturing. Supervisors: Prof. dr. ir. Stijn De Vuyst and Prof. dr. Birger Raa. Internal defence December 2026; public defence expected January/February 2027.</p>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="when">Sep 2018 &ndash; Dec 2021</div>
+      <div>
+        <h3>Doctoral studies, Industrial Engineering</h3>
+        <span class="org">K. N. Toosi University of Technology <span>&middot; Tehran</span></span>
+        <p>Program not completed. Thesis project: <em>Vehicle Routing Problem with Non-Stationary Demand Points</em>, under Prof. dr. Mostafa Setak. The routing and warehousing work of this period was completed and published with Prof. Tom Van Woensel (TU/e) and Prof. Emrah Demir (Cardiff University).</p>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="when">Sep 2014 &ndash; Feb 2017</div>
+      <div><h3>M.Sc. Industrial Engineering</h3><span class="org">University of Tehran</span></div>
+    </div>
+    <div class="entry">
+      <div class="when">Sep 2009 &ndash; Sep 2013</div>
+      <div><h3>B.Sc. Industrial Engineering</h3><span class="org">Shahid Beheshti University of Medical Sciences <span>&middot; Tehran</span></span></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="publications">
+    <h2 id="publications">Publications</h2>
+    <p class="sub">Journal articles</p>
+    <div class="pub"><b>J1</b><div>Hedayati, S., De Vuyst, S., Raa, B. (2026). Inspection station allocation in a production line with delayed inspection. <span class="venue">Computers &amp; Operations Research</span>, 194, 107588.<span class="meta"><a href="https://doi.org/10.1016/j.cor.2026.107588">doi:10.1016/j.cor.2026.107588</a> &middot; Web of Science indexed &middot; UGent class A1</span></div></div>
+    <div class="pub"><b>J2</b><div>Hedayati, S., Setak, M., Demir, E., Van Woensel, T. (2024). A new approach to the joint order batching and picker routing problem with alternative locations. <span class="venue">IMA Journal of Management Mathematics</span>, 35(2), 241&ndash;265. Oxford University Press.</div></div>
+    <div class="pub"><b>J3</b><div>Hedayati, S., Setak, M., Van Woensel, T., Demir, E. (2024). Re-supplying autonomous mobile parcel lockers in last-mile distribution. <span class="venue">Future Transportation</span>, 4(4), 1266&ndash;1296. MDPI.</div></div>
+
+    <p class="sub">Manuscripts in preparation</p>
+    <div class="pub"><b>M1</b><div>Hedayati, S., De Vuyst, S. Learning decision-dependent recourse domains in two-stage stochastic programming.</div></div>
+    <div class="pub"><b>M2</b><div>With S. De Vuyst: certified scenario reduction for stochastic inspection allocation.</div></div>
+    <div class="pub"><b>M3</b><div>With S. De Vuyst: contextual scenario reduction.</div></div>
+    <div class="pub"><b>M4</b><div>With S. De Vuyst: stochastic lot-sizing and scheduling for quality-graded disassembly.</div></div>
+
+    <p class="sub">Conference contributions</p>
+    <div class="pub"><b>C1</b><div>Hedayati, S., De Vuyst, S., Raa, B. (2026). Dynamic programming for inspection station allocation in production lines. <span class="venue">ORBEL 40</span>, pp. 230&ndash;232.</div></div>
+    <div class="pub"><b>C2</b><div>Hedayati, S., De Vuyst, S. (2025). Stochastic lot-sizing and scheduling for quality-differentiated disassembly. <span class="venue">IWLS 2025, 15th International Workshop on Lot Sizing</span>, pp. 73&ndash;76.</div></div>
+    <div class="pub"><b>C3</b><div>Hedayati, S., De Vuyst, S. (2025). Dynamic stochastic modeling and optimization of scheduling and quality inspection in re-manufacturing systems. <span class="venue">Flanders Make Scientific Conference</span>, Leuven.</div></div>
+    <div class="pub"><b>C4</b><div>Hedayati, S., De Vuyst, S. (2025). Stochastic scheduling and quality inspection in remanufacturing systems. <span class="venue">FEARS 2025</span>, Ghent.<span class="meta"><a href="https://doi.org/10.5281/zenodo.17435277">doi:10.5281/zenodo.17435277</a></span></div></div>
+    <div class="pub"><b>C5</b><div>Hedayati, S., De Vuyst, S., Raa, B. (2022). Allocation of inspection stations in a multi-product serial assembly line with delayed inspection. <span class="venue">FEARS 2022</span>, Ghent.<span class="meta"><a href="https://doi.org/10.5281/zenodo.7406064">doi:10.5281/zenodo.7406064</a></span></div></div>
+    <div class="pub"><b>C6</b><div>Hedayati, S., De Vuyst, S., Raa, B. (2022). Optimal inspection allocation efforts with inspection intervals in flexible multi-stage manufacturing systems. <span class="venue">NOMLC 2022, Netherlands Operations Management and Logistics Conference</span>.</div></div>
+    <div class="pub"><b>C7</b><div>ZahediSeresht, M., Hedayati, S. (2022). Dynamic capacitated lot sizing and disassembly under yield uncertainty. <span class="venue">CORS/INFORMS International Conference</span>, Vancouver, 5&ndash;8 June 2022.</div></div>
+    <div class="pub"><b>C8</b><div>Hedayati, S., Setak, M., Demir, E., Van Woensel, T. (2021). An application of the clustered generalized vehicle routing problem: order consolidation for e-tailers. <span class="venue">9th INFORMS Transportation Science and Logistics Society Workshop</span> (virtual), 13&ndash;15 December 2021.</div></div>
+
+    <p class="sub">Academic service</p>
+    <p class="pub" style="display:block">Peer reviewer for <span class="venue">IMA Journal of Management Mathematics</span> (2025, reviewer certificate awarded), <span class="venue">Journal of Heuristics</span> and <span class="venue">OR Spectrum</span>.</p>
+  </section>
+
+  <section aria-labelledby="projects">
+    <h2 id="projects">Research projects</h2>
+    <div class="entry">
+      <div class="when">Oct 2024 &ndash; present</div>
+      <div>
+        <h3>REMASC <span style="font-weight:400;color:var(--muted)">&middot; Flanders Make with Ghent University</span></h3>
+        <p>Prediction &amp; management of the &lsquo;reverse&rsquo; remanufacturing supply chain: scheduling, quality simulation and predictive analytics for disassembly and remanufacturing.</p>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="when">Jan 2022 &ndash; present</div>
+      <div>
+        <h3>Doctoral project <span style="font-weight:400;color:var(--muted)">&middot; Ghent University</span></h3>
+        <p>Stochastic optimization models for allocation of quality inspection in flexible assembly.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="skills">
+    <h2 id="skills">What I build with</h2>
+    <p class="legend">Deep &mdash; published, benchmarked and defended &middot; Working &mdash; used in delivery &middot; Scoped &mdash; exactly the stated extent</p>
+    <div class="skills">
+      <div class="skill"><h3>Optimization models <span class="deep">Deep</span></h3><p>Mixed-integer and integer programming &middot; valid inequalities, lazy constraints and callbacks, warm starts &middot; branch-and-bound &middot; Gurobi (gurobipy), CPLEX, AMPL, HiGHS</p></div>
+      <div class="skill"><h3>Algorithms that scale <span class="deep">Deep</span></h3><p>Lagrangian relaxation with dual-guided repair heuristics &middot; Benders / L-shaped decomposition &middot; exact dynamic programming &middot; simulated annealing, genetic algorithms, differential evolution, large-neighbourhood and local search</p></div>
+      <div class="skill"><h3>Under uncertainty <span class="deep">Deep</span></h3><p>Two-stage stochastic programming &middot; sample average approximation with statistical optimality-gap bounds &middot; scenario generation and reduction &middot; decision-dependent uncertainty</p></div>
+      <div class="skill"><h3>Simulation <span class="deep">Deep</span></h3><p>Discrete-event simulation (SimPy, R simmer) &middot; simulation&ndash;optimization &middot; design of experiments</p></div>
+      <div class="skill"><h3>Tools people run <span>Working</span></h3><p>Python (pandas, NumPy, SciPy, scikit-learn, multiprocessing, Tkinter) &middot; R (since 2015) &middot; SQL &middot; DuckDB &middot; Git &middot; LaTeX &middot; reproducible experiment pipelines &middot; self-service decision applications with automated scenario comparison, built for non-specialists</p></div>
+      <div class="skill"><h3>Process and quality <span>Working</span></h3><p>BPMN and process design &middot; statistical process control, process capability, acceptance sampling &middot; ISO 9001, ISO 14001, OHSAS 18001 Lead Implementer &middot; PMBOK</p></div>
+      <div class="skill"><h3>Learning for OR <span class="scoped">Scoped</span></h3><p>Reinforcement learning (PPO, custom Gym environments) controlling an optimizer&rsquo;s parameters &middot; graph neural networks for combinatorial optimization (supervised thesis) &middot; nonparametric estimation (nearest neighbours, honest forests) &middot; prescriptive and contextual models</p></div>
+      <div class="skill"><h3>ERP process design <span class="scoped">Scoped</span></h3><p>SAP Materials Management process blueprinting on one six-month implementation; process design, not configuration</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="labs">
+    <h2 id="labs">Public labs and open tools</h2>
+    <ul class="labs">
+      <li><a href="https://ripple-optimization-lab-ixsdhfedbevujnmwyqq6qh.streamlit.app/">RIPPLE Optimization Lab</a><span>Stochastic MILP demonstrator for recovery planning under uncertain yield and demand (HiGHS, CVaR option).</span></li>
+      <li><a href="https://isapdi-simulation-lab.onrender.com">ISAPDI Simulation Lab</a><span>Interactive inspection-allocation and production-line simulation.</span></li>
+      <li><a href="https://hedayatis.github.io/retail-analytics-lab/">Retail Analytics Lab</a><span>Auditable pipeline over 1,067,371 transaction lines; Python, SQL/DuckDB and R with output parity and 60 passing tests.</span></li>
+      <li><a href="https://github.com/hedayatis/overleaf-revmode-template">RevMode for LaTeX</a><span>Open-source, MIT-licensed single-source manuscript revision workflow.</span></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="more">
+    <h2 id="more">Languages and certification</h2>
+    <div class="two">
+      <ul class="facts">
+        <li>Persian <span>&mdash; native</span></li>
+        <li>English <span>&mdash; full professional proficiency</span></li>
+        <li>Dutch <span>&mdash; B1+, certified by the University Language Centre (UCT), Ghent University</span></li>
+      </ul>
+      <ul class="facts">
+        <li>ISO 9001 Foundation <span>&mdash; Quality</span></li>
+        <li>ISO 14001 <span>&mdash; Environmental Management Systems</span></li>
+        <li>OHSAS 18001 Lead Implementer <span>&mdash; Health &amp; Safety</span></li>
+        <li>PMBOK &middot; Microsoft Project</li>
+      </ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="refs">
+    <h2 id="refs">References</h2>
+    <p class="summary">Available on request &mdash; including both Ph.D. supervisors at Ghent University and co-authors at Eindhoven University of Technology and Cardiff University.</p>
+  </section>
+
+  <footer class="cv-foot">
+    <span>Sajjad (Sam) Hedayati &middot; Ghent, Belgium &middot; sajjad.hedayati@ugent.be</span>
+    <span>CV &mdash; v1.0 (web) &middot; October 2026</span>
+  </footer>
+</main>
+
+</body>
+</html>
