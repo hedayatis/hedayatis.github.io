@@ -166,7 +166,7 @@ The current version is stamped in the page footer.
 
 ## Revision and validation
 
-Current revision: **4.1**. The existing two-part website revision convention is
+Current revision: **4.2**. The existing two-part website revision convention is
 preserved in `VERSION`, the footer, and `CHANGELOG.md`.
 
 Revision 4.0 is a full rebrand: new visual identity, builder positioning, and a

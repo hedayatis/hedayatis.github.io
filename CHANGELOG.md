@@ -1,5 +1,21 @@
 # Changelog
 
+## [4.2] - 2026-10-26
+
+**Status:** release
+
+### Fixed
+
+- Conference contributions: eight peer-reviewed, not six. The headline
+  figure and the publications list now include CORS/INFORMS International
+  Conference 2022 and the 9th INFORMS TSL Workshop 2021, matching the
+  academic CV (confirmed by Sam, 26 October 2026). The CV page states the
+  count and labels the list peer-reviewed (CV v1.1, PDF regenerated).
+
+### Validation
+
+- `python -B -m unittest discover -s tests -v`: 12/12 passed.
+
 ## [4.1] - 2026-10-26
 
 **Status:** release
