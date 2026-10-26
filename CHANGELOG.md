@@ -1,5 +1,55 @@
 # Changelog
 
+## [4.0] - 2026-10-26
+
+**Status:** release
+
+### Added
+
+- Lead the page with the strongest verified result: the simulation tool that
+  provided the key evidence behind Flanders Make's decision to continue funding
+  the programme, with a spec sheet of what was built and how it was delivered.
+- Builder positioning in the masthead: "I build the model, then the tool people
+  run it in."
+- A sticky section bar, a route-to-decision brand mark and favicon, a numbered
+  section system, and a hero schematic that draws one route through a candidate
+  set. The schematic shows the shape of the problem, not a result.
+- A headline-figures strip, a GitHub profile link, and a closing contact band.
+- Regression checks that the funding result leads the page, that the source
+  stays pure ASCII, and that no availability, permit or job-seeking wording
+  reaches the public page.
+
+### Changed
+
+- Replace the v3.8 identity with a new brand system: warm paper, near-black ink
+  and one vermilion signal colour; Instrument Serif, Inter and JetBrains Mono.
+- Redesign every section: outcome cards with large figures, numbered lab cards,
+  a two-column capability grid, a timeline, numbered publications.
+- Recolour all existing hand-drawn schematics and journal-paper animations to
+  the new palette without redrawing them.
+- Reword "dashboards" as self-service reporting and decision tools, matching
+  the builder positioning.
+
+### Fixed
+
+- The process-analytics capability claimed "six years inside operations"; the
+  verified record is six positions totalling three years and three months. The
+  card now says "six positions in operating companies", consistent with the
+  track record.
+
+### Validation
+
+- `python -B -m unittest discover -s tests -v`: 11/11 passed.
+- Rendered in Chromium at 1440 px (light and dark) and 390 px: fonts load, no
+  console errors, no horizontal overflow.
+- Text and accent pairings measure at least 4.66:1 contrast in light mode and
+  6.28:1 in dark mode.
+
+### Compatibility
+
+- Every external link, lab card id and anchor from 3.8 is preserved. The page
+  remains a single self-contained HTML file with no JavaScript or build step.
+
 ## [3.8] - 2026-09-02
 
 **Status:** release

@@ -1,7 +1,7 @@
 # Sajjad (Sam) Hedayati
 
-Operations research, optimization, simulation and decision support for
-manufacturing and logistics. Ghent, Belgium.
+Operations research and decision science for manufacturing and logistics.
+I build the model, then the tool people run it in. Ghent, Belgium.
 
 This repository serves my profile page:
 **[hedayatis.github.io](https://hedayatis.github.io)**
@@ -17,9 +17,12 @@ This repository serves my profile page:
 
 A one-page, LinkedIn-ready portfolio of my work in operations research: exact
 and stochastic optimization, discrete-event simulation, and the decision tools
-built on top of them. It shows the problems I have worked on -- inspection
-allocation, warehouse and marketplace routing, mobile parcel-locker resupply,
-and remanufacturing planning -- with compact schematics and measured outcomes.
+built on top of them. It opens with the result that matters most -- a
+simulation tool I built provided the key evidence behind Flanders Make's
+decision to continue funding its remanufacturing programme -- then shows the
+problems I have worked on -- inspection allocation, warehouse and marketplace
+routing, mobile parcel-locker resupply, and remanufacturing planning -- with
+compact schematics and measured outcomes.
 
 ## RIPPLE Optimization Lab
 
@@ -133,13 +136,17 @@ Deliberately simple, and kept that way:
 - **CSS-only animation.** The journal-paper schematics run a single slow,
   staged choreography per scene; `prefers-reduced-motion` renders the completed
   state statically instead.
-- **Personal typography:** Fraunces gives the name, thesis statement and book
-  title a distinctive editorial signature; Manrope carries technical headings,
-  Source Serif 4 keeps long research text readable, and IBM Plex Mono labels
-  metrics and evidence.
-- **Complete dark mode:** a midnight ink-blue system with high-contrast teal and
-  brass accents follows the visitor's operating-system preference, including
-  technical drawings and browser chrome.
+- **Brand system:** warm paper, near-black ink and a single vermilion signal
+  colour. Instrument Serif carries the name, the statements and every large
+  number; Inter carries reading text and headings; JetBrains Mono labels
+  evidence, sources and data. A route-to-decision mark doubles as the favicon.
+- **Complete dark mode:** a graphite system with a brighter vermilion signal
+  follows the visitor's operating-system preference, including technical
+  drawings and browser chrome. Every text and accent pairing clears WCAG AA
+  in both themes.
+- **Zero-JavaScript motion:** the hero draws one route through a candidate set,
+  sections reveal on scroll where the browser supports scroll-driven animation,
+  and all of it is disabled under `prefers-reduced-motion`.
 - **Print-aware.** A print stylesheet turns the dark bands white so the page
   exports cleanly to PDF.
 - **Plain ASCII source.** Special characters are written as HTML entities so the
@@ -151,12 +158,13 @@ The current version is stamped in the page footer.
 
 ## Revision and validation
 
-Current revision: **3.8**. The existing two-part website revision convention is
+Current revision: **4.0**. The existing two-part website revision convention is
 preserved in `VERSION`, the footer, and `CHANGELOG.md`.
 
-The book closes the portfolio immediately above the footer; all other sections
-retain their existing order. Revision 3.8 changes only the visual identity and
-theme behavior, not the published research content or links.
+Revision 4.0 is a full rebrand: new visual identity, builder positioning, and a
+page that leads with the funding-decision result. Every lab link, publication
+and measured outcome carries over unchanged; the book still closes the
+portfolio immediately above the footer.
 
 Run the dependency-free static checks from the repository root:
 
