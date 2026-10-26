@@ -4,190 +4,219 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="description" content="Sajjad (Sam) Hedayati &mdash; operations research, optimization and simulation for manufacturing and logistics, with measured gains in cost, runtime and decision quality.">
-<title>Sajjad (Sam) Hedayati &mdash; Optimization &amp; Simulation</title>
+<meta name="description" content="Sajjad (Sam) Hedayati &mdash; operations research and decision science. I build the model, then the tool people run it in: optimization, simulation and decision tools for manufacturing and logistics.">
+<title>Sajjad (Sam) Hedayati &mdash; I build the model, then the tool</title>
 <link rel="canonical" href="https://hedayatis.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23121417'/%3E%3Cpath d='M8 23c4 0 4-7 8-7s4-7 8-7' fill='none' stroke='%23F4F1EA' stroke-width='2.2' stroke-linecap='round'/%3E%3Ccircle cx='8' cy='23' r='2.6' fill='%23F4F1EA'/%3E%3Ccircle cx='24' cy='9' r='3' fill='%23FF7A55'/%3E%3C/svg%3E">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://hedayatis.github.io/">
-<meta property="og:title" content="Sajjad (Sam) Hedayati &mdash; Optimization &amp; Simulation">
-<meta property="og:description" content="Operations research and decision tools for manufacturing and logistics, backed by measured computational outcomes.">
+<meta property="og:title" content="Sajjad (Sam) Hedayati &mdash; I build the model, then the tool people run it in">
+<meta property="og:description" content="Operations research and decision science for manufacturing and logistics: optimization, simulation and self-service decision tools, backed by published, measured results.">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/63190657?v=4">
 <meta property="og:image:alt" content="Sajjad (Sam) Hedayati">
 <meta name="twitter:card" content="summary">
-<meta name="theme-color" content="#10222C" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#071419" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F4F1EA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1013" media="(prefers-color-scheme: dark)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+  /* ---------- brand tokens ---------- */
   :root{
-    --ink:#10222C; --petrol:#0B4F6C; --petrol-soft:#3D7C97; --brass:#A97A22;
-    --paper:#ECEFF0; --card:#FFFFFF; --tint:#E9F1F4; --rule:#B9C3C9; --muted:#56676F;
-    --signature:"Fraunces",Georgia,"Times New Roman",serif;
-    --display:"Manrope","Helvetica Neue",Arial,sans-serif;
-    --body:"Source Serif 4",Georgia,"Times New Roman",serif;
-    --mono:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;
+    --ink:#121417; --paper:#F4F1EA; --card:#FBFAF6; --tint:#ECE7DC; --line:#CFC8BA;
+    --rule:#DCD6C9; --muted:#5B5F67; --signal:#B83A17; --signal-wash:#F6E3DA;
+    --deep:#111316; --deep-2:#181B1F; --deep-text:#ECE7DD; --deep-muted:#A2A6AD; --deep-rule:#2C3036; --deep-signal:#FF7A55;
+    --display:"Instrument Serif","Iowan Old Style",Georgia,"Times New Roman",serif;
+    --sans:"Inter","Helvetica Neue",Arial,sans-serif;
+    --mono:"JetBrains Mono","SFMono-Regular",Consolas,monospace;
   }
   *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%;color-scheme:light dark}
-  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
-  .wrap{max-width:900px;margin:0 auto;padding:0 26px}
-
-  .masthead{background:linear-gradient(135deg,#10222C 0%,#0A3545 100%);color:#E7EDF0;padding:54px 0 40px}
-  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin:0 0 18px}
-  .masthead h1{font-family:var(--signature);font-weight:600;font-optical-sizing:auto;font-size:clamp(40px,7.7vw,66px);line-height:.98;letter-spacing:-.025em;margin:0 0 16px}
-  .name-alias{font-style:italic;font-weight:500;color:#D5A84F;font-size:.76em;white-space:nowrap}
-  .lede{font-size:clamp(17px,2.3vw,20px);max-width:47ch;margin:0 0 26px;color:#C7D5DB}
-  .contact{font-family:var(--mono);font-size:12.5px;line-height:2;color:#A9BBC4;border-top:1px solid rgba(255,255,255,.16);padding-top:16px}
-  .contact a{color:#CFE0E7;text-decoration:none;border-bottom:1px solid rgba(207,224,231,.35)}
-  .contact a:hover{color:#fff;border-bottom-color:#fff}
-  .sep{color:#5E7480;padding:0 8px}
-
-  .thesis{background:var(--card);border-bottom:1px solid var(--rule);padding:46px 0 40px}
-  .claim{font-family:var(--signature);font-weight:600;font-optical-sizing:auto;font-size:clamp(25px,3.8vw,35px);line-height:1.2;letter-spacing:-.018em;margin:0 0 16px;max-width:25ch}
-  .gloss{margin:0;max-width:60ch;color:var(--muted)}
-
-  .flow{display:flex;align-items:stretch;margin:34px 0 0;flex-wrap:wrap}
-  .stage{flex:1 1 118px;background:var(--tint);border:1px solid var(--rule);padding:13px 12px;min-width:118px}
-  .stage b{font-family:var(--display);font-weight:600;font-size:15px;color:var(--petrol);display:block;line-height:1.2}
-  .stage span{font-family:var(--mono);font-size:10.5px;color:var(--muted);display:block;margin-top:6px;line-height:1.6}
-  .stage.out{background:var(--ink);border-color:var(--ink)}
-  .stage.out b{color:#fff}
-  .stage.out span{color:#9FB4BE}
-  .chev{align-self:center;color:var(--brass);font-family:var(--mono);font-size:15px;padding:0 8px}
-  .loop{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--brass);margin-top:10px}
-  .ledger{font-family:var(--mono);font-size:12px;letter-spacing:.03em;color:var(--petrol);margin-top:26px;padding-top:14px;border-top:1px solid var(--rule)}
-
-  .impact{background:#F5F8F9;border-bottom:1px solid var(--rule)}
-  .impact-intro{color:var(--muted);max-width:67ch;margin:0 0 24px}
-  .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
-  .metric{background:var(--card);padding:22px;display:flex;flex-direction:column;min-height:230px}
-  .metric-value{font-family:var(--display);font-size:36px;font-weight:700;line-height:1;color:var(--petrol);letter-spacing:-.025em;margin:0 0 7px}
-  .metric h3{font-size:17px;color:var(--ink);margin:0 0 9px}
-  .metric p{font-size:14.5px;color:var(--muted);margin:0 0 14px}
-  .metric-source{font-family:var(--mono);font-size:10.5px;line-height:1.5;color:var(--brass);margin-top:auto;text-transform:uppercase;letter-spacing:.05em}
-  .evidence-note{font-family:var(--mono);font-size:11px;line-height:1.65;color:var(--muted);margin:17px 0 0}
-
-
-  .lab-section{background:#E2ECEF;border-bottom:1px solid var(--rule)}
-  .lab-shell{background:var(--card);border:1px solid var(--rule);border-top:4px solid var(--petrol);padding:26px}
-  .lab-shell + .lab-shell{margin-top:22px}
-  .lab-head + .lab-actions{margin-top:22px}
-  .lab-shell[id]{scroll-margin-top:24px}
-  .lab-head{display:grid;grid-template-columns:1fr auto;gap:22px;align-items:start}
-  .lab-status{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--brass);border:1px solid var(--brass);padding:5px 8px;white-space:nowrap}
-  .lab-title{font-family:var(--display);font-size:clamp(27px,4vw,38px);line-height:1.05;color:var(--ink);margin:4px 0 10px}
-  .lab-lede{color:var(--muted);max-width:61ch;margin:0}
-  .lab-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:24px 0 18px}
-  .lab-step{background:#F7FAFB;padding:16px}
-  .lab-step b{font-family:var(--display);font-size:17px;color:var(--petrol);display:block}
-  .lab-step span{font-family:var(--mono);font-size:10.5px;line-height:1.55;color:var(--muted)}
-  .lab-kpis{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}
-  .lab-kpis span{font-family:var(--mono);font-size:10.5px;color:var(--ink);background:var(--tint);border:1px solid var(--rule);padding:6px 8px}
-  .lab-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-  .lab-button{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;background:var(--petrol);color:#fff;padding:11px 15px;border:1px solid var(--petrol)}
-  .lab-button:hover{background:var(--ink);border-color:var(--ink)}
-  .lab-button.secondary{background:transparent;color:var(--petrol)}
-  .lab-button.secondary:hover{background:var(--tint);border-color:var(--ink);color:var(--ink)}
-  .lab-note{font-family:var(--mono);font-size:10.5px;color:var(--muted)}
-  .book-section{background:var(--ink);color:#D8E3E7;border-bottom:1px solid #071820}
-  .book-section h2{color:#D5A84F}
-  .book-section .h2rule{background:#D8E3E7}
-  .book-card{display:grid;grid-template-columns:minmax(190px,248px) 1fr;gap:34px;align-items:center}
-  .book-cover-link{display:block;background:#fff;border:1px solid rgba(255,255,255,.22);box-shadow:0 16px 34px rgba(0,0,0,.24);line-height:0}
-  .book-cover{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover}
-  .book-kicker{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#D5A84F;margin:0 0 12px}
-  .book-title{font-family:var(--signature);font-size:clamp(30px,4.7vw,44px);font-weight:600;line-height:1.04;letter-spacing:-.02em;color:#fff;margin:0 0 10px}
-  .book-subtitle{font-family:var(--body);font-size:18px;line-height:1.45;color:#BFD0D7;margin:0 0 18px;max-width:42ch}
-  .book-description{color:#AFC1C9;max-width:56ch;margin:0 0 18px}
-  .book-meta{font-family:var(--mono);font-size:11px;line-height:1.7;letter-spacing:.04em;text-transform:uppercase;color:#839AA5;margin:0 0 23px}
-  .book-actions{display:flex;gap:10px;flex-wrap:wrap}
-  .book-button{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid #D5A84F;padding:11px 15px;color:#10222C;background:#D5A84F}
-  .book-button:hover{background:#E4BC6B;border-color:#E4BC6B}
-  .book-button.secondary{color:#D8E3E7;background:transparent;border-color:#627B87}
-  .book-button.secondary:hover{color:#fff;border-color:#D8E3E7}
-
-  section{padding:46px 0}
-  h2{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin:0 0 4px}
-  .h2rule{height:2px;background:var(--ink);width:34px;margin-bottom:24px}
-  h3{font-family:var(--display);font-weight:600;font-size:20px;letter-spacing:-.005em;margin:0 0 6px;color:var(--petrol)}
+  html{-webkit-text-size-adjust:100%;color-scheme:light dark;scroll-behavior:smooth;scroll-padding-top:72px}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  a{color:inherit}
   p{margin:0 0 12px}
+  a:focus-visible,input:focus-visible+label{outline:2px solid var(--signal);outline-offset:3px}
+  ::selection{background:var(--signal);color:#fff}
 
-  .legend{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin:-12px 0 24px;line-height:1.9}
-  .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--petrol);border-radius:2px;padding:2px 7px;color:var(--petrol);background:var(--tint);white-space:nowrap}
-  .tag.work{border-color:var(--rule);color:var(--muted);background:#F5F8F9}
-  .tag.scoped{border-color:var(--brass);color:var(--brass);background:#FBF6EC}
-  .area{background:var(--card);border:1px solid var(--rule);border-left:3px solid var(--petrol);padding:20px 22px;margin-bottom:12px}
-  .head{display:flex;gap:12px;align-items:flex-start}
-  .icon{flex:0 0 30px;width:30px;height:30px;margin-top:2px}
-  .icon svg{width:30px;height:30px;display:block}
+  /* ---------- top bar ---------- */
+  .topbar{position:sticky;top:0;z-index:20;background:rgba(244,241,234,.86);-webkit-backdrop-filter:saturate(1.4) blur(12px);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--rule)}
+  .topbar-in{display:flex;align-items:center;justify-content:space-between;gap:24px;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;font-size:15px;letter-spacing:-.01em;white-space:nowrap}
+  .brand svg{width:28px;height:28px;display:block}
+  .mk-bg{fill:var(--ink)} .mk-ln{stroke:var(--paper)} .mk-d1{fill:var(--paper)} .mk-d2{fill:#FF7A55}
+  .navlinks{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+  .navlinks::-webkit-scrollbar{display:none}
+  .navlinks a{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--muted);padding:8px 10px;border-radius:999px;white-space:nowrap}
+  .navlinks a:hover{color:var(--ink);background:var(--tint)}
+
+  /* ---------- hero ---------- */
+  .hero{padding:76px 0 64px;border-bottom:1px solid var(--rule);background:radial-gradient(1100px 520px at 88% -10%,rgba(184,58,23,.07),transparent 60%),var(--paper)}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.9fr);gap:56px;align-items:center}
+  .kicker{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 26px}
+  .kicker .dot{width:8px;height:8px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 4px var(--signal-wash)}
+  .hero h1{font-family:var(--display);font-weight:400;font-size:clamp(54px,8.6vw,112px);line-height:.92;letter-spacing:-.025em;margin:0 0 26px}
+  .name-alias{font-style:italic;color:var(--signal);font-size:.62em;white-space:nowrap;letter-spacing:-.01em}
+  .statement{font-family:var(--display);font-size:clamp(28px,3.6vw,42px);line-height:1.08;letter-spacing:-.015em;margin:0 0 20px;max-width:20ch}
+  .statement em{color:var(--signal)}
+  .lede{font-size:clamp(17px,1.7vw,19px);color:var(--muted);max-width:52ch;margin:0 0 30px}
+  .cta{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 34px}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;background:var(--ink);color:var(--paper);padding:14px 20px;border:1px solid var(--ink);border-radius:999px;transition:background .2s,color .2s,border-color .2s}
+  .btn:hover{background:var(--signal);border-color:var(--signal);color:#fff}
+  .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+  .btn.ghost:hover{border-color:var(--ink);background:var(--card);color:var(--ink)}
+  .btn .arr{transition:transform .2s}
+  .btn:hover .arr{transform:translateX(3px)}
+  .contact{list-style:none;margin:0;padding:18px 0 0;border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:6px 22px;font-family:var(--mono);font-size:12.5px}
+  .contact a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:1px}
+  .contact a:hover{color:var(--ink);border-bottom-color:var(--signal)}
+  .hero-fig{margin:0;background:var(--card);border:1px solid var(--rule);border-radius:18px;padding:18px 18px 14px;box-shadow:0 1px 0 rgba(18,20,23,.03),0 30px 60px -30px rgba(18,20,23,.25)}
+  .hero-fig svg{display:block;width:100%;height:auto}
+  .hero-fig figcaption{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:10px;padding-top:10px;border-top:1px dashed var(--rule)}
+  .hroute{stroke-dasharray:100;stroke-dashoffset:100;animation:hdraw 3.2s cubic-bezier(.6,.05,.25,1) .5s forwards}
+  .hpick{transform-box:fill-box;transform-origin:center;opacity:0;transform:scale(.3);animation:hpop .45s cubic-bezier(.3,1.6,.5,1) forwards}
+  .hpick.p1{animation-delay:.9s}.hpick.p2{animation-delay:1.35s}.hpick.p3{animation-delay:1.8s}.hpick.p4{animation-delay:2.25s}.hpick.p5{animation-delay:2.7s}.hpick.p6{animation-delay:3.4s}
+  .hlabel{opacity:0;animation:hfade .6s ease 3.7s forwards}
+  @keyframes hdraw{to{stroke-dashoffset:0}}
+  @keyframes hpop{to{opacity:1;transform:none}}
+  @keyframes hfade{to{opacity:1}}
+
+  /* ---------- section scaffolding ---------- */
+  section{padding:88px 0}
+  .sec-head{display:grid;grid-template-columns:200px minmax(0,1fr);gap:28px;margin-bottom:44px;align-items:start}
+  .label{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:10px 0 0;display:flex;gap:10px;align-items:center}
+  .label b{font-weight:500;color:var(--signal)}
+  .label::after{content:"";flex:1;height:1px;background:var(--rule);max-width:60px}
+  h2{font-family:var(--display);font-weight:400;font-size:clamp(34px,4.6vw,56px);line-height:1.02;letter-spacing:-.02em;margin:0 0 14px;max-width:22ch}
+  h2 em{color:var(--signal)}
+  .sec-intro{color:var(--muted);max-width:62ch;margin:0;font-size:17.5px}
+  h3{font-family:var(--sans);font-weight:600;font-size:19px;letter-spacing:-.012em;line-height:1.3;margin:0 0 6px;color:var(--ink)}
+
+  /* ---------- proof band ---------- */
+  .proof{background:var(--deep);color:var(--deep-text);padding:96px 0 84px;position:relative;overflow:hidden}
+  .proof::before{content:"";position:absolute;inset:0;background:radial-gradient(800px 420px at 12% 0%,rgba(255,122,85,.12),transparent 60%);pointer-events:none}
+  .proof .wrap{position:relative}
+  .proof .label{color:var(--deep-muted)}
+  .proof .label b{color:var(--deep-signal)}
+  .proof .label::after{background:var(--deep-rule)}
+  .proof-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:56px;align-items:end;margin-bottom:56px}
+  .proof-claim{font-family:var(--display);font-weight:400;font-size:clamp(32px,4.2vw,56px);line-height:1.06;letter-spacing:-.02em;margin:22px 0 24px;max-width:22ch;color:#fff}
+  .proof-claim em{color:var(--deep-signal)}
+  .proof-gloss{color:var(--deep-muted);max-width:68ch;font-size:17.5px;margin:0 0 14px}
+  .proof-src{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--deep-signal);margin:0}
+  .spec{margin:0;border:1px solid var(--deep-rule);border-radius:16px;background:rgba(255,255,255,.025);padding:6px 22px}
+  .spec div{display:grid;grid-template-columns:110px minmax(0,1fr);gap:14px;padding:14px 0;border-top:1px solid var(--deep-rule)}
+  .spec div:first-child{border-top:0}
+  .spec dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--deep-muted);padding-top:3px}
+  .spec dd{margin:0;font-size:15px;line-height:1.45;color:var(--deep-text)}
+  .spec .win dd{color:#fff;font-weight:500}
+  .spec .win dt{color:var(--deep-signal)}
+  .stats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;margin:0;border-top:1px solid var(--deep-rule)}
+  .stats div{padding:22px 18px 0 0;border-right:1px solid var(--deep-rule);margin-right:18px}
+  .stats div:last-child{border-right:0;margin-right:0}
+  .stats dt{font-family:var(--display);font-size:clamp(40px,4.4vw,58px);line-height:1;color:#fff;letter-spacing:-.02em;margin:0 0 10px}
+  .stats dd{margin:0;font-size:13.5px;line-height:1.45;color:var(--deep-muted)}
+
+  /* ---------- method ---------- */
+  .method{background:var(--card);border-bottom:1px solid var(--rule)}
+  .flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:8px 0 0;padding:0;list-style:none;counter-reset:step}
+  .stage{position:relative;background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:20px 18px 18px;counter-increment:step;min-height:150px}
+  .stage::before{content:"0" counter(step);display:block;font-family:var(--mono);font-size:11px;color:var(--signal);letter-spacing:.1em;margin-bottom:22px}
+  .stage::after{content:"";position:absolute;top:50%;right:-12px;width:12px;height:1px;background:var(--line)}
+  .stage:last-child::after{display:none}
+  .stage b{font-weight:600;font-size:16.5px;display:block;line-height:1.25;letter-spacing:-.01em}
+  .stage span{font-family:var(--mono);font-size:11px;color:var(--muted);display:block;margin-top:8px;line-height:1.6}
+  .stage.out{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+  .stage.out::before{color:var(--deep-signal)}
+  .stage.out span{color:var(--deep-muted)}
+  .loop{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--signal);margin:18px 0 0}
+
+  /* ---------- measured outcomes ---------- */
+  .metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  .metric{background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:26px 24px 22px;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s,border-color .25s}
+  .metric:hover{transform:translateY(-3px);border-color:var(--line);box-shadow:0 22px 40px -28px rgba(18,20,23,.35)}
+  .metric .metric-value{font-family:var(--display);font-size:clamp(48px,5vw,64px);line-height:.95;color:var(--signal);letter-spacing:-.025em;margin:0 0 12px}
+  .metric h3{margin:0 0 10px}
+  .metric p{font-size:15px;color:var(--muted);margin:0 0 18px}
+  .metric-source{font-family:var(--mono);font-size:10.5px;line-height:1.5;color:var(--muted);margin-top:auto;padding-top:14px;border-top:1px solid var(--rule);text-transform:uppercase;letter-spacing:.06em}
+  .evidence-note{font-family:var(--mono);font-size:11.5px;line-height:1.7;color:var(--muted);margin:22px 0 0;max-width:90ch}
+
+  /* ---------- labs ---------- */
+  .lab-section{background:var(--tint);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .lab-shell{background:var(--card);border:1px solid var(--rule);border-radius:20px;padding:34px;display:grid;grid-template-columns:150px minmax(0,1fr);gap:8px 34px;position:relative;overflow:hidden}
+  .lab-shell + .lab-shell{margin-top:22px}
+  .lab-shell[id]{scroll-margin-top:84px}
+  .lab-index{grid-row:1 / span 4;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border-right:1px solid var(--rule);padding-right:20px}
+  .lab-index b{display:block;font-family:var(--display);font-weight:400;font-size:64px;line-height:.9;letter-spacing:-.03em;color:var(--ink);margin-bottom:12px;text-transform:none}
+  .lab-head{display:grid;grid-template-columns:1fr auto;gap:22px;align-items:start}
+  .lab-head .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--signal);margin:0 0 8px}
+  .lab-status{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:6px 12px;white-space:nowrap}
+  .lab-status::before{content:"";width:7px;height:7px;border-radius:50%;background:#2F9E5B;box-shadow:0 0 0 3px rgba(47,158,91,.18)}
+  .lab-title{font-family:var(--display);font-weight:400;font-size:clamp(32px,3.6vw,44px);line-height:1;letter-spacing:-.02em;color:var(--ink);margin:0 0 12px}
+  .lab-lede{color:var(--muted);max-width:62ch;margin:0}
+  .lab-head + .lab-actions{margin-top:22px}
+  .lab-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:24px 0 16px}
+  .lab-step{background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:16px}
+  .lab-step b{font-weight:600;font-size:15.5px;color:var(--ink);display:block;margin-bottom:4px}
+  .lab-step span{font-family:var(--mono);font-size:10.5px;line-height:1.6;color:var(--muted)}
+  .lab-kpis{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 22px}
+  .lab-kpis span{font-family:var(--mono);font-size:10.5px;color:var(--ink);background:var(--tint);border-radius:999px;padding:6px 11px}
+  .lab-actions{display:flex;gap:10px 14px;flex-wrap:wrap;align-items:center}
+  .lab-button{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;background:var(--ink);color:var(--paper);padding:12px 18px;border:1px solid var(--ink);border-radius:999px;transition:background .2s,border-color .2s,color .2s}
+  .lab-button:hover{background:var(--signal);border-color:var(--signal);color:#fff}
+  .lab-button.secondary{background:transparent;color:var(--ink);border-color:var(--line)}
+  .lab-button.secondary:hover{background:var(--paper);border-color:var(--ink);color:var(--ink)}
+  .lab-note{font-family:var(--mono);font-size:11px;line-height:1.6;color:var(--muted);flex:1 1 260px}
+
+  /* ---------- what I build ---------- */
+  .legend{font-family:var(--mono);font-size:12px;color:var(--muted);margin:0 0 26px;line-height:2;display:flex;flex-wrap:wrap;gap:4px 22px}
+  .legend strong{font-weight:500;color:var(--ink)}
+  .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--ink);border-radius:999px;padding:3px 10px;color:var(--paper);background:var(--ink);white-space:nowrap}
+  .tag.work{border-color:var(--line);color:var(--ink);background:transparent}
+  .tag.scoped{border-color:var(--signal);color:var(--signal);background:transparent}
+  .areas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .area{background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:24px 24px 22px;display:flex;flex-direction:column}
+  .head{display:flex;gap:14px;align-items:flex-start}
+  .icon{flex:0 0 44px;width:44px;height:44px;border-radius:12px;background:var(--tint);display:grid;place-items:center}
+  .icon svg{width:28px;height:28px;display:block}
   .titles{flex:1 1 auto;min-width:0}
-  .titles .top{display:flex;gap:12px;align-items:baseline;justify-content:space-between;flex-wrap:wrap}
-  .area p{color:var(--muted);max-width:64ch;font-size:16px;margin:6px 0 0}
-  .kit{font-family:var(--mono);font-size:12.5px;line-height:1.95;color:var(--ink);margin:12px 0 0;padding-top:12px;border-top:1px dotted var(--rule)}
+  .titles .top{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:4px}
+  .titles .top h3{margin:0}
+  .area p{color:var(--muted);font-size:15.5px;margin:8px 0 0}
+  .area .kit{font-family:var(--mono);font-size:11.5px;line-height:1.95;color:var(--ink);margin:16px 0 0;padding-top:14px;border-top:1px dashed var(--rule)}
 
-  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
-  .gcard{background:var(--card);border:1px solid var(--rule);padding:0 0 20px;display:flex;flex-direction:column}
-  .plate{background:var(--tint);border-bottom:1px solid var(--rule);padding:14px 16px}
-  .plate svg{width:100%;height:auto;display:block}
-  .gbody{padding:16px 20px 0}
-  .gbody h3{font-size:19px;color:var(--ink)}
+  /* ---------- problems solved ---------- */
+  .gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .gcard{background:var(--card);border:1px solid var(--rule);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+  .gcard:hover{transform:translateY(-3px);box-shadow:0 26px 44px -30px rgba(18,20,23,.4)}
+  .plate{background:var(--tint);border-bottom:1px solid var(--rule);padding:22px 26px}
+  .plate svg{width:100%;max-width:440px;height:auto;display:block;margin:0 auto}
+  .gbody{padding:22px 26px 24px}
+  .gbody h3{font-family:var(--display);font-weight:400;font-size:29px;line-height:1.08;letter-spacing:-.015em;margin-bottom:10px}
   .gbody p{font-size:15.5px;color:var(--muted);margin:0}
-  .source{font-family:var(--mono);font-size:11.5px;color:var(--petrol);display:block;margin-top:9px}
+  .source{font-family:var(--mono);font-size:11px;color:var(--signal);display:block;margin-top:14px;letter-spacing:.02em}
+  .also{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:14px}
+  .result{border-top:2px solid var(--ink);padding:18px 0 0}
+  .result h3{font-size:17px;margin-bottom:8px}
+  .result p{color:var(--muted);font-size:15px;margin:0}
+  .sub-label{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:56px 0 18px}
 
-  .result{border-top:1px solid var(--rule);padding:16px 0}
-  .result:first-of-type{border-top:2px solid var(--ink)}
-  .result h3{font-size:18px;color:var(--ink);margin-bottom:4px}
-  .result p{color:var(--muted);max-width:72ch;font-size:15.5px;margin:0}
-
-  .role{display:grid;grid-template-columns:152px 1fr;gap:22px;padding:16px 0;border-top:1px solid var(--rule)}
-  .role:first-of-type{border-top:2px solid var(--ink)}
-  .when{font-family:var(--mono);font-size:12px;color:var(--petrol);padding-top:3px}
-  .role h3{font-size:18px;color:var(--ink);margin-bottom:4px}
-  .role p{font-size:15.5px;color:var(--muted);margin:0;max-width:64ch}
-  .where{font-family:var(--display);font-weight:500;font-size:15px;color:var(--petrol-soft);display:block;margin-bottom:6px}
-
-  .pub{padding:14px 0;border-top:1px solid var(--rule);font-size:15.5px}
-  .pub:first-of-type{border-top:2px solid var(--ink)}
-  .venue{font-style:italic}
-  .note{font-family:var(--mono);font-size:11.5px;color:var(--muted);display:block;margin-top:5px}
-
-  .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
-  .fact{background:var(--card);padding:20px 22px}
-  .fact h3{font-size:12px;font-family:var(--mono);font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);margin-bottom:10px}
-  .fact ul{margin:0;padding-left:0;list-style:none}
-  .fact li{font-size:15px;line-height:1.5;margin-bottom:9px;color:var(--ink)}
-  .fact li span{color:var(--muted);font-size:13.5px;display:block}
-
-  footer{background:var(--ink);color:#A9BBC4;padding:34px 0;font-family:var(--mono);font-size:12px;line-height:1.9}
-  footer strong{color:#E7EDF0;font-weight:500}
-  footer a{color:#CFE0E7}
-  .version{margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,.16);color:#7A8F9A}
-
-  a:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
-
-  .rise{opacity:0;transform:translateY(10px);animation:rise .5s ease forwards}
-  .rise:nth-child(2){animation-delay:.06s}
-  .rise:nth-child(3){animation-delay:.12s}
-  @keyframes rise{to{opacity:1;transform:none}}
-  @media (prefers-reduced-motion:reduce){.rise{animation:none;opacity:1;transform:none}}
-
-  /* journal-paper animation tabs */
-  .jtabs{background:var(--card);border:1px solid var(--rule);position:relative}
+  /* ---------- journal papers in motion ---------- */
+  .jtabs-section{background:var(--card);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .jtabs{background:var(--paper);border:1px solid var(--rule);border-radius:20px;position:relative;overflow:hidden}
   .jtabs>input{position:absolute;opacity:0;pointer-events:none}
-  .jtl{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--rule)}
-  .jtl label{font-family:var(--mono);font-size:11px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;padding:12px 10px;cursor:pointer;color:var(--muted);flex:1 1 33%;text-align:center;border-right:1px solid var(--rule)}
-  .jtl label:last-child{border-right:none}
-  .jtl label:hover{color:var(--petrol)}
-  .jpanel{display:none;padding:18px 20px 20px}
-  .jpanel .cap{font-family:var(--display);font-weight:600;font-size:19px;color:var(--ink);margin:14px 0 2px}
-  .jpanel .src{font-family:var(--mono);font-size:11.5px;color:var(--petrol);margin:0}
-  .jpanel .expl{font-size:15.5px;color:var(--muted);margin:8px 0 0;max-width:70ch}
-  #jt1:checked~.jtl label[for=jt1],#jt2:checked~.jtl label[for=jt2],#jt3:checked~.jtl label[for=jt3]{color:var(--petrol);background:var(--tint);box-shadow:inset 0 -2px 0 var(--petrol)}
-  #jt1:focus-visible~.jtl label[for=jt1],#jt2:focus-visible~.jtl label[for=jt2],#jt3:focus-visible~.jtl label[for=jt3]{outline:2px solid var(--brass);outline-offset:-3px}
+  .jtl{display:flex;flex-wrap:wrap;gap:6px;padding:10px;border-bottom:1px solid var(--rule)}
+  .jtl label{font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;padding:11px 14px;cursor:pointer;color:var(--muted);flex:1 1 30%;text-align:center;border-radius:999px;transition:background .2s,color .2s}
+  .jtl label:hover{color:var(--ink);background:var(--tint)}
+  .jpanel{display:none;padding:24px 28px 28px}
+  .jpanel .cap{font-family:var(--display);font-size:30px;line-height:1.1;letter-spacing:-.015em;color:var(--ink);margin:20px 0 6px}
+  .jpanel .src{font-family:var(--mono);font-size:11.5px;color:var(--signal);margin:0}
+  .jpanel .expl{font-size:16px;color:var(--muted);margin:10px 0 0;max-width:72ch}
+  #jt1:checked~.jtl label[for=jt1],#jt2:checked~.jtl label[for=jt2],#jt3:checked~.jtl label[for=jt3]{color:var(--paper);background:var(--ink)}
+  #jt1:focus-visible~.jtl label[for=jt1],#jt2:focus-visible~.jtl label[for=jt2],#jt3:focus-visible~.jtl label[for=jt3]{outline:2px solid var(--signal);outline-offset:2px}
   #jt1:checked~.jp1,#jt2:checked~.jp2,#jt3:checked~.jp3{display:block}
-  .jplate{background:var(--tint);border:1px solid var(--rule);padding:18px 22px}
-  .jplate svg{width:100%;max-width:660px;height:auto;display:block;margin:0 auto}
+  .jplate{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:22px 26px}
+  .jplate svg{width:100%;max-width:700px;height:auto;display:block;margin:0 auto}
   /* each scene runs one slow 14s choreography: draw, travel, settle, rest */
   .a1arc{opacity:0;animation:a1arc 14s ease-in-out infinite}
   .a1dot{opacity:0;animation:a1dot 14s cubic-bezier(.45,.05,.25,1) infinite}
@@ -213,178 +242,364 @@
   @keyframes a3f1{0%,24%{transform:scaleY(0)}32%{transform:scaleY(1)}88%{transform:scaleY(1)}96%,100%{transform:scaleY(0)}}
   @keyframes a3f2{0%,40%{transform:scaleY(0)}48%{transform:scaleY(1)}88%{transform:scaleY(1)}96%,100%{transform:scaleY(0)}}
   @keyframes a3f3{0%,54%{transform:scaleY(0)}62%{transform:scaleY(1)}88%{transform:scaleY(1)}96%,100%{transform:scaleY(0)}}
+
+  /* ---------- track record ---------- */
+  .timeline{position:relative;margin:0;padding:0;list-style:none}
+  .role{display:grid;grid-template-columns:200px minmax(0,1fr);gap:28px;padding:26px 0;border-top:1px solid var(--rule);position:relative}
+  .role:first-child{border-top:2px solid var(--ink)}
+  .when{font-family:var(--mono);font-size:12px;color:var(--signal);padding-top:4px;letter-spacing:.02em}
+  .role h3{font-family:var(--display);font-weight:400;font-size:30px;line-height:1.08;letter-spacing:-.015em;margin-bottom:6px}
+  .where{font-weight:500;font-size:15px;color:var(--ink);display:block;margin-bottom:10px}
+  .role p{font-size:15.5px;color:var(--muted);margin:0;max-width:70ch}
+
+  /* ---------- publications ---------- */
+  .pubs{background:var(--card);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .publist{list-style:none;margin:0;padding:0;counter-reset:pub}
+  .pub{display:grid;grid-template-columns:60px minmax(0,1fr);gap:20px;padding:22px 0;border-top:1px solid var(--rule);font-size:16px}
+  .pub:first-child{border-top:2px solid var(--ink)}
+  .pub::before{counter-increment:pub;content:"[" counter(pub) "]";font-family:var(--mono);font-size:12px;color:var(--signal);padding-top:4px}
+  .pub.plain::before{content:"\2014";color:var(--muted)}
+  .pub > div{max-width:82ch}
+  .venue{font-style:italic;font-weight:500}
+  .note{font-family:var(--mono);font-size:11.5px;color:var(--muted);display:block;margin-top:8px}
+
+  /* ---------- facts ---------- */
+  .facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  .fact{background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:24px}
+  .fact h3{font-size:11.5px;font-family:var(--mono);font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--signal);margin-bottom:16px}
+  .fact ul{margin:0;padding-left:0;list-style:none}
+  .fact li{font-size:15.5px;line-height:1.45;margin-bottom:12px;color:var(--ink);font-weight:500}
+  .fact li span{color:var(--muted);font-size:13.5px;display:block;font-weight:400;margin-top:2px}
+
+  /* ---------- book ---------- */
+  .book-section{background:var(--deep);color:var(--deep-text)}
+  .book-section .label{color:var(--deep-muted)}
+  .book-section .label b{color:var(--deep-signal)}
+  .book-section .label::after{background:var(--deep-rule)}
+  .book-card{display:grid;grid-template-columns:minmax(200px,280px) 1fr;gap:56px;align-items:center;margin-top:30px}
+  .book-cover-link{display:block;background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08);line-height:0;transform:rotate(-2deg);transition:transform .3s}
+  .book-cover-link:hover{transform:rotate(0) translateY(-4px)}
+  .book-cover{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover}
+  .book-kicker{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--deep-signal);margin:0 0 14px}
+  .book-title{font-family:var(--display);font-size:clamp(40px,5.4vw,68px);font-weight:400;line-height:.98;letter-spacing:-.02em;color:#fff;margin:0 0 14px}
+  .book-subtitle{font-family:var(--display);font-style:italic;font-size:clamp(20px,2.2vw,25px);line-height:1.3;color:var(--deep-text);margin:0 0 20px;max-width:34ch}
+  .book-description{color:var(--deep-muted);max-width:56ch;margin:0 0 20px}
+  .book-meta{font-family:var(--mono);font-size:11px;line-height:1.7;letter-spacing:.06em;text-transform:uppercase;color:var(--deep-muted);margin:0 0 26px}
+  .book-actions{display:flex;gap:10px;flex-wrap:wrap}
+  .book-button{display:inline-flex;align-items:center;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid var(--deep-signal);border-radius:999px;padding:13px 20px;color:#111316;background:var(--deep-signal);transition:background .2s,border-color .2s,color .2s}
+  .book-button:hover{background:#fff;border-color:#fff}
+  .book-button.secondary{color:var(--deep-text);background:transparent;border-color:#4A5059}
+  .book-button.secondary:hover{color:#fff;border-color:#fff;background:transparent}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--deep);color:var(--deep-muted);padding:0 0 40px;font-size:15px;border-top:1px solid var(--deep-rule)}
+  .foot-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:40px;padding:64px 0 44px;align-items:end}
+  .foot-title{font-family:var(--display);font-size:clamp(36px,4.6vw,60px);line-height:1;letter-spacing:-.02em;color:#fff;margin:0 0 18px}
+  .foot-title em{color:var(--deep-signal)}
+  .foot-mail{font-family:var(--display);font-size:clamp(22px,2.6vw,32px);color:var(--deep-text);text-decoration:none;border-bottom:1px solid var(--deep-signal)}
+  .foot-mail:hover{color:#fff}
+  .foot-links{list-style:none;margin:0;padding:0;font-family:var(--mono);font-size:12.5px;display:grid;grid-template-columns:1fr 1fr;gap:8px 20px}
+  .foot-links a{color:var(--deep-text);text-decoration:none}
+  .foot-links a:hover{color:var(--deep-signal)}
+  footer strong{color:var(--deep-text);font-weight:500}
+  .version{font-family:var(--mono);font-size:11.5px;padding-top:20px;border-top:1px solid var(--deep-rule);color:var(--deep-muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px}
+  .version a{color:var(--deep-text)}
+
+  /* ---------- motion ---------- */
+  .rise{opacity:0;transform:translateY(12px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
+  .rise:nth-child(2){animation-delay:.08s}
+  .rise:nth-child(3){animation-delay:.16s}
+  .rise:nth-child(4){animation-delay:.24s}
+  .rise:nth-child(5){animation-delay:.32s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @supports (animation-timeline:view()){
+    @media (prefers-reduced-motion:no-preference){
+      .reveal{animation:reveal linear both;animation-timeline:view();animation-range:entry 0% cover 18%}
+    }
+  }
+  @keyframes reveal{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
   @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .rise{animation:none;opacity:1;transform:none}
+    .hroute{animation:none;stroke-dashoffset:0}
+    .hpick,.hlabel{animation:none;opacity:1;transform:none}
+    .metric,.gcard,.btn .arr,.book-cover-link{transition:none}
     .a1arc,.a1dot,.a1chk,.a2route,.a2picker,.a2halo1,.a2halo2,.a3route,.a3truck,.a3f1,.a3f2,.a3f3{animation:none}
     .a1arc,.a1dot,.a1chk,.a2picker,.a3truck{opacity:1}
     .a1chk,.a2route,.a3route{stroke-dashoffset:0}
     .a3f1,.a3f2,.a3f3{transform:scaleY(1)}
     .a2halo1,.a2halo2{opacity:0}
   }
+
+  /* ---------- dark theme ---------- */
   @media (prefers-color-scheme:dark){
     :root{
-      --ink:#E7EFF2; --petrol:#69C2C7; --petrol-soft:#8FBCC3; --brass:#E4B65B;
-      --paper:#071419; --card:#0D2027; --tint:#122B33; --rule:#2C454E; --muted:#A9BCC3;
+      --ink:#ECE7DD; --paper:#0E1013; --card:#16191E; --tint:#1D2128; --line:#3A404A;
+      --rule:#272B32; --muted:#A3A8B1; --signal:#FF7A55; --signal-wash:rgba(255,122,85,.16);
+      --deep:#08090B; --deep-2:#101216; --deep-rule:#23272D;
     }
-    body{background:#071419}
-    .masthead{background:radial-gradient(circle at 84% 8%,rgba(73,156,166,.18),transparent 36%),linear-gradient(135deg,#061117 0%,#0A2731 100%);color:#F2F7F8;border-bottom:1px solid #26444E}
-    .name-alias{color:#F0C46A}
-    .lede{color:#C6D7DC}
-    .contact{color:#9FB5BC;border-top-color:rgba(207,231,236,.18)}
-    .contact a{color:#B9DDE2;border-bottom-color:rgba(185,221,226,.38)}
-    .contact a:hover{color:#fff;border-bottom-color:#fff}
-    .sep{color:#617B84}
-    .thesis{background:#0A1B21}
-    .impact{background:#08171D}
-    .lab-section{background:#09191F}
-    .lab-step{background:#10262E}
-    .stage.out{background:#143844;border-color:#3B707C}
-    .stage.out b{color:#F4FAFB}
-    .stage.out span{color:#B0C7CE}
-    .lab-button{background:var(--petrol);border-color:var(--petrol);color:#061419}
-    .lab-button:hover{background:#91D9DC;border-color:#91D9DC;color:#061419}
-    .lab-button.secondary{background:transparent;color:var(--petrol)}
-    .lab-button.secondary:hover{background:var(--tint);border-color:var(--petrol);color:#DDF7F8}
-    .tag.work{background:#0E242B}
-    .tag.scoped{background:#2A2314}
-    .book-section,footer{background:#050E12;border-color:#1D333B}
-    .book-cover-link{border-color:#36515B;box-shadow:0 18px 42px rgba(0,0,0,.45)}
-    .book-button{color:#071419;background:#E4B65B;border-color:#E4B65B}
-    .book-button:hover{background:#F2CB7A;border-color:#F2CB7A}
-    .book-button.secondary{background:transparent;color:#D8E7EA;border-color:#54717B}
-    .book-button.secondary:hover{color:#fff;border-color:#D8E7EA}
-    footer{color:#9FB5BC}
-    footer strong{color:#EFF6F7}
-    footer a{color:#B9DDE2}
-    .version{border-top-color:#263C44;color:#78919A}
-    svg[stroke="#0B4F6C"],svg [stroke="#0B4F6C"]{stroke:var(--petrol)}
-    svg[stroke="#A97A22"],svg [stroke="#A97A22"]{stroke:var(--brass)}
-    svg [fill="#E9F1F4"]{fill:var(--tint)}
-    svg [fill="#0B4F6C"]{fill:var(--petrol)}
-    svg [fill="#10222C"]{fill:var(--ink)}
+    body{background:#0E1013}
+    .topbar{background:rgba(14,16,19,.82)}
+    .hero{background:radial-gradient(1100px 520px at 88% -10%,rgba(255,122,85,.10),transparent 60%),var(--paper)}
+    .hero-fig{box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
+    .btn{color:#0E1013}
+    .btn:hover{background:var(--signal);border-color:var(--signal);color:#0E1013}
+    .lab-button{color:#0E1013}
+    .lab-button:hover{color:#0E1013}
+    .lab-button.secondary,.lab-button.secondary:hover{color:var(--ink)}
+    .stage.out{background:#22262D;border-color:#3A404A;color:#F4F0E8}
+    .tag{color:#0E1013}
+    .tag.work{color:var(--ink)}
+    ::selection{color:#0E1013}
+    svg[stroke="#121417"],svg [stroke="#121417"]{stroke:var(--ink)}
+    svg[stroke="#B83A17"],svg [stroke="#B83A17"]{stroke:var(--signal)}
+    svg [stroke="#CFC8BA"]{stroke:var(--line)}
+    svg [stroke="#fff"]{stroke:var(--paper)}
+    svg [fill="#ECE7DC"]{fill:var(--tint)}
+    svg [fill="#E1DACB"]{fill:#262B33}
+    svg [fill="#121417"]{fill:var(--ink)}
+    svg [fill="#B83A17"]{fill:var(--signal)}
+    svg [fill="#5B5F67"]{fill:var(--muted)}
+    svg [fill="#DCD6C9"]{fill:var(--rule)}
     svg [fill="#FFFFFF"],svg [fill="#fff"]{fill:var(--card)}
   }
-  @media print{.jtabs-section{display:none}}
+
+  /* ---------- small screens ---------- */
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .proof-grid{grid-template-columns:1fr;gap:36px}
+    .hero-fig{max-width:520px}
+    .sec-head{grid-template-columns:1fr;gap:6px}
+    .stats{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:24px}
+    .stats div:nth-child(3n){border-right:0;margin-right:0}
+    .flow{grid-template-columns:1fr 1fr}
+    .stage::after{display:none}
+    .metrics{grid-template-columns:1fr 1fr}
+    .lab-shell{grid-template-columns:1fr}
+    .lab-index{grid-row:auto;border-right:0;padding:0 0 12px;border-bottom:1px solid var(--rule);display:flex;align-items:baseline;gap:14px}
+    .lab-index b{font-size:44px;margin:0}
+    .also{grid-template-columns:1fr}
+    .facts{grid-template-columns:1fr 1fr}
+    .foot-grid{grid-template-columns:1fr}
+  }
   @media (max-width:620px){
     body{font-size:16px}
-    .role{grid-template-columns:1fr;gap:6px}
-    .book-card{grid-template-columns:1fr;gap:25px}
+    .wrap{padding:0 18px}
+    .brand span{display:none}
+    .topbar-in{gap:12px}
+    .hero{padding:48px 0 44px}
+    section{padding:60px 0}
+    .proof{padding:64px 0 56px}
+    .stats{grid-template-columns:1fr 1fr}
+    .stats div:nth-child(3n){border-right:1px solid var(--deep-rule);margin-right:18px}
+    .stats div:nth-child(2n){border-right:0;margin-right:0}
+    .flow,.metrics,.areas,.gallery,.facts{grid-template-columns:1fr}
+    .stage{min-height:0}
+    .lab-shell{padding:24px 20px}
     .lab-head{grid-template-columns:1fr}
     .lab-flow{grid-template-columns:1fr}
-    .book-cover-link{width:min(74vw,260px)}
-    .masthead{padding:38px 0 30px}
-    section{padding:34px 0}
-    .chev{display:none}
-    .stage{flex:1 1 100%}
+    .role{grid-template-columns:1fr;gap:6px}
+    .pub{grid-template-columns:1fr;gap:4px}
+    .book-card{grid-template-columns:1fr;gap:32px}
+    .book-cover-link{width:min(70vw,260px)}
+    .foot-links{grid-template-columns:1fr}
+    .jpanel{padding:18px}
+    .jplate{padding:14px}
   }
 
+  /* ---------- print ---------- */
   @media print{
     :root{
-      --ink:#10222C; --petrol:#0B4F6C; --petrol-soft:#3D7C97; --brass:#A97A22;
-      --paper:#fff; --card:#fff; --tint:#E9F1F4; --rule:#B9C3C9; --muted:#56676F;
+      --ink:#121417; --paper:#fff; --card:#fff; --tint:#F1EDE5; --line:#CFC8BA;
+      --rule:#DCD6C9; --muted:#4F535A; --signal:#B83A17;
+      --deep:#fff; --deep-text:#121417; --deep-muted:#4F535A; --deep-rule:#DCD6C9; --deep-signal:#B83A17;
     }
     body{background:#fff;font-size:10.5pt}
-    .masthead,footer{background:#fff;color:var(--ink)}
-    .masthead h1{color:var(--ink)}
-    .lede,.contact,footer{color:#333}
-    .contact a,footer a{color:var(--petrol)}
-    .stage.out{background:#fff;border-color:var(--ink)}
-    .stage.out b{color:var(--ink)}
-    .stage.out span{color:#555}
-    .area,.gcard,.metric,.book-card,.result,.role,.pub,.fact{break-inside:avoid}
-    section{padding:16px 0}
-    .rise{animation:none;opacity:1;transform:none}
-    .gallery{grid-template-columns:1fr 1fr}
+    .topbar,.cta,.jtabs-section,.hero-fig{display:none}
+    .hero{padding:12px 0 18px;background:#fff}
+    .hero-grid{grid-template-columns:1fr}
+    .proof-claim,.stats dt,.foot-title,.book-title,.spec dd,.spec .win dd{color:var(--ink)}
+    .proof-grid{grid-template-columns:1fr;gap:16px;margin-bottom:20px}
+    .stage.out{background:#fff;color:var(--ink);border-color:var(--ink)}
+    .metric,.area,.gcard,.lab-shell,.book-card,.result,.role,.pub,.fact{break-inside:avoid;box-shadow:none}
+    section,.proof{padding:18px 0}
+    .rise,.reveal,.hroute,.hpick,.hlabel{animation:none;opacity:1;transform:none;stroke-dashoffset:0}
+    .book-cover-link{transform:none;box-shadow:none;border:1px solid var(--rule)}
+    .gallery,.metrics,.areas{grid-template-columns:1fr 1fr}
+    .foot-grid{padding:20px 0}
   }
 </style>
 </head>
 <body>
 
-<header class="masthead">
-  <div class="wrap">
-    <p class="eyebrow rise">Operations research &middot; Ghent, Belgium</p>
-    <h1 class="rise">Sajjad <span class="name-alias">(Sam)</span> Hedayati</h1>
-    <p class="lede rise">I design optimization and simulation tools that turn operational uncertainty into measurable improvements in cost, speed and service.</p>
-    <div class="contact">
-      <a href="mailto:sajjad.hedayati@ugent.be">sajjad.hedayati@ugent.be</a><span class="sep">/</span><a href="https://www.linkedin.com/in/sajjad-hedayati-13703725a">LinkedIn</a><span class="sep">/</span><a href="https://orcid.org/0000-0002-1008-6288">ORCID 0000-0002-1008-6288</a><span class="sep">/</span><a href="https://scholar.google.com/citations?user=vNrnIkoAAAAJ">Google Scholar</a><span class="sep">/</span><a href="#ripple">Labs &amp; tools</a><span class="sep">/</span><a href="#book">Book</a>
+<nav class="topbar" aria-label="Page sections">
+  <div class="wrap topbar-in">
+    <a class="brand" href="#top" aria-label="Sajjad (Sam) Hedayati &mdash; back to top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect class="mk-bg" width="32" height="32" rx="8"/><path class="mk-ln" d="M8 23c4 0 4-7 8-7s4-7 8-7" fill="none" stroke-width="2.2" stroke-linecap="round"/><circle class="mk-d1" cx="8" cy="23" r="2.6"/><circle class="mk-d2" cx="24" cy="9" r="3"/></svg><span>Sam Hedayati</span></a>
+    <div class="navlinks">
+      <a href="#impact">Impact</a><a href="#ripple">Labs &amp; tools</a><a href="#build">What I build</a><a href="#research">Research</a><a href="#record">Record</a><a href="#book">Book</a>
     </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="kicker rise"><span class="dot" aria-hidden="true"></span>Operations research &amp; decision science &middot; Ghent, Belgium</p>
+      <h1 class="rise">Sajjad <span class="name-alias">(Sam)</span> Hedayati</h1>
+      <p class="statement rise">I build the model, <em>then the tool people run it in.</em></p>
+      <p class="lede rise">Optimization, simulation and decision tools for manufacturing and logistics &mdash; for the operational problems off-the-shelf software does not cover. I take a messy question from mathematical formulation to an application planners operate on their own.</p>
+      <div class="cta rise">
+        <a class="btn" href="#impact">See what changed <span class="arr" aria-hidden="true">&rarr;</span></a>
+        <a class="btn ghost" href="mailto:sajjad.hedayati@ugent.be">Email me</a>
+      </div>
+      <ul class="contact">
+        <li><a href="mailto:sajjad.hedayati@ugent.be">sajjad.hedayati@ugent.be</a></li>
+        <li><a href="https://www.linkedin.com/in/sajjad-hedayati-13703725a">LinkedIn</a></li>
+        <li><a href="https://orcid.org/0000-0002-1008-6288">ORCID 0000-0002-1008-6288</a></li>
+        <li><a href="https://scholar.google.com/citations?user=vNrnIkoAAAAJ">Google Scholar</a></li>
+        <li><a href="https://github.com/hedayatis">GitHub</a></li>
+      </ul>
+    </div>
+    <figure class="hero-fig rise">
+      <svg viewBox="0 0 420 380" fill="none" role="img" aria-label="Schematic: a field of candidate points, from which one route is drawn from a start point through a few selected points to a final decision">
+        <g fill="#DCD6C9">
+          <circle cx="30" cy="30" r="1.2"/><circle cx="90" cy="30" r="1.2"/><circle cx="150" cy="30" r="1.2"/><circle cx="210" cy="30" r="1.2"/><circle cx="270" cy="30" r="1.2"/><circle cx="330" cy="30" r="1.2"/><circle cx="390" cy="30" r="1.2"/>
+          <circle cx="30" cy="110" r="1.2"/><circle cx="90" cy="110" r="1.2"/><circle cx="150" cy="110" r="1.2"/><circle cx="210" cy="110" r="1.2"/><circle cx="270" cy="110" r="1.2"/><circle cx="330" cy="110" r="1.2"/><circle cx="390" cy="110" r="1.2"/>
+          <circle cx="30" cy="190" r="1.2"/><circle cx="90" cy="190" r="1.2"/><circle cx="150" cy="190" r="1.2"/><circle cx="210" cy="190" r="1.2"/><circle cx="270" cy="190" r="1.2"/><circle cx="330" cy="190" r="1.2"/><circle cx="390" cy="190" r="1.2"/>
+          <circle cx="30" cy="270" r="1.2"/><circle cx="90" cy="270" r="1.2"/><circle cx="150" cy="270" r="1.2"/><circle cx="210" cy="270" r="1.2"/><circle cx="270" cy="270" r="1.2"/><circle cx="330" cy="270" r="1.2"/><circle cx="390" cy="270" r="1.2"/>
+          <circle cx="30" cy="350" r="1.2"/><circle cx="90" cy="350" r="1.2"/><circle cx="150" cy="350" r="1.2"/><circle cx="210" cy="350" r="1.2"/><circle cx="270" cy="350" r="1.2"/><circle cx="330" cy="350" r="1.2"/><circle cx="390" cy="350" r="1.2"/>
+        </g>
+        <text x="22" y="20" font-family="JetBrains Mono, monospace" font-size="10" fill="#5B5F67" letter-spacing="1">CANDIDATE SET</text>
+        <g stroke="#CFC8BA" stroke-width="1.4" fill="#fff">
+          <circle cx="76" cy="196" r="5"/><circle cx="58" cy="118" r="5"/><circle cx="128" cy="146" r="5"/><circle cx="192" cy="96" r="5"/>
+          <circle cx="210" cy="322" r="5"/><circle cx="292" cy="296" r="5"/><circle cx="352" cy="246" r="5"/><circle cx="384" cy="176" r="5"/>
+          <circle cx="166" cy="48" r="5"/><circle cx="262" cy="66" r="5"/><circle cx="106" cy="62" r="5"/><circle cx="318" cy="350" r="5"/><circle cx="392" cy="318" r="5"/>
+        </g>
+        <path class="hroute" pathLength="100" d="M48 330L128 262L232 300L300 220L176 166L262 104L372 64" stroke="#B83A17" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="38" y="320" width="20" height="20" rx="4" fill="#121417"/>
+        <g fill="#B83A17">
+          <circle class="hpick p1" cx="128" cy="262" r="6.5"/><circle class="hpick p2" cx="232" cy="300" r="6.5"/><circle class="hpick p3" cx="300" cy="220" r="6.5"/>
+          <circle class="hpick p4" cx="176" cy="166" r="6.5"/><circle class="hpick p5" cx="262" cy="104" r="6.5"/>
+        </g>
+        <g class="hpick p6"><rect x="358" y="50" width="28" height="28" rx="6" fill="#121417"/><path d="M365 64l5 5 9-10" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+        <text x="66" y="362" font-family="JetBrains Mono, monospace" font-size="10" fill="#5B5F67" letter-spacing="1">START</text>
+        <text class="hlabel" x="352" y="40" font-family="JetBrains Mono, monospace" font-size="10" fill="#B83A17" letter-spacing="1" text-anchor="end">DECISION</text>
+      </svg>
+      <figcaption>Fig. 0 &mdash; from a candidate set to one implementable decision. A drawing of the problem&rsquo;s shape, not of any result.</figcaption>
+    </figure>
   </div>
 </header>
 
-<div class="thesis">
+<section class="proof" id="impact" aria-labelledby="proof-title">
   <div class="wrap">
-    <p class="claim">I work from mathematical formulation to an implementable decision &mdash; algorithm, simulation, validation and usable output.</p>
-    <p class="gloss">The common thread is measurable decision support: reduce the problem without losing the decision, expose the trade-offs, and leave planners with a tool they can interrogate themselves.</p>
-
-    <div class="flow">
-      <div class="stage"><b>Plant data</b><span>failures, rework, routings, stock</span></div>
-      <div class="chev">&#9656;</div>
-      <div class="stage"><b>Discrete-event model</b><span>SimPy &middot; R simmer</span></div>
-      <div class="chev">&#9656;</div>
-      <div class="stage"><b>Optimization layer</b><span>MILP &middot; Lagrangian &middot; stochastic</span></div>
-      <div class="chev">&#9656;</div>
-      <div class="stage"><b>Scenario dashboard</b><span>self-service interface</span></div>
-      <div class="chev">&#9656;</div>
-      <div class="stage out"><b>The decision</b><span>capacity, policy, investment</span></div>
+    <p class="label"><b>01</b> The result that matters most</p>
+    <div class="proof-grid">
+    <div>
+    <h2 class="proof-claim" id="proof-title">A simulation tool I built provided the key evidence behind Flanders Make&rsquo;s decision to <em>continue funding</em> the programme.</h2>
+    <p class="proof-gloss">There was no tool for the question, so I built one &mdash; and made it self-service by design, so the partner could interrogate the results themselves rather than take my output on trust.</p>
+    <p class="proof-src">Ghent University &amp; Flanders Make &middot; REMASC programme</p>
     </div>
-    <p class="loop">&#8635; planners re-run the scenarios themselves &mdash; the loop closes without me</p>
-
-    <p class="ledger">&asymp; 8 years professionally &nbsp;/&nbsp; 3 journal articles, 6 peer-reviewed conference contributions, 8 current manuscripts and research studies &nbsp;/&nbsp; reviewer for 3 international OR journals</p>
+    <dl class="spec">
+      <div><dt>Built</dt><dd>A discrete-event simulation engine and analytics interface for remanufacturing operations</dd></div>
+      <div><dt>Models</dt><dd>Stochastic failures, rework loops, cost accumulation, WIP and spare-parts inventory, replenishment policies, queueing, operator-skill effects</dd></div>
+      <div><dt>Stack</dt><dd>Python SimPy &middot; R simmer</dd></div>
+      <div><dt>Delivered as</dt><dd>A self-service GUI with automated scenario comparison</dd></div>
+      <div class="win"><dt>Outcome</dt><dd>The key evidence behind continued funding of the programme</dd></div>
+    </dl>
+    </div>
+    <dl class="stats">
+      <div><dt>&asymp;8</dt><dd>years of professional experience</dd></div>
+      <div><dt>3</dt><dd>journal articles</dd></div>
+      <div><dt>6</dt><dd>peer-reviewed conference contributions</dd></div>
+      <div><dt>8</dt><dd>current manuscripts and research studies</dd></div>
+      <div><dt>3</dt><dd>international OR journals I review for</dd></div>
+      <div><dt>4</dt><dd>public labs and open tools</dd></div>
+    </dl>
   </div>
-</div>
+</section>
 
-<section class="impact" id="measured-outcomes">
+<section class="method" id="method">
   <div class="wrap">
-    <h2>Selected measured outcomes</h2>
-    <div class="h2rule"></div>
-    <p class="impact-intro">A short numerical record of what changed in the computational studies &mdash; savings, reductions and solution-quality gains, with the scope kept explicit.</p>
+    <div class="sec-head">
+      <p class="label"><b>02</b> How I work</p>
+      <div>
+        <h2>From formulation to an implementable <em>decision.</em></h2>
+        <p class="sec-intro">Algorithm, simulation, validation and usable output. Reduce the problem without losing the decision, expose the trade-offs, and leave planners with a tool they can interrogate themselves.</p>
+      </div>
+    </div>
+    <ol class="flow">
+      <li class="stage reveal"><b>Plant data</b><span>failures, rework, routings, stock</span></li>
+      <li class="stage reveal"><b>Discrete-event model</b><span>SimPy &middot; R simmer</span></li>
+      <li class="stage reveal"><b>Optimization layer</b><span>MILP &middot; Lagrangian &middot; stochastic</span></li>
+      <li class="stage reveal"><b>Scenario interface</b><span>self-service, built for the planner</span></li>
+      <li class="stage out reveal"><b>The decision</b><span>capacity, policy, investment</span></li>
+    </ol>
+    <p class="loop"><span aria-hidden="true">&#8635;</span> Planners re-run the scenarios themselves &mdash; the loop closes without me</p>
+  </div>
+</section>
+
+<section id="measured-outcomes">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label"><b>03</b> Measured outcomes</p>
+      <div>
+        <h2>What changed, <em>in numbers.</em></h2>
+        <p class="sec-intro">A short numerical record of what changed in the computational studies &mdash; savings, reductions and solution-quality gains, with the scope kept explicit.</p>
+      </div>
+    </div>
     <div class="metrics">
-      <article class="metric">
+      <article class="metric reveal">
         <p class="metric-value">95%</p>
         <h3>fewer scenarios</h3>
         <p>Compressed 1,000 scenarios to 50. A certified variant reduced training time from 88.77 s to 5.27 s while retaining the full-SAA holdout cost in the tested setting.</p>
         <span class="metric-source">Certified stochastic inspection study</span>
       </article>
-      <article class="metric">
+      <article class="metric reveal">
         <p class="metric-value">13.3&ndash;29.4%</p>
         <h3>lower total routing cost</h3>
         <p>Across 80 marketplace-routing instances: 13.3% below the best sequential policy and 29.4% below cheapest-source planning; better on 75 of 80 and never worse.</p>
         <span class="metric-source">Integrated sourcing and routing study</span>
       </article>
-      <article class="metric">
+      <article class="metric reveal">
         <p class="metric-value">94.4%</p>
         <h3>less solve time</h3>
         <p>Reduced 418.50 s to 23.31 s on the largest delayed-inspection benchmark while keeping the reported upper-bound gaps below 8%.</p>
         <span class="metric-source">Published inspection-allocation study</span>
       </article>
-      <article class="metric">
+      <article class="metric reveal">
         <p class="metric-value">10,000</p>
         <h3>exact matches</h3>
         <p>A tailored dynamic program matched the integer-program optimum on every tested instance and averaged an 8.6&times; speedup at 100 stages.</p>
         <span class="metric-source">Exact dynamic-programming study</span>
       </article>
-      <article class="metric">
+      <article class="metric reveal">
         <p class="metric-value">40.0%</p>
         <h3>lower weekly planning cost</h3>
         <p>Against a strong workload-coverage roster in paired synthetic weeks; separately, condition information and skill-differentiated beliefs were worth 8.9% and 12.0%.</p>
         <span class="metric-source">Integrated remanufacturing benchmark</span>
       </article>
-      <article class="metric">
+      <article class="metric reveal">
         <p class="metric-value">&gt;80%</p>
         <h3>less recipient waiting</h3>
         <p>Fleet sizing cut waiting by more than 80% in both tested mobility regimes; multi-start search recovered all 12 of 12 exactly enumerable optima.</p>
         <span class="metric-source">Stochastic mobile-depot study</span>
       </article>
     </div>
-    <p class="evidence-note">Scope note &mdash; these are published or fully scripted computational benchmark results under each study's stated assumptions. They are not presented as realized client savings.</p>
+    <p class="evidence-note">Scope note &mdash; these are published or fully scripted computational benchmark results under each study&rsquo;s stated assumptions. They are not presented as realized client savings.</p>
   </div>
 </section>
 
-
 <section class="lab-section" id="ripple">
   <div class="wrap">
-    <h2>Interactive labs &amp; open research tools</h2>
-    <div class="h2rule"></div>
+    <div class="sec-head">
+      <p class="label"><b>04</b> Labs &amp; open tools</p>
+      <div>
+        <h2>Don&rsquo;t take my word for it &mdash; <em>run them.</em></h2>
+        <p class="sec-intro">Four public pieces of work you can open in a browser today: two decision labs, an auditable analytics pipeline and an open-source research tool.</p>
+      </div>
+    </div>
     <article class="lab-shell">
+      <div class="lab-index"><b>01</b>Optimization</div>
       <div class="lab-head">
         <div>
           <p class="eyebrow">Recovery planning under uncertainty</p>
@@ -407,6 +622,7 @@
       </div>
     </article>
     <article class="lab-shell" id="simulation-lab" aria-labelledby="simulation-lab-title">
+      <div class="lab-index"><b>02</b>Simulation</div>
       <div class="lab-head">
         <div>
           <p class="eyebrow">Inspection allocation &middot; production-line simulation</p>
@@ -421,6 +637,7 @@
       </div>
     </article>
     <article class="lab-shell" id="retail-analytics-lab" aria-labelledby="retail-lab-title">
+      <div class="lab-index"><b>03</b>Analytics</div>
       <div class="lab-head">
         <div>
           <p class="eyebrow">Data engineering &middot; customer analytics</p>
@@ -444,6 +661,7 @@
       </div>
     </article>
     <article class="lab-shell" id="revmode" aria-labelledby="revmode-title">
+      <div class="lab-index"><b>04</b>Open source</div>
       <div class="lab-head">
         <div>
           <p class="eyebrow">Open research tooling &middot; reproducible writing</p>
@@ -469,20 +687,25 @@
   </div>
 </section>
 
-<section>
+<section id="build">
   <div class="wrap">
-    <h2>What I work on</h2>
-    <div class="h2rule"></div>
-    <p class="legend">Depth is labelled, not implied.<br>
-    <strong>Deep</strong> &mdash; published, benchmarked and defended. &nbsp;<strong>Working</strong> &mdash; used in delivery. &nbsp;<strong>Scoped</strong> &mdash; exactly the stated extent, no more.</p>
+    <div class="sec-head">
+      <p class="label"><b>05</b> What I build</p>
+      <div>
+        <h2>Depth is labelled, <em>not implied.</em></h2>
+        <p class="sec-intro">Every capability carries an honest depth tag, so you can tell what is published and defended from what is narrower.</p>
+      </div>
+    </div>
+    <p class="legend"><span><strong>Deep</strong> &mdash; published, benchmarked and defended</span><span><strong>Working</strong> &mdash; used in delivery</span><span><strong>Scoped</strong> &mdash; exactly the stated extent, no more</span></p>
 
-    <div class="area">
+    <div class="areas">
+    <div class="area reveal">
       <div class="head">
-        <div class="icon"><svg viewBox="0 0 30 30" fill="none" stroke="#0B4F6C" stroke-width="1.4" aria-hidden="true">
+        <div class="icon"><svg viewBox="0 0 30 30" fill="none" stroke="#121417" stroke-width="1.4" aria-hidden="true">
           <path d="M15 6v4M15 10L8 14M15 10l7 4M8 16v3M8 19l-3 4M8 19l3 4M22 16v5"/>
-          <circle cx="15" cy="4" r="2.2" fill="#E9F1F4"/><circle cx="8" cy="14" r="2.2" fill="#E9F1F4"/>
-          <circle cx="22" cy="14" r="2.2" fill="#0B4F6C"/><circle cx="5" cy="24" r="2.2" fill="#E9F1F4"/>
-          <circle cx="11" cy="24" r="2.2" fill="#E9F1F4"/><circle cx="22" cy="23" r="2.2" fill="#E9F1F4"/>
+          <circle cx="15" cy="4" r="2.2" fill="#ECE7DC"/><circle cx="8" cy="14" r="2.2" fill="#ECE7DC"/>
+          <circle cx="22" cy="14" r="2.2" fill="#121417"/><circle cx="5" cy="24" r="2.2" fill="#ECE7DC"/>
+          <circle cx="11" cy="24" r="2.2" fill="#ECE7DC"/><circle cx="22" cy="23" r="2.2" fill="#ECE7DC"/>
         </svg></div>
         <div class="titles">
           <div class="top"><h3>Optimization and decision models</h3><span class="tag">Deep</span></div>
@@ -492,12 +715,12 @@
       <p class="kit">Mixed-integer &amp; integer programming &middot; Gurobi (gurobipy), AMPL, CPLEX &middot; valid inequalities, lazy constraints, callbacks, warm starts &middot; Lagrangian relaxation with dual-guided repair heuristics &middot; Benders / L-shaped decomposition &middot; exact dynamic programming &middot; simulated annealing, genetic algorithms, differential evolution, large-neighbourhood and hill-climbing search</p>
     </div>
 
-    <div class="area">
+    <div class="area reveal">
       <div class="head">
-        <div class="icon"><svg viewBox="0 0 30 30" fill="none" stroke="#0B4F6C" stroke-width="1.4" aria-hidden="true">
-          <circle cx="6" cy="15" r="2.4" fill="#0B4F6C"/>
+        <div class="icon"><svg viewBox="0 0 30 30" fill="none" stroke="#121417" stroke-width="1.4" aria-hidden="true">
+          <circle cx="6" cy="15" r="2.4" fill="#121417"/>
           <path d="M9 14L23 6M9 15h14M9 16l14 8" stroke-dasharray="3 2.5"/>
-          <path d="M25 4v22" stroke="#A97A22" stroke-width="1.2"/>
+          <path d="M25 4v22" stroke="#B83A17" stroke-width="1.2"/>
         </svg></div>
         <div class="titles">
           <div class="top"><h3>Decisions under uncertainty</h3><span class="tag">Deep</span></div>
@@ -507,41 +730,41 @@
       <p class="kit">Two-stage stochastic programming &middot; sample average approximation with statistical optimality-gap bounds &middot; scenario generation and reduction (moment matching, clustering, quasi-Monte-Carlo) &middot; decision-dependent (endogenous) uncertainty &middot; value of the stochastic solution</p>
     </div>
 
-    <div class="area">
+    <div class="area reveal">
       <div class="head">
-        <div class="icon"><svg viewBox="0 0 30 30" fill="none" stroke="#0B4F6C" stroke-width="1.4" aria-hidden="true">
+        <div class="icon"><svg viewBox="0 0 30 30" fill="none" stroke="#121417" stroke-width="1.4" aria-hidden="true">
           <circle cx="4.5" cy="11" r="2"/><circle cx="10" cy="11" r="2"/><circle cx="15.5" cy="11" r="2"/>
-          <rect x="19.5" y="7" width="8" height="8" fill="#E9F1F4"/><path d="M17.5 11h2"/>
-          <path d="M4 21c3 0 3-3 6-3s3 3 6 3 3-3 6-3 3 3 6 3" stroke="#A97A22"/>
+          <rect x="19.5" y="7" width="8" height="8" fill="#ECE7DC"/><path d="M17.5 11h2"/>
+          <path d="M4 21c3 0 3-3 6-3s3 3 6 3 3-3 6-3 3 3 6 3" stroke="#B83A17"/>
         </svg></div>
         <div class="titles">
           <div class="top"><h3>Simulation and decision tools</h3><span class="tag">Deep</span></div>
           <p>Discrete-event models of production and logistics systems, plus the interface that lets a planner run them without me in the room.</p>
         </div>
       </div>
-      <p class="kit">Discrete-event simulation (SimPy, R simmer) &middot; simulation&ndash;optimization &middot; design of experiments &middot; stochastic failures, rework loops, WIP and spare-parts inventory, replenishment policies, queueing and utilisation, operator-skill effects &middot; Python (NumPy, pandas, SciPy, Matplotlib, multiprocessing, Tkinter) &middot; R &middot; Git &middot; GUI and dashboard delivery</p>
+      <p class="kit">Discrete-event simulation (SimPy, R simmer) &middot; simulation&ndash;optimization &middot; design of experiments &middot; stochastic failures, rework loops, WIP and spare-parts inventory, replenishment policies, queueing and utilisation, operator-skill effects &middot; Python (NumPy, pandas, SciPy, Matplotlib, multiprocessing, Tkinter) &middot; R &middot; Git &middot; GUI and self-service decision-tool delivery</p>
     </div>
 
-    <div class="area">
+    <div class="area reveal">
       <div class="head">
-        <div class="icon"><svg viewBox="0 0 30 30" fill="none" stroke="#0B4F6C" stroke-width="1.4" aria-hidden="true">
-          <rect x="3" y="5" width="9" height="6" fill="#E9F1F4"/><rect x="18" y="5" width="9" height="6" fill="#E9F1F4"/>
-          <rect x="10.5" y="19" width="9" height="6" fill="#E9F1F4"/>
+        <div class="icon"><svg viewBox="0 0 30 30" fill="none" stroke="#121417" stroke-width="1.4" aria-hidden="true">
+          <rect x="3" y="5" width="9" height="6" fill="#ECE7DC"/><rect x="18" y="5" width="9" height="6" fill="#ECE7DC"/>
+          <rect x="10.5" y="19" width="9" height="6" fill="#ECE7DC"/>
           <path d="M12 8h6M22.5 11v5h-7.5v3M7.5 11v11h3" stroke-linecap="round"/>
         </svg></div>
         <div class="titles">
           <div class="top"><h3>Process and planning analytics</h3><span class="tag work">Working</span></div>
-          <p>Six years inside operations before the research programme: mapping how a process actually runs, getting the data out, and putting numbers in front of the people who decide.</p>
+          <p>Six positions in operating companies before the research programme: mapping how a process actually runs, getting the data out, and putting numbers in front of the people who decide.</p>
         </div>
       </div>
-      <p class="kit">BPMN and formal process modelling &middot; as-is / to-be mapping and process reengineering &middot; SQL extraction and merging against production databases &middot; R analytics and reporting &middot; dashboard design &middot; production planning, timetabling and scheduling &middot; bottleneck analysis &middot; KPI definition and board-level reporting &middot; statistical process control, process and measurement system capability, acceptance sampling</p>
+      <p class="kit">BPMN and formal process modelling &middot; as-is / to-be mapping and process reengineering &middot; SQL extraction and merging against production databases &middot; R analytics and reporting &middot; self-service reporting tools and the data models underneath &middot; production planning, timetabling and scheduling &middot; bottleneck analysis &middot; KPI definition and board-level reporting &middot; statistical process control, process and measurement system capability, acceptance sampling</p>
     </div>
 
-    <div class="area">
+    <div class="area reveal">
       <div class="head">
-        <div class="icon"><svg viewBox="0 0 30 30" fill="none" stroke="#0B4F6C" stroke-width="1.4" aria-hidden="true">
+        <div class="icon"><svg viewBox="0 0 30 30" fill="none" stroke="#121417" stroke-width="1.4" aria-hidden="true">
           <circle cx="7" cy="8" r="2.2"/><circle cx="7" cy="22" r="2.2"/>
-          <circle cx="15" cy="15" r="2.4" fill="#A97A22" stroke="#A97A22"/>
+          <circle cx="15" cy="15" r="2.4" fill="#B83A17" stroke="#B83A17"/>
           <circle cx="24" cy="8" r="2.2"/><circle cx="24" cy="22" r="2.2"/>
           <path d="M8.6 9.6l4.8 4M8.6 20.4l4.8-4M16.8 13.6l5.4-4M16.8 16.4l5.4 4"/>
         </svg></div>
@@ -553,10 +776,10 @@
       <p class="kit">PPO agents in custom Gym environments learning Lagrangian multiplier update policies &middot; graph neural networks for combinatorial optimization (co-supervised, not sole author) &middot; kernel-based contextual / prescriptive models &middot; scikit-learn &middot; supervised classification, k-means and k-medoids clustering</p>
     </div>
 
-    <div class="area">
+    <div class="area reveal">
       <div class="head">
-        <div class="icon"><svg viewBox="0 0 30 30" fill="none" stroke="#0B4F6C" stroke-width="1.4" aria-hidden="true">
-          <path d="M15 4l11 5-11 5-11-5z" fill="#E9F1F4"/><path d="M4 15l11 5 11-5"/><path d="M4 21l11 5 11-5"/>
+        <div class="icon"><svg viewBox="0 0 30 30" fill="none" stroke="#121417" stroke-width="1.4" aria-hidden="true">
+          <path d="M15 4l11 5-11 5-11-5z" fill="#ECE7DC"/><path d="M4 15l11 5 11-5"/><path d="M4 21l11 5 11-5"/>
         </svg></div>
         <div class="titles">
           <div class="top"><h3>ERP process design</h3><span class="tag scoped">Scoped</span></div>
@@ -564,28 +787,34 @@
         </div>
       </div>
     </div>
+    </div>
   </div>
 </section>
 
-<section>
+<section id="research" class="problems">
   <div class="wrap">
-    <h2>Problems solved, and what changed</h2>
-    <div class="h2rule"></div>
+    <div class="sec-head">
+      <p class="label"><b>06</b> Problems solved</p>
+      <div>
+        <h2>Hard problems, and <em>what changed.</em></h2>
+        <p class="sec-intro">Each drawing shows the structure of the problem, never the result. The result is in the sentence underneath, with its source.</p>
+      </div>
+    </div>
     <div class="gallery">
 
-      <div class="gcard">
+      <div class="gcard reveal">
         <div class="plate">
-          <svg viewBox="0 0 300 120" fill="none" stroke="#0B4F6C" stroke-width="1.6" role="img" aria-label="A production line whose inspection is deferred to a later station">
-            <text stroke="none" x="150" y="14" font-family="IBM Plex Mono, monospace" font-size="10" fill="#A97A22" text-anchor="middle">inspection deferred downstream</text>
-            <path d="M92 44C112 24 214 24 238 40" stroke="#A97A22" stroke-width="1.6" stroke-dasharray="5 4"/>
-            <path d="M232 33l8 8-11 2z" fill="#A97A22" stroke="none"/>
-            <path d="M14 62h272" stroke="#B9C3C9" stroke-width="8" stroke-linecap="round"/>
+          <svg viewBox="0 0 300 120" fill="none" stroke="#121417" stroke-width="1.6" role="img" aria-label="A production line whose inspection is deferred to a later station">
+            <text stroke="none" x="150" y="14" font-family="JetBrains Mono, monospace" font-size="10" fill="#B83A17" text-anchor="middle">inspection deferred downstream</text>
+            <path d="M92 44C112 24 214 24 238 40" stroke="#B83A17" stroke-width="1.6" stroke-dasharray="5 4"/>
+            <path d="M232 33l8 8-11 2z" fill="#B83A17" stroke="none"/>
+            <path d="M14 62h272" stroke="#CFC8BA" stroke-width="8" stroke-linecap="round"/>
             <rect x="24" y="48" width="30" height="28" fill="#fff"/><rect x="76" y="48" width="30" height="28" fill="#fff"/>
             <rect x="128" y="48" width="30" height="28" fill="#fff"/><rect x="180" y="48" width="30" height="28" fill="#fff"/>
-            <rect x="232" y="48" width="30" height="28" fill="#0B4F6C"/>
+            <rect x="232" y="48" width="30" height="28" fill="#121417"/>
             <path d="M239 61l5 5 9-10" stroke="#fff" stroke-width="2.2"/>
-            <text stroke="none" x="24" y="98" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F">station 1</text>
-            <text stroke="none" x="286" y="98" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F" text-anchor="end">inspection station</text>
+            <text stroke="none" x="24" y="98" font-family="JetBrains Mono, monospace" font-size="10" fill="#5B5F67">station 1</text>
+            <text stroke="none" x="286" y="98" font-family="JetBrains Mono, monospace" font-size="10" fill="#5B5F67" text-anchor="end">inspection station</text>
           </svg>
         </div>
         <div class="gbody">
@@ -595,19 +824,19 @@
         </div>
       </div>
 
-      <div class="gcard">
+      <div class="gcard reveal">
         <div class="plate">
-          <svg viewBox="0 0 300 120" fill="none" stroke="#0B4F6C" stroke-width="1.6" role="img" aria-label="A picker route through warehouse aisles with alternative pick locations">
-            <text stroke="none" x="286" y="14" font-family="IBM Plex Mono, monospace" font-size="10" fill="#A97A22" text-anchor="end">alternative pick locations</text>
-            <rect x="30" y="22" width="18" height="76" fill="#D8E4E9" stroke="none"/>
-            <rect x="96" y="22" width="18" height="76" fill="#D8E4E9" stroke="none"/>
-            <rect x="162" y="22" width="18" height="76" fill="#D8E4E9" stroke="none"/>
-            <rect x="228" y="22" width="18" height="76" fill="#D8E4E9" stroke="none"/>
-            <path d="M18 104h264" stroke="#B9C3C9"/>
-            <path d="M20 100V34h52v52h52V30h52v56h52V40" stroke="#0B4F6C" stroke-width="2"/>
-            <circle cx="72" cy="56" r="4.5" fill="#0B4F6C"/><circle cx="124" cy="44" r="4.5" fill="#0B4F6C"/>
-            <circle cx="176" cy="70" r="4.5" fill="#fff" stroke="#A97A22" stroke-width="2"/>
-            <circle cx="228" cy="42" r="4.5" fill="#fff" stroke="#A97A22" stroke-width="2"/>
+          <svg viewBox="0 0 300 120" fill="none" stroke="#121417" stroke-width="1.6" role="img" aria-label="A picker route through warehouse aisles with alternative pick locations">
+            <text stroke="none" x="286" y="14" font-family="JetBrains Mono, monospace" font-size="10" fill="#B83A17" text-anchor="end">alternative pick locations</text>
+            <rect x="30" y="22" width="18" height="76" fill="#E1DACB" stroke="none"/>
+            <rect x="96" y="22" width="18" height="76" fill="#E1DACB" stroke="none"/>
+            <rect x="162" y="22" width="18" height="76" fill="#E1DACB" stroke="none"/>
+            <rect x="228" y="22" width="18" height="76" fill="#E1DACB" stroke="none"/>
+            <path d="M18 104h264" stroke="#CFC8BA"/>
+            <path d="M20 100V34h52v52h52V30h52v56h52V40" stroke="#121417" stroke-width="2"/>
+            <circle cx="72" cy="56" r="4.5" fill="#121417"/><circle cx="124" cy="44" r="4.5" fill="#121417"/>
+            <circle cx="176" cy="70" r="4.5" fill="#fff" stroke="#B83A17" stroke-width="2"/>
+            <circle cx="228" cy="42" r="4.5" fill="#fff" stroke="#B83A17" stroke-width="2"/>
           </svg>
         </div>
         <div class="gbody">
@@ -617,20 +846,20 @@
         </div>
       </div>
 
-      <div class="gcard">
+      <div class="gcard reveal">
         <div class="plate">
-          <svg viewBox="0 0 300 120" fill="none" stroke="#0B4F6C" stroke-width="1.6" role="img" aria-label="A truck route from a depot to mobile parcel lockers within time windows">
-            <text stroke="none" x="286" y="14" font-family="IBM Plex Mono, monospace" font-size="10" fill="#A97A22" text-anchor="end">multiple time windows</text>
-            <path d="M52 60C80 30 106 92 140 62c30-26 62 30 96 2" stroke="#0B4F6C" stroke-width="2"/>
-            <rect x="16" y="48" width="32" height="24" fill="#0B4F6C"/>
-            <text stroke="none" x="32" y="64" font-family="IBM Plex Mono, monospace" font-size="11" fill="#fff" text-anchor="middle">D</text>
-            <rect x="104" y="78" width="18" height="26" rx="2" fill="#E9F1F4"/>
-            <rect x="152" y="24" width="18" height="26" rx="2" fill="#E9F1F4"/>
-            <rect x="238" y="42" width="18" height="26" rx="2" fill="#E9F1F4"/>
-            <path d="M108 86h10M108 92h10M156 32h10M156 38h10M242 50h10M242 56h10" stroke="#0B4F6C" stroke-width="1"/>
-            <circle cx="113" cy="70" r="3.4" fill="#A97A22"/><circle cx="161" cy="58" r="3.4" fill="#A97A22"/>
-            <circle cx="247" cy="76" r="3.4" fill="#A97A22"/>
-            <text stroke="none" x="14" y="98" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F">depot</text>
+          <svg viewBox="0 0 300 120" fill="none" stroke="#121417" stroke-width="1.6" role="img" aria-label="A truck route from a depot to mobile parcel lockers within time windows">
+            <text stroke="none" x="286" y="14" font-family="JetBrains Mono, monospace" font-size="10" fill="#B83A17" text-anchor="end">multiple time windows</text>
+            <path d="M52 60C80 30 106 92 140 62c30-26 62 30 96 2" stroke="#121417" stroke-width="2"/>
+            <rect x="16" y="48" width="32" height="24" fill="#121417"/>
+            <text stroke="none" x="32" y="64" font-family="JetBrains Mono, monospace" font-size="11" fill="#fff" text-anchor="middle">D</text>
+            <rect x="104" y="78" width="18" height="26" rx="2" fill="#ECE7DC"/>
+            <rect x="152" y="24" width="18" height="26" rx="2" fill="#ECE7DC"/>
+            <rect x="238" y="42" width="18" height="26" rx="2" fill="#ECE7DC"/>
+            <path d="M108 86h10M108 92h10M156 32h10M156 38h10M242 50h10M242 56h10" stroke="#121417" stroke-width="1"/>
+            <circle cx="113" cy="70" r="3.4" fill="#B83A17"/><circle cx="161" cy="58" r="3.4" fill="#B83A17"/>
+            <circle cx="247" cy="76" r="3.4" fill="#B83A17"/>
+            <text stroke="none" x="14" y="98" font-family="JetBrains Mono, monospace" font-size="10" fill="#5B5F67">depot</text>
           </svg>
         </div>
         <div class="gbody">
@@ -640,23 +869,23 @@
         </div>
       </div>
 
-      <div class="gcard">
+      <div class="gcard reveal">
         <div class="plate">
-          <svg viewBox="0 0 300 120" fill="none" stroke="#0B4F6C" stroke-width="1.6" role="img" aria-label="A returned product disassembled into components across uncertain scenarios">
-            <text stroke="none" x="14" y="14" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F">returned unit</text>
-            <rect x="18" y="48" width="34" height="28" fill="#0B4F6C"/>
-            <path d="M52 62h30" stroke="#B9C3C9" stroke-width="2"/>
-            <path d="M84 62l32-30M84 62h32M84 62l32 30" stroke="#A97A22" stroke-dasharray="5 4"/>
-            <rect x="120" y="20" width="26" height="24" fill="#E9F1F4"/>
-            <rect x="120" y="50" width="26" height="24" fill="#E9F1F4"/>
-            <rect x="120" y="80" width="26" height="24" fill="#E9F1F4"/>
-            <path d="M146 32h30M146 62h30M146 92h30" stroke="#B9C3C9"/>
+          <svg viewBox="0 0 300 120" fill="none" stroke="#121417" stroke-width="1.6" role="img" aria-label="A returned product disassembled into components across uncertain scenarios">
+            <text stroke="none" x="14" y="14" font-family="JetBrains Mono, monospace" font-size="10" fill="#5B5F67">returned unit</text>
+            <rect x="18" y="48" width="34" height="28" fill="#121417"/>
+            <path d="M52 62h30" stroke="#CFC8BA" stroke-width="2"/>
+            <path d="M84 62l32-30M84 62h32M84 62l32 30" stroke="#B83A17" stroke-dasharray="5 4"/>
+            <rect x="120" y="20" width="26" height="24" fill="#ECE7DC"/>
+            <rect x="120" y="50" width="26" height="24" fill="#ECE7DC"/>
+            <rect x="120" y="80" width="26" height="24" fill="#ECE7DC"/>
+            <path d="M146 32h30M146 62h30M146 92h30" stroke="#CFC8BA"/>
             <rect x="176" y="20" width="20" height="24" fill="#fff"/><rect x="200" y="20" width="20" height="24" fill="#fff"/>
             <rect x="176" y="50" width="20" height="24" fill="#fff"/><rect x="200" y="50" width="20" height="24" fill="#fff"/>
             <rect x="176" y="80" width="20" height="24" fill="#fff"/><rect x="200" y="80" width="20" height="24" fill="#fff"/>
-            <text stroke="none" x="232" y="36" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F">scenario 1</text>
-            <text stroke="none" x="232" y="66" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F">scenario 2</text>
-            <text stroke="none" x="232" y="96" font-family="IBM Plex Mono, monospace" font-size="10" fill="#56676F">scenario s</text>
+            <text stroke="none" x="232" y="36" font-family="JetBrains Mono, monospace" font-size="10" fill="#5B5F67">scenario 1</text>
+            <text stroke="none" x="232" y="66" font-family="JetBrains Mono, monospace" font-size="10" fill="#5B5F67">scenario 2</text>
+            <text stroke="none" x="232" y="96" font-family="JetBrains Mono, monospace" font-size="10" fill="#5B5F67">scenario s</text>
           </svg>
         </div>
         <div class="gbody">
@@ -667,14 +896,34 @@
       </div>
 
     </div>
+
+    <p class="sub-label">Also on the record</p>
+    <div class="also">
+      <div class="result reveal">
+        <h3>Turned an intractable formulation into a polynomial-time routine</h3>
+        <p>Derived an exact dynamic-programming algorithm for the uncapacitated inspection-allocation problem: identical optima on 10,000 tested instances and an 8.6&times; average speedup at 100 stages.</p>
+      </div>
+      <div class="result reveal">
+        <h3>Protected 9.3% of total cost by modelling uncertainty</h3>
+        <p>On an independent holdout sample, the stochastic inspection plan cost 9.3% less than expected-value planning. Certified scenario reduction then removed 95% of the scenarios without giving back the tested out-of-sample result.</p>
+      </div>
+      <div class="result reveal">
+        <h3>Separated the value of three planning inputs</h3>
+        <p>In paired synthetic remanufacturing experiments, integrated roster decisions reduced weekly cost by 40.0% against a workload-coverage rule; condition information contributed 8.9% and operator-skill information 12.0% against their respective ablations.</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="jtabs-section" id="journal-motion">
   <div class="wrap">
-    <h2>The journal papers &mdash; in motion</h2>
-    <div class="h2rule"></div>
-    <p class="legend">One tab per journal article. Each animation draws the problem the paper solves &mdash; the structure, never the results.</p>
+    <div class="sec-head">
+      <p class="label"><b>07</b> Papers in motion</p>
+      <div>
+        <h2>The journal papers, <em>animated.</em></h2>
+        <p class="sec-intro">One tab per journal article. Each animation draws the problem the paper solves &mdash; the structure, never the results.</p>
+      </div>
+    </div>
     <div class="jtabs">
       <input type="radio" name="jtab" id="jt1" checked>
       <input type="radio" name="jtab" id="jt2">
@@ -685,59 +934,59 @@
         <label for="jt3">Mobile lockers &middot; Future Transp. 2024</label>
       </div>
       <div class="jpanel jp1">
-        <div class="jplate"><svg viewBox="0 0 640 200" fill="none" stroke="#0B4F6C" stroke-width="1.6" role="img" aria-label="Animated: a defect travels down the production line and is caught at a later inspection station">
-          <text stroke="none" x="320" y="22" font-family="IBM Plex Mono, monospace" font-size="11" fill="#A97A22" text-anchor="middle" letter-spacing="1">inspection deferred downstream</text>
-          <path class="a1arc" d="M105 90C210 34 430 34 502 86" stroke="#A97A22" stroke-width="1.5" stroke-dasharray="6 5"/>
-          <path class="a1arc" d="M495 78l9 10-13 2z" fill="#A97A22" stroke="none"/>
-          <path d="M30 118h580" stroke="#B9C3C9" stroke-width="9" stroke-linecap="round"/>
+        <div class="jplate"><svg viewBox="0 0 640 200" fill="none" stroke="#121417" stroke-width="1.6" role="img" aria-label="Animated: a defect travels down the production line and is caught at a later inspection station">
+          <text stroke="none" x="320" y="22" font-family="JetBrains Mono, monospace" font-size="11" fill="#B83A17" text-anchor="middle" letter-spacing="1">inspection deferred downstream</text>
+          <path class="a1arc" d="M105 90C210 34 430 34 502 86" stroke="#B83A17" stroke-width="1.5" stroke-dasharray="6 5"/>
+          <path class="a1arc" d="M495 78l9 10-13 2z" fill="#B83A17" stroke="none"/>
+          <path d="M30 118h580" stroke="#CFC8BA" stroke-width="9" stroke-linecap="round"/>
           <rect x="60" y="97" width="46" height="42" fill="#fff"/><rect x="170" y="97" width="46" height="42" fill="#fff"/>
           <rect x="280" y="97" width="46" height="42" fill="#fff"/><rect x="390" y="97" width="46" height="42" fill="#fff"/>
-          <rect x="500" y="97" width="46" height="42" fill="#0B4F6C"/>
-          <g class="a1dot"><circle cx="83" cy="118" r="5" fill="#A97A22" stroke="none"/></g>
+          <rect x="500" y="97" width="46" height="42" fill="#121417"/>
+          <g class="a1dot"><circle cx="83" cy="118" r="5" fill="#B83A17" stroke="none"/></g>
           <path class="a1chk" pathLength="100" d="M512 118l8 8 15-17" stroke="#fff" stroke-width="2.6"/>
-          <text stroke="none" x="60" y="164" font-family="IBM Plex Mono, monospace" font-size="11" fill="#56676F">station 1</text>
-          <text stroke="none" x="610" y="164" font-family="IBM Plex Mono, monospace" font-size="11" fill="#56676F" text-anchor="end">inspection station</text>
+          <text stroke="none" x="60" y="164" font-family="JetBrains Mono, monospace" font-size="11" fill="#5B5F67">station 1</text>
+          <text stroke="none" x="610" y="164" font-family="JetBrains Mono, monospace" font-size="11" fill="#5B5F67" text-anchor="end">inspection station</text>
         </svg></div>
         <p class="cap">Inspection station allocation with delayed inspection</p>
         <p class="src">Computers &amp; Operations Research 194, 107588 (2026) &middot; with S. De Vuyst and B. Raa</p>
         <p class="expl">A defect born at an early station need not be caught there: it may be caught at any station inside its window, at the price of capacity every other defect type competes for. One cycle follows one defect down the line to the station that catches it.</p>
       </div>
       <div class="jpanel jp2">
-        <div class="jplate"><svg viewBox="0 0 640 200" fill="none" stroke="#0B4F6C" stroke-width="1.6" role="img" aria-label="Animated: a picker tour draws itself through the aisles and commits to alternative pick locations as it passes them">
-          <text stroke="none" x="610" y="22" font-family="IBM Plex Mono, monospace" font-size="11" fill="#A97A22" text-anchor="end" letter-spacing="1">alternative pick locations</text>
-          <rect x="86" y="34" width="40" height="120" fill="#D8E4E9" stroke="none"/>
-          <rect x="216" y="34" width="40" height="120" fill="#D8E4E9" stroke="none"/>
-          <rect x="346" y="34" width="40" height="120" fill="#D8E4E9" stroke="none"/>
-          <rect x="476" y="34" width="40" height="120" fill="#D8E4E9" stroke="none"/>
-          <path d="M40 172h560" stroke="#B9C3C9"/>
-          <path class="a2route" pathLength="100" d="M56 166V52h130v98h130V46h130v104h124" stroke="#0B4F6C" stroke-width="2"/>
-          <circle cx="186" cy="110" r="5" fill="#0B4F6C"/><circle cx="316" cy="84" r="5" fill="#0B4F6C"/>
-          <circle class="a2halo1" cx="446" cy="118" r="6" stroke="#A97A22" stroke-width="2"/>
-          <circle cx="446" cy="118" r="5" fill="#fff" stroke="#A97A22" stroke-width="2"/>
-          <circle class="a2halo2" cx="524" cy="150" r="6" stroke="#A97A22" stroke-width="2"/>
-          <circle cx="524" cy="150" r="5" fill="#fff" stroke="#A97A22" stroke-width="2"/>
-          <g class="a2picker"><circle r="5.5" fill="#0B4F6C" stroke="#fff" stroke-width="1.5"/></g>
-          <text stroke="none" x="40" y="192" font-family="IBM Plex Mono, monospace" font-size="11" fill="#56676F">depot</text>
+        <div class="jplate"><svg viewBox="0 0 640 200" fill="none" stroke="#121417" stroke-width="1.6" role="img" aria-label="Animated: a picker tour draws itself through the aisles and commits to alternative pick locations as it passes them">
+          <text stroke="none" x="610" y="22" font-family="JetBrains Mono, monospace" font-size="11" fill="#B83A17" text-anchor="end" letter-spacing="1">alternative pick locations</text>
+          <rect x="86" y="34" width="40" height="120" fill="#E1DACB" stroke="none"/>
+          <rect x="216" y="34" width="40" height="120" fill="#E1DACB" stroke="none"/>
+          <rect x="346" y="34" width="40" height="120" fill="#E1DACB" stroke="none"/>
+          <rect x="476" y="34" width="40" height="120" fill="#E1DACB" stroke="none"/>
+          <path d="M40 172h560" stroke="#CFC8BA"/>
+          <path class="a2route" pathLength="100" d="M56 166V52h130v98h130V46h130v104h124" stroke="#121417" stroke-width="2"/>
+          <circle cx="186" cy="110" r="5" fill="#121417"/><circle cx="316" cy="84" r="5" fill="#121417"/>
+          <circle class="a2halo1" cx="446" cy="118" r="6" stroke="#B83A17" stroke-width="2"/>
+          <circle cx="446" cy="118" r="5" fill="#fff" stroke="#B83A17" stroke-width="2"/>
+          <circle class="a2halo2" cx="524" cy="150" r="6" stroke="#B83A17" stroke-width="2"/>
+          <circle cx="524" cy="150" r="5" fill="#fff" stroke="#B83A17" stroke-width="2"/>
+          <g class="a2picker"><circle r="5.5" fill="#121417" stroke="#fff" stroke-width="1.5"/></g>
+          <text stroke="none" x="40" y="192" font-family="JetBrains Mono, monospace" font-size="11" fill="#5B5F67">depot</text>
         </svg></div>
         <p class="cap">Joint order batching and picker routing with alternative locations</p>
         <p class="src">IMA Journal of Management Mathematics 35(2), 241&ndash;265 (2024) &middot; with M. Setak, E. Demir and T. Van Woensel</p>
         <p class="expl">When an item is held at several shelves, the route chooses the location. One cycle draws the tour; the ring marks the moment a pick commits to the alternative that suits the route.</p>
       </div>
       <div class="jpanel jp3">
-        <div class="jplate"><svg viewBox="0 0 640 200" fill="none" stroke="#0B4F6C" stroke-width="1.6" role="img" aria-label="Animated: a resupply vehicle rides one round from the depot, replenishing mobile parcel lockers as it passes">
-          <text stroke="none" x="610" y="22" font-family="IBM Plex Mono, monospace" font-size="11" fill="#A97A22" text-anchor="end" letter-spacing="1">multiple time windows</text>
-          <path class="a3route" pathLength="100" d="M84 113C170 40 250 170 340 96 400 56 470 140 596 106" stroke="#0B4F6C" stroke-width="2"/>
-          <rect x="36" y="96" width="48" height="34" fill="#0B4F6C"/>
-          <text stroke="none" x="60" y="118" font-family="IBM Plex Mono, monospace" font-size="12" fill="#fff" text-anchor="middle">D</text>
+        <div class="jplate"><svg viewBox="0 0 640 200" fill="none" stroke="#121417" stroke-width="1.6" role="img" aria-label="Animated: a resupply vehicle rides one round from the depot, replenishing mobile parcel lockers as it passes">
+          <text stroke="none" x="610" y="22" font-family="JetBrains Mono, monospace" font-size="11" fill="#B83A17" text-anchor="end" letter-spacing="1">multiple time windows</text>
+          <path class="a3route" pathLength="100" d="M84 113C170 40 250 170 340 96 400 56 470 140 596 106" stroke="#121417" stroke-width="2"/>
+          <rect x="36" y="96" width="48" height="34" fill="#121417"/>
+          <text stroke="none" x="60" y="118" font-family="JetBrains Mono, monospace" font-size="12" fill="#fff" text-anchor="middle">D</text>
           <rect x="186" y="120" width="26" height="38" rx="2" fill="#fff"/>
           <rect x="352" y="26" width="26" height="38" rx="2" fill="#fff"/>
           <rect x="500" y="122" width="26" height="38" rx="2" fill="#fff"/>
-          <path d="M191 130h16M191 137h16M357 36h16M357 43h16M505 132h16M505 139h16" stroke="#0B4F6C" stroke-width="1"/>
-          <rect class="a3f1" x="190" y="146" width="18" height="8" fill="#A97A22" stroke="none"/>
-          <rect class="a3f2" x="356" y="52" width="18" height="8" fill="#A97A22" stroke="none"/>
-          <rect class="a3f3" x="504" y="148" width="18" height="8" fill="#A97A22" stroke="none"/>
-          <g class="a3truck"><rect x="-11" y="-8" width="22" height="13" rx="2" fill="#A97A22" stroke="none"/><circle cx="-5" cy="7" r="2.6" fill="#10222C" stroke="none"/><circle cx="5" cy="7" r="2.6" fill="#10222C" stroke="none"/></g>
-          <text stroke="none" x="36" y="150" font-family="IBM Plex Mono, monospace" font-size="11" fill="#56676F">depot</text>
+          <path d="M191 130h16M191 137h16M357 36h16M357 43h16M505 132h16M505 139h16" stroke="#121417" stroke-width="1"/>
+          <rect class="a3f1" x="190" y="146" width="18" height="8" fill="#B83A17" stroke="none"/>
+          <rect class="a3f2" x="356" y="52" width="18" height="8" fill="#B83A17" stroke="none"/>
+          <rect class="a3f3" x="504" y="148" width="18" height="8" fill="#B83A17" stroke="none"/>
+          <g class="a3truck"><rect x="-11" y="-8" width="22" height="13" rx="2" fill="#B83A17" stroke="none"/><circle cx="-5" cy="7" r="2.6" fill="#121417" stroke="none"/><circle cx="5" cy="7" r="2.6" fill="#121417" stroke="none"/></g>
+          <text stroke="none" x="36" y="150" font-family="JetBrains Mono, monospace" font-size="11" fill="#5B5F67">depot</text>
         </svg></div>
         <p class="cap">Re-supplying autonomous mobile parcel lockers in last-mile distribution</p>
         <p class="src">Future Transportation 4(4), 1266&ndash;1296 (2024) &middot; with M. Setak, T. Van Woensel and E. Demir</p>
@@ -746,96 +995,90 @@
     </div>
   </div>
 </section>
-<section>
-  <div class="wrap">
-    <h2>Also on the record</h2>
-    <div class="h2rule"></div>
 
-    <div class="result">
-      <h3>Turned an intractable formulation into a polynomial-time routine</h3>
-      <p>Derived an exact dynamic-programming algorithm for the uncapacitated inspection-allocation problem: identical optima on 10,000 tested instances and an 8.6&times; average speedup at 100 stages.</p>
+<section id="record">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label"><b>08</b> Track record</p>
+      <div>
+        <h2>Eight years, <em>three settings.</em></h2>
+        <p class="sec-intro">An industrial research programme, a visiting research post in the Netherlands, and the operating companies where it started.</p>
+      </div>
     </div>
-    <div class="result">
-      <h3>Protected 9.3% of total cost by modelling uncertainty</h3>
-      <p>On an independent holdout sample, the stochastic inspection plan cost 9.3% less than expected-value planning. Certified scenario reduction then removed 95% of the scenarios without giving back the tested out-of-sample result.</p>
-    </div>
-    <div class="result">
-      <h3>Separated the value of three planning inputs</h3>
-      <p>In paired synthetic remanufacturing experiments, integrated roster decisions reduced weekly cost by 40.0% against a workload-coverage rule; condition information contributed 8.9% and operator-skill information 12.0% against their respective ablations.</p>
-    </div>
+    <ol class="timeline">
+      <li class="role reveal">
+        <div class="when">Jan 2022 &mdash; present</div>
+        <div>
+          <h3>Project Researcher</h3>
+          <span class="where">Ghent University &amp; Flanders Make &mdash; REMASC programme</span>
+          <p>Stochastic and learning-augmented optimization for capacity allocation and scheduling in remanufacturing, delivered as decision tools the industrial partner uses directly on their own data. Teaching assistant since February 2022: runs the exercise sessions for the whole course and sometimes delivers the theory lectures &mdash; probability and R, exploratory data analysis, hypothesis testing, regression, one- and two-way ANOVA, design of experiments, acceptance sampling, statistical process control, process and measurement system capability. Co-supervised one M.Sc. thesis.</p>
+        </div>
+      </li>
+      <li class="role reveal">
+        <div class="when">Sep &mdash; Dec 2021</div>
+        <div>
+          <h3>Visiting Researcher</h3>
+          <span class="where">Eindhoven University of Technology (TU/e)</span>
+          <p>City logistics and warehousing: waste-collection routing, last-mile delivery with alternative locations, integrated order picking and batching, mobile parcel lockers. Coursework with BETA, the Dutch research school for Operations Management &amp; Logistics.</p>
+        </div>
+      </li>
+      <li class="role reveal">
+        <div class="when">Dec 2015 &mdash; Jul 2021</div>
+        <div>
+          <h3>Business analysis, planning and industrial engineering</h3>
+          <span class="where">APSAN &middot; Baroline &middot; Hacoupian &middot; SmartComm &middot; Entekhab Group &middot; SarvRayaneh &mdash; Iran</span>
+          <p>Six positions, two of them concurrent, totalling three years and three months. Process modelling and reengineering in every role; SQL extraction against live databases; self-service reporting tools and board-level reporting; planning, timetabling and scheduling across competing teams at a startup; bottleneck analysis on a live garment production floor; process design on a SAP MM implementation at a petrochemical facility.</p>
+        </div>
+      </li>
+    </ol>
   </div>
 </section>
 
-<section>
+<section class="pubs" id="publications">
   <div class="wrap">
-    <h2>Track record</h2>
-    <div class="h2rule"></div>
-
-    <div class="role">
-      <div class="when">Jan 2022 &mdash; present</div>
+    <div class="sec-head">
+      <p class="label"><b>09</b> Publications</p>
       <div>
-        <h3>Project Researcher</h3>
-        <span class="where">Ghent University &amp; Flanders Make &mdash; REMASC programme</span>
-        <p>Stochastic and learning-augmented optimization for capacity allocation and scheduling in remanufacturing, delivered as decision tools the industrial partner uses directly on their own data. Teaching assistant since February 2022: runs the exercise sessions for the whole course and sometimes delivers the theory lectures &mdash; probability and R, exploratory data analysis, hypothesis testing, regression, one- and two-way ANOVA, design of experiments, acceptance sampling, statistical process control, process and measurement system capability. Co-supervised one M.Sc. thesis.</p>
+        <h2>Publications and <em>peer review.</em></h2>
       </div>
     </div>
-
-    <div class="role">
-      <div class="when">Sep &mdash; Dec 2021</div>
-      <div>
-        <h3>Visiting Researcher</h3>
-        <span class="where">Eindhoven University of Technology (TU/e)</span>
-        <p>City logistics and warehousing: waste-collection routing, last-mile delivery with alternative locations, integrated order picking and batching, mobile parcel lockers. Coursework with BETA, the Dutch research school for Operations Management &amp; Logistics.</p>
-      </div>
-    </div>
-
-    <div class="role">
-      <div class="when">Dec 2015 &mdash; Jul 2021</div>
-      <div>
-        <h3>Business analysis, planning and industrial engineering</h3>
-        <span class="where">APSAN &middot; Baroline &middot; Hacoupian &middot; SmartComm &middot; Entekhab Group &middot; SarvRayaneh &mdash; Iran</span>
-        <p>Six positions, two of them concurrent, totalling three years and three months. Process modelling and reengineering in every role; SQL extraction against live databases; dashboards and board-level reporting; planning, timetabling and scheduling across competing teams at a startup; bottleneck analysis on a live garment production floor; process design on a SAP MM implementation at a petrochemical facility.</p>
-      </div>
-    </div>
+    <ol class="publist">
+      <li class="pub">
+        <div>Hedayati, S., De Vuyst, S., Raa, B. (2026). Inspection station allocation in a production line with delayed inspection. <span class="venue">Computers &amp; Operations Research</span>, 194, 107588.
+        <span class="note">Web of Science indexed &middot; UGent class A1</span></div>
+      </li>
+      <li class="pub">
+        <div>Hedayati, S., Setak, M., Demir, E., Van Woensel, T. (2024). A new approach to the joint order batching and picker routing problem with alternative locations. <span class="venue">IMA Journal of Management Mathematics</span>, 35(2), 241&ndash;265. Oxford University Press.</div>
+      </li>
+      <li class="pub">
+        <div>Hedayati, S., Setak, M., Van Woensel, T., Demir, E. (2024). Re-supplying autonomous mobile parcel lockers in last-mile distribution. <span class="venue">Future Transportation</span>, 4(4), 1266&ndash;1296. MDPI.</div>
+      </li>
+      <li class="pub plain">
+        <div>Six peer-reviewed conference contributions: ORBEL 40 (2026) &middot; Flanders Make Scientific Conference 2025 &middot; FEARS 2025 &middot; IWLS 2025 &middot; FEARS 2022 &middot; NOMLC 2022.
+        <span class="note">Peer reviewer for IMA Journal of Management Mathematics, Journal of Heuristics and OR Spektrum</span></div>
+      </li>
+      <li class="pub plain">
+        <div>Current manufacturing research: certified scenario reduction for stochastic inspection allocation; an exact dynamic program for uncapacitated inspection allocation; decision-dependent recourse domains; certificate-conditioned remanufacturing planning; and integrated disassembly scheduling with workforce planning.
+        <span class="note">Working manuscripts and reproducible computational studies &middot; not yet submitted unless stated otherwise</span></div>
+      </li>
+      <li class="pub plain">
+        <div>Current logistics and synthesis research: delegated basket completion in marketplace e-grocery (sole-authored); the stochastic mobile-depot autonomous locker routing problem; and a structured review of uncertainty across the recoverable area.
+        <span class="note">Working manuscripts and research studies &middot; August 2026</span></div>
+      </li>
+    </ol>
   </div>
 </section>
 
-<section>
+<section id="education">
   <div class="wrap">
-    <h2>Publications and peer review</h2>
-    <div class="h2rule"></div>
-
-    <div class="pub">
-      Hedayati, S., De Vuyst, S., Raa, B. (2026). Inspection station allocation in a production line with delayed inspection. <span class="venue">Computers &amp; Operations Research</span>, 194, 107588.
-      <span class="note">Web of Science indexed &middot; UGent class A1</span>
+    <div class="sec-head">
+      <p class="label"><b>10</b> Foundations</p>
+      <div>
+        <h2>Education, languages, <em>certification.</em></h2>
+      </div>
     </div>
-    <div class="pub">
-      Hedayati, S., Setak, M., Demir, E., Van Woensel, T. (2024). A new approach to the joint order batching and picker routing problem with alternative locations. <span class="venue">IMA Journal of Management Mathematics</span>, 35(2), 241&ndash;265. Oxford University Press.
-    </div>
-    <div class="pub">
-      Hedayati, S., Setak, M., Van Woensel, T., Demir, E. (2024). Re-supplying autonomous mobile parcel lockers in last-mile distribution. <span class="venue">Future Transportation</span>, 4(4), 1266&ndash;1296. MDPI.
-    </div>
-    <div class="pub">
-      Six peer-reviewed conference contributions: ORBEL 40 (2026) &middot; Flanders Make Scientific Conference 2025 &middot; FEARS 2025 &middot; IWLS 2025 &middot; FEARS 2022 &middot; NOMLC 2022.
-      <span class="note">Peer reviewer for IMA Journal of Management Mathematics, Journal of Heuristics and OR Spektrum</span>
-    </div>
-    <div class="pub">
-      Current manufacturing research: certified scenario reduction for stochastic inspection allocation; an exact dynamic program for uncapacitated inspection allocation; decision-dependent recourse domains; certificate-conditioned remanufacturing planning; and integrated disassembly scheduling with workforce planning.
-      <span class="note">Working manuscripts and reproducible computational studies &middot; not yet submitted unless stated otherwise</span>
-    </div>
-    <div class="pub">
-      Current logistics and synthesis research: delegated basket completion in marketplace e-grocery (sole-authored); the stochastic mobile-depot autonomous locker routing problem; and a structured review of uncertainty across the recoverable area.
-      <span class="note">Working manuscripts and research studies &middot; August 2026</span>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>Education, languages, certification</h2>
-    <div class="h2rule"></div>
     <div class="facts">
-      <div class="fact">
+      <div class="fact reveal">
         <h3>Education</h3>
         <ul>
           <li>Ph.D. Industrial Engineering<span>Ghent University, 2022&ndash;2026 (expected). Internal defence December 2026; public defence expected early 2027.</span></li>
@@ -844,7 +1087,7 @@
           <li>Doctoral studies, K. N. Toosi University of Technology<span>2018&ndash;2021, program not completed</span></li>
         </ul>
       </div>
-      <div class="fact">
+      <div class="fact reveal">
         <h3>Languages</h3>
         <ul>
           <li>Persian<span>Native</span></li>
@@ -852,7 +1095,7 @@
           <li>Dutch<span>B1+, certified by UCT, Ghent University</span></li>
         </ul>
       </div>
-      <div class="fact">
+      <div class="fact reveal">
         <h3>Certification</h3>
         <ul>
           <li>ISO 9001 Foundation &mdash; Quality</li>
@@ -868,8 +1111,7 @@
 
 <section class="book-section" id="book">
   <div class="wrap">
-    <h2>Book</h2>
-    <div class="h2rule"></div>
+    <h2 class="label"><b>11</b> Book</h2>
     <article class="book-card">
       <a class="book-cover-link" href="books/the-abundance-within.pdf" target="_blank" rel="noopener" aria-label="Read The Abundance Within online">
         <img class="book-cover" src="assets/the-abundance-within-cover-final.png" width="576" height="864" loading="lazy" alt="Cover of The Abundance Within by Sam Hedayati">
@@ -891,8 +1133,19 @@
 
 <footer>
   <div class="wrap">
-    <strong>Sajjad (Sam) Hedayati</strong> &mdash; optimization, simulation and decision support for manufacturing and logistics. Ghent, Belgium.
-    <div class="version">Profile &mdash; v3.8 (web) &middot; September 2026 &middot; <a href="mailto:sajjad.hedayati@ugent.be">sajjad.hedayati@ugent.be</a></div>
+    <div class="foot-grid">
+      <div>
+        <p class="foot-title">Have a problem <em>no tool solves?</em></p>
+        <a class="foot-mail" href="mailto:sajjad.hedayati@ugent.be">sajjad.hedayati@ugent.be</a>
+      </div>
+      <ul class="foot-links">
+        <li><a href="https://www.linkedin.com/in/sajjad-hedayati-13703725a">LinkedIn</a></li>
+        <li><a href="https://scholar.google.com/citations?user=vNrnIkoAAAAJ">Google Scholar</a></li>
+        <li><a href="https://orcid.org/0000-0002-1008-6288">ORCID</a></li>
+        <li><a href="https://github.com/hedayatis">GitHub</a></li>
+      </ul>
+    </div>
+    <div class="version"><span><strong>Sajjad (Sam) Hedayati</strong> &mdash; optimization, simulation and decision support for manufacturing and logistics. Ghent, Belgium.</span><span>Profile &mdash; v4.0 (web) &middot; October 2026</span></div>
   </div>
 </footer>
 

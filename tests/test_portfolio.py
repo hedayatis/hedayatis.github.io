@@ -2,6 +2,7 @@
 from collections import Counter
 from html.parser import HTMLParser
 from pathlib import Path
+import re
 import unittest
 
 
@@ -119,16 +120,32 @@ class PortfolioTests(unittest.TestCase):
         self.assertIn(SIMULATION, self.readme)
         self.assertIn("50 seconds or more", self.readme)
 
-    def test_personal_typography_and_dark_theme(self):
-        for family in ("Fraunces", "Manrope", "Source+Serif+4", "IBM+Plex+Mono"):
+    def test_brand_typography_and_dark_theme(self):
+        for family in ("Instrument+Serif", "Inter", "JetBrains+Mono"):
             self.assertIn(family, self.source)
-        self.assertIn('--signature:"Fraunces"', self.source)
+        self.assertIn('--display:"Instrument Serif"', self.source)
         self.assertIn('class="name-alias"', self.source)
+        self.assertIn("I build the model, <em>then the tool people run it in.</em>", self.source)
         self.assertIn("@media (prefers-color-scheme:dark)", self.source)
         self.assertIn("color-scheme:light dark", self.source)
-        self.assertIn('content="#071419" media="(prefers-color-scheme: dark)"', self.source)
+        self.assertIn('content="#0E1013" media="(prefers-color-scheme: dark)"', self.source)
+        self.assertIn("prefers-reduced-motion:reduce", self.source)
         self.assertIn("Complete dark mode", self.readme)
 
+    def test_funding_decision_leads_the_page(self):
+        # The strongest verified result: it must sit directly under the masthead.
+        claim = "decision to <em>continue funding</em> the programme"
+        self.assertIn(claim, self.source)
+        self.assertLess(self.source.index(claim), self.source.index('id="measured-outcomes"'))
+
+    def test_public_page_is_ascii_and_carries_nothing_private(self):
+        self.assertTrue(self.source.isascii(), "write special characters as HTML entities")
+        forbidden = [r"\+32\s?4\d{2}", r"months'? notice", r"willing to relocate",
+                     r"\bopen to\b", r"\bseeking\b", r"looking for a role", r"residence permit",
+                     r"single permit", r"Blue Card", r"sponsorship", r"permanent residency",
+                     r"Not claimed", r"salary"]
+        for pattern in forbidden:
+            self.assertIsNone(re.search(pattern, self.source, re.I), pattern)
 
 if __name__ == "__main__":
     unittest.main()
