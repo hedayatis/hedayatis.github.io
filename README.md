@@ -109,7 +109,7 @@ denying real need or injustice.
 - **10,000 exact matches:** a tailored dynamic program matched the IP optimum
   on every tested instance and averaged an 8.6x speedup at 100 stages.
 - **40.0% lower weekly planning cost:** against a strong workload-coverage
-  roster in paired synthetic remanufacturing weeks; condition and skill
+  shift schedule in paired synthetic remanufacturing weeks; condition and skill
   information contributed 8.9% and 12.0% against their respective ablations.
 - **More than 80% less waiting:** from fleet sizing in both tested stochastic
   mobile-depot mobility regimes; multi-start search recovered all 12 of 12
@@ -166,7 +166,7 @@ The current version is stamped in the page footer.
 
 ## Revision and validation
 
-Current revision: **4.2**. The existing two-part website revision convention is
+Current revision: **4.3**. The existing two-part website revision convention is
 preserved in `VERSION`, the footer, and `CHANGELOG.md`.
 
 Revision 4.0 is a full rebrand: new visual identity, builder positioning, and a

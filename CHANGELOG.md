@@ -1,5 +1,26 @@
 # Changelog
 
+## [4.3] - 2026-11-02
+
+**Status:** release
+
+### Added
+
+- The REMASC shift-scheduling engine for the partner's operators, on the
+  profile page and in the CV (simulation-optimization method, Gurobi, handed
+  over to the partners who own it).
+- All eight working papers on the CV page, with their titles, in place of the
+  four short lines (labelled working papers, unpublished). CV PDF regenerated.
+
+### Changed
+
+- "Roster" replaced by shift-schedule wording on the profile page and in the
+  README, to match the terminology of the thesis and papers.
+
+### Validation
+
+- `python -B -m unittest discover -s tests -v`: see the release commit.
+
 ## [4.2] - 2026-10-26
 
 **Status:** release

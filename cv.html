@@ -181,6 +181,7 @@
         <span class="org">Ghent University &amp; Flanders Make <span>&middot; Dept. of Industrial Systems Engineering and Product Design &middot; REMASC programme since Oct 2024</span></span>
         <ul>
           <li><strong>They had no tool for it; I built one, and it changed a funding decision.</strong> A discrete-event simulation and analytics application &mdash; a digital twin of the partner&rsquo;s cellular remanufacturing floor: stochastic failures, rework loops, WIP and spare-parts inventory, replenishment policies, resource utilisation, queues, operator-skill effects and cost &mdash; with automated scenario comparison of dispatching rules, staffing and shift schedules. Delivered as a self-service application so the partner&rsquo;s engineers could test changes themselves; it provided the key evidence behind Flanders Make&rsquo;s decision to continue funding the programme.</li>
+          <li><strong>Built the shift-scheduling engine for the partner&rsquo;s operators.</strong> A simulation-optimization method of my own, solved with Gurobi. Operator skills are modelled per job type, operator, cell and machine, and each arrival carries the partner&rsquo;s own classification label, which sets its route. Handed over with a technical booklet on the model and the code, and a user guide with a narrated video. It runs from a browser app or a JSON input. The REMASC partners own it.</li>
           <li><strong>Solved what the solver could not.</strong> Formulated inspection-station and capacity allocation as integer programmes, then built two Lagrangian relaxation approaches with greedy repair and hill-climbing search that return near-optimal plans with bounded gaps where the commercial solver stalls at the time limit; on the largest benchmark, runtime fell from 418.50 s to 23.31 s with the reported gap below 8%. Benchmarked against the exact solver and a problem-specific genetic algorithm; published in <em>Computers &amp; Operations Research</em> (2026).</li>
           <li><strong>Made an intractable case exact.</strong> Derived an exact dynamic program for the uncapacitated case: identical optima on all 10,000 tested instances and an 8.6&times; average speedup at 100 stages, verified against an independent branch-and-bound implementation.</li>
           <li><strong>Showed what modelling uncertainty is worth.</strong> On an independent holdout sample, the stochastic inspection plan cost 9.3% less than expected-value planning; a certified scenario reduction then cut 1,000 scenarios to 50 without giving back the tested out-of-sample result.</li>
@@ -345,11 +346,15 @@
     <div class="pub"><b>J2</b><div>Hedayati, S., Setak, M., Demir, E., Van Woensel, T. (2024). A new approach to the joint order batching and picker routing problem with alternative locations. <span class="venue">IMA Journal of Management Mathematics</span>, 35(2), 241&ndash;265. Oxford University Press.</div></div>
     <div class="pub"><b>J3</b><div>Hedayati, S., Setak, M., Van Woensel, T., Demir, E. (2024). Re-supplying autonomous mobile parcel lockers in last-mile distribution. <span class="venue">Future Transportation</span>, 4(4), 1266&ndash;1296. MDPI.</div></div>
 
-    <p class="sub">Manuscripts in preparation</p>
-    <div class="pub"><b>M1</b><div>Hedayati, S., De Vuyst, S. Learning decision-dependent recourse domains in two-stage stochastic programming.</div></div>
-    <div class="pub"><b>M2</b><div>With S. De Vuyst: certified scenario reduction for stochastic inspection allocation.</div></div>
-    <div class="pub"><b>M3</b><div>With S. De Vuyst: contextual scenario reduction.</div></div>
-    <div class="pub"><b>M4</b><div>With S. De Vuyst: stochastic lot-sizing and scheduling for quality-graded disassembly.</div></div>
+    <p class="sub">Working papers (unpublished)</p>
+    <div class="pub"><b>W1</b><div>Learning decision-dependent recourse domains in two-stage stochastic programming. With S. De Vuyst.</div></div>
+    <div class="pub"><b>W2</b><div>A sample average approximation method with certified scenario reduction for the stochastic inspection station allocation problem with delayed inspection. With S. De Vuyst and B. Raa.</div></div>
+    <div class="pub"><b>W3</b><div>Context-aware inspection station allocation with delayed inspection and sequential loss of inspectability. With S. De Vuyst and B. Raa.</div></div>
+    <div class="pub"><b>W4</b><div>Optimal inspection station allocation in production lines: a dynamic programming approach. With S. De Vuyst and B. Raa.</div></div>
+    <div class="pub"><b>W5</b><div>Multistage stochastic lot-sizing and scheduling for quality-graded disassembly: logic-based Benders decomposition and the value of adaptive scheduling. With S. De Vuyst.</div></div>
+    <div class="pub"><b>W6</b><div>Certificate-conditioned stochastic yield in remanufacturing: integrating weekly shift scheduling with adaptive multi-stage disassembly planning and lot-sizing. With S. De Vuyst.</div></div>
+    <div class="pub"><b>W7</b><div>Integrated disassembly scheduling and workforce planning under condition-based quality classification with misclassification recourse: a two-stage stochastic programming approach.</div></div>
+    <div class="pub"><b>W8</b><div>Uncertainty in the recoverable area: a review of assumptions, models, and solution approaches from returns inventory to recovered outputs.</div></div>
 
     <p class="sub">Conference contributions (peer-reviewed)</p>
     <div class="pub"><b>C1</b><div>Hedayati, S., De Vuyst, S., Raa, B. (2026). Dynamic programming for inspection station allocation in production lines. <span class="venue">ORBEL 40</span>, pp. 230&ndash;232.</div></div>
